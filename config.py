@@ -1,5 +1,5 @@
-items = [{'id':0, 'name':'item1'},
-         {'id':1, 'name':'item2'}]
+items = [{'id':0, 'name':'item-1'},
+         {'id':1, 'name':'item-2'}]
 
 item1_prices = [5.0,10.0,17.0,25.0]
 item2_prices = [28.0,30.0,41.0,50.0]
