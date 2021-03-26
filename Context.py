@@ -29,7 +29,7 @@ class Context():
                 idx = c['id']
                 f_x, f_y = interpolate(np.array(prices), np.array(probabilities[season]['probabilities'][idx]))
                 ax.plot(f_x,f_y,color=c['color'],label=c['name'])
-                ax.scatter(prices,probabilities[season]['probabilities'][idx],marker='o',color=c['color'])
+                ax.scatter(prices,probabilities[season]['probabilities'][idx],marker='.',color=c['color'])
                 ax.legend()
                 ax.set_title(probabilities[season]['name'])
                 ax.set_xlabel("price")
