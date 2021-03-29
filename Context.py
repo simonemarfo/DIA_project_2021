@@ -5,7 +5,7 @@ from scipy.interpolate import interp1d
 from config import *
 
 def interpolate(x, y):
-    new_x = np.linspace(x.min(), x.max(), num=int((x.max()-x.min())/0.5)) # step of 0.50€
+    new_x = np.linspace(x.min(), x.max(), num=int((x.max()-x.min())/5)) # step of 5€
     f = interp1d(x, y, kind='quadratic')
     return new_x, f(new_x)
 
@@ -19,6 +19,8 @@ class Context():
         self.item2_prices = item2_prices # candidates price for second item
         self.item1_probabilities = item1_probabilities # item1 seasonal probabilities: [{'id':0,'name':'season1', 'probabilities':[[]], {...}]
         self.item2_probabilities = item2_probabilities 
+        self.customersDistribution = np.multiply(gaussDistributionParam,maxDailyCustomers) # mu,sigma parameters for gaussian distribution
+        
         
 
     def plot_conversion_rate(self,prices,probabilities, title='Conversion rate'):
@@ -34,6 +36,7 @@ class Context():
                 ax.set_title(probabilities[season]['name'])
                 ax.set_xlabel("price")
                 ax.set_ylabel("probabiliy")
+                ax.set_ylim(0,1)
 
         plt.show()
     
@@ -44,8 +47,18 @@ class Context():
         self.plot_conversion_rate(self.item2_prices,self.item2_probabilities,  'Conversion rate: second item')
 
 
+    def customers_daily_instance(self): #TO COMPLETE 
+        dailyCustomer = []
+    
+        for i in range(0,self.n_classes):
+            sample = np.random.normal(self.customersDistribution[i,0],self.customersDistribution[i,1])
+            dailyCustomer.append(int(sample))
+
+        return dailyCustomer
+
 
 
 ctx = Context()
 ctx.plot_item1_conversion_rate()
 ctx.plot_item2_conversion_rate()
+print(ctx.customers_daily_instance())
