@@ -13,6 +13,10 @@ gaussDistributionParam =[[.15,.03],
                  [.40,.05],
                  [.25,.04]]
                  
+#Fraction of customer with no promo(P0)
+no_promo1=.3
+no_promo2=.25
+
 item1_probabilities =[{'id':0,'name':'Spring-Summer', 'probabilities':[[.75,.5,.5,.5],  #MTB - Sport Addicted
                                                                  [.6,.3,.2,.1],         #MTB - Gifter
                                                                  [.6,.4,.3,.1],         #MTB - Amateur
