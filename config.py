@@ -1,5 +1,11 @@
-items = [{'id':0, 'name':'Mountain Bike'},
+items_info = [{'id':0, 'name':'Mountain Bike'},
          {'id':1, 'name':'Garmin'}]
+
+classes_info = [{'id':0, 'name':'Sport Addicted','color':'r'}, #COMPRA A QUALSIASI PREZZO
+                {'id':1, 'name':'Gifter','color':'b'},         #REGALA LA BICI
+                {'id':2, 'name':'Amateur','color':'g'},        #FA SPORT OGNI TANTO
+                {'id':3, 'name':'Worried','color':'y'}]        #STA ATTENTO A SPENDERE
+
 #FIXARE RANGE PREZZI; BELLA MOL; 6 valori proposti da mol;occhio ti guardiamo
 item1_prices = [2060.0,2200.0,2290.0,2400.0]
 item2_prices = [420.0,500.0,560.0,630.0]
@@ -47,7 +53,3 @@ item2_probabilities = [{'id':0,'name':'Spring-Summer', 'probabilities':[[.55,.35
                     ]
                        
 
-classes_info = [{'id':0, 'name':'Sport Addicted','color':'r'}, #COMPRA A QUALSIASI PREZZO
-                {'id':1, 'name':'Gifter','color':'b'},         #REGALA LA BICI
-                {'id':2, 'name':'Amateur','color':'g'},        #FA SPORT OGNI TANTO
-                {'id':3, 'name':'Worried','color':'y'}]        #STA ATTENTO A SPENDERE

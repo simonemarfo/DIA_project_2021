@@ -12,7 +12,8 @@ def interpolate(x, y):
 class Context():
     def __init__(self):
         
-        self.classes_info = classes_info # load the class information: {'id':0, 'name':'class-1','color':'r'}
+        self.items_info = items_info # items information: [{'id':0, 'name':'name1'},...]
+        self.classes_info = classes_info # load the class information: [{'id':0, 'name':'class-1','color':'r'},...]
         self.n_classes = len(classes_info)
         
         self.item1_prices = item1_prices # candidates price for first item: [pr0, pr1, pr2, pr3]
@@ -21,7 +22,7 @@ class Context():
         self.item2_probabilities = item2_probabilities 
         self.customersDistribution = np.multiply(gaussDistributionParam,maxDailyCustomers) # mu,sigma parameters for gaussian distribution
         self.amount_of_no_promos = no_promo1
-        self.discount_promos= promos     #P0=0% P1=10% P2=20% P3=30%
+        self.discount_promos = promos     #P0=0% P1=10% P2=20% P3=30%
 
         
         
@@ -69,4 +70,8 @@ class Context():
 
     def conversion_rate_second_element(self, p, customer_class, season = 0): #Season = 0 : default Spring/Summer
         return self.conversion_rate(p, self.item2_prices, self.item2_probabilities[season]['probabilities'][customer_class])
+
+    def purchase(self,probability):  
+        return np.random.binomial(1,probability)
+
 

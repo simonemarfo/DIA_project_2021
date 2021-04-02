@@ -3,6 +3,22 @@ from scipy.optimize import linear_sum_assignment # library that implement this a
 import matplotlib.pyplot as plt
 from Context import *
 
+def optimalSolutionsIterations(matching_matrix, verbose = False):
+    iteration_matrix = []
+    for i in range(4):
+        row_ind,col_ind = linear_sum_assignment(matching_matrix,maximize=True) # optimization 
+        if verbose:
+            print(f"\nScipy linear sum assignment\n\nMatrix:\n{matching_matrix}\nOptimal Matching: rows{row_ind} cols{col_ind} value {matching_matrix[row_ind,col_ind].sum()}")
+        # preparing matrix for next iteration
+        temp = np.zeros((4,4))
+        for ind in range(0,len(row_ind)):
+            temp[row_ind[ind],col_ind[ind]] =  matching_matrix[row_ind[ind],col_ind[ind]]
+            matching_matrix[row_ind[ind],col_ind[ind]] = -1
+        
+        iteration_matrix.append(temp)
+    return iteration_matrix
+
+
 # nopromo 
 def noPromoDistribution(iteration_matrix, class_final_distribution, verbose = False):
     iter_sum = [] # sum of optimal value at each iteration 
@@ -26,8 +42,8 @@ def noPromoDistribution(iteration_matrix, class_final_distribution, verbose = Fa
         print(f'iteration order :  {iteration_order}')
         print(f'total amount {tot_amount}')
         print(f'Final class distribution promo matrix :\n{class_final_distribution}')
-#promos 
 
+#promos 
 def promoDistribution(iteration_matrix, class_final_distribution, verbose = False):
     # outer-class: 
     iter_sum = [] # sum of optimal value at each iteration 
@@ -63,79 +79,117 @@ def promoDistribution(iteration_matrix, class_final_distribution, verbose = Fals
         print(f'promo per iteration :{promo_per_iteration}')
         print(f'Final class distribution promo matrix :\n{class_final_distribution}')
 
-ctx = Context()
-customer_daily = ctx.customers_daily_instance()
-total_clients = np.sum(customer_daily)
-no_promo = int(total_clients*ctx.amount_of_no_promos)
-total_promo = total_clients-no_promo
-item1_price_full = 2400.0
-item2_price_full = 630.0
+def computeClassPromoDistribution(iteration_matrix,class_final_distribution,verbose=False):
+    noPromoDistribution(iteration_matrix, class_final_distribution,verbose=verbose) # compute the first column related to P0 (no doscount)
+    promoDistribution(iteration_matrix, class_final_distribution,verbose=verbose)   # compute the distribution for promos P1, P2, P3
+    # normalize the distributions row by row
+    for i in range(0,4):
+        sum_per_class=(np.sum(class_final_distribution[i,:]))
+        for j in range(0,4):
+            class_final_distribution[i,j] = (class_final_distribution[i,j]*100/sum_per_class)/100  # do not cast to integer!
+    return class_final_distribution
 
-#Calculate of the customers that buy the first item
+#
+# Experiment 1 
+#
+
+item1_price_full = 2400.0
+item2_price_full = 630.0 
+class_final_distribution = np.zeros((4,4))  # this 4x4 matrix contains the probablilty that to a user, belonging to a category (row) is given a certaind discount (columns)
+
+# context generation 
+ctx = Context()
+customer_daily = ctx.customers_daily_instance() # return a vector corresponding to numbers of customers per class 
+total_clients = np.sum(customer_daily)
+no_promo = int(total_clients * ctx.amount_of_no_promos) # percentage no-promo over the daily total number of customers  
+total_promo = total_clients - no_promo
+
+
+# Calculate of the customers that buy the first item
+# Use the conversion rate of the first item (at the defined price), as fractions of buyers
 first_item_acquirents = np.zeros((4))
 
 for i in range (0,4):
-    first_item_acquirents[i]=int(customer_daily[i]*ctx.conversion_rate_first_element(item1_price_full, i))
+    first_item_acquirents[i]=int(customer_daily[i] * ctx.conversion_rate_first_element(item1_price_full, i))
 
-#Matching problem, Initialization of the matrix
-#Every cell contains: conversion_rate*discounted_price*tot_clients of that class
+# knowing the numbers of customers that bought the first item, we aims to maximize the profit making them buy the second item
+# Considering as known the conversion rate of each class, in order to maximize the profit we can determine which discout apply to a class 
+# Solved as Matching Problem: match every user category to all the four possible discounts (P0, P1, P2, P3) with the pobability to apply it in order to maximize the profit
+
+# discounted price for the second items
 discounted_price = [item2_price_full,
     item2_price_full*(1-ctx.discount_promos[1]),
     item2_price_full*(1-ctx.discount_promos[2]),
     item2_price_full*(1-ctx.discount_promos[3])]
 
+# Matching matrix: rows[0..3] are the user categories; columns[0..3] are the discouts; celles are the weights calculated as (conversion_rate * discounted_price * tot_clients) of that class
 matching_matrix = np.zeros((4,4))
-
-
 for i in range (0,4): #classes
     for j in range (0,4): #promos
         matching_matrix[i,j] = int(discounted_price[j]*(ctx.conversion_rate_second_element(discounted_price[j],i))*first_item_acquirents[i])
 
-print("MATCHING MATRIX")
-print(matching_matrix)
 
-print("DISCOUNTED PRICE")
-print(discounted_price)
-print("TOT PROMO")
-print(total_promo)
-print("NO PROMO")
-print(no_promo)
-print("TOT CLIENTS CHE ENTRANO PER MOL BELLA MOL QUELLI CHE LO PAGANO")
-print(total_clients)
-print("CLIENTI GIORNALIERI")
-print(customer_daily)
-print("ACQUIRENTI PRIMO ELEMENTO")
-print(first_item_acquirents)
+# the matching is performed iterating over the matching_matrix four times. Every iteration determine the optimal solution of the matching problem, which allow to maximize the profit
+# the iteration_matrix save collect all these oprimal solutions
+iteration_matrix = optimalSolutionsIterations(matching_matrix=matching_matrix.copy(),verbose=True)
+
+# compiling the class final distribution matrix 
+class_final_distribution = computeClassPromoDistribution(iteration_matrix,class_final_distribution,True)
+
+# Output overview
+print("\n\n#############\n")
+print(f" {ctx.items_info[0]['name']}: {item1_price_full} €\n {ctx.items_info[1]['name']}: {item2_price_full} €\n Discouts (%): {[_*100 for _ in ctx.discount_promos]}")
+print(f" Discounted {ctx.items_info[1]['name']}: {discounted_price} €")
+print(f" Total daily custemers: {total_clients}\n Daily customers per class: {customer_daily}\n Total promo: {total_promo}\n No promo: {no_promo} --> {ctx.amount_of_no_promos * 100}% of total daily customes")
+print("\n")
+print(f" Customers that bought {ctx.items_info[0]['name']} : {first_item_acquirents}")
+print(f"\n[*]Matching matrix\n\t{matching_matrix}\n[*]Iteration matrix\n\t{iteration_matrix} ")
+print(f"\n\nOPTIMAL SOLUTION: PROBABILITY DISTRIBUTION OF PROMOS PER CLASS\n{class_final_distribution.round(2)}\n\n\n")
+
+# testing optimal solution. Comparing rewards of no-discounts vs optimal solutions
+n_experiments = 50
+
+daily_reward_no_promotion_srategy = []
+daily_reward_promotion_srategy = []
+
+for t in range(n_experiments):
+    daily_reward = [0,0]
+    for category in range(len(customer_daily)):
+        for customer in range(customer_daily[category]): # for each category emulate the user that purchase the good
+            ########################
+            # NO PROMOTION STRATEGY
+            ########################
+            
+            customer_probability = ctx.conversion_rate_first_element(item1_price_full,category) # buy first item 
+            reward_item1 = ctx.purchase(customer_probability) * item1_price_full
+            reward_item2 = 0.0 
+            if(reward_item1 > 0): # propose second item
+                customer_probability = ctx.conversion_rate_second_element(item2_price_full,category)
+                reward_item2 = ctx.purchase(customer_probability) * item2_price_full
+            daily_reward[0] += reward_item1 + reward_item2
+            #print(f"[NP]Customer {customer}, category {category} -- item1: {reward_item1}€ --- item2: {reward_item2}€\n [$] Daily reward: {daily_reward[0]}€")
+            
+
+            ########################
+            # PROMOTION STRATEGY
+            ########################
+            customer_probability = ctx.conversion_rate_first_element(item1_price_full,category) # buy first item 
+            reward_item1 = ctx.purchase(customer_probability) * item1_price_full
+            reward_item2 = 0.0 
+            if(reward_item1 > 0): # propose second item with a discount
+                d_price = np.random.choice(discounted_price, p=class_final_distribution[category])
+                customer_probability = ctx.conversion_rate_second_element(d_price,category)
+                reward_item2 = ctx.purchase(customer_probability) * d_price
+            daily_reward[1] += reward_item1 + reward_item2
+            #print(f"[P]Customer {customer}, category {category} -- item1: {reward_item1}€ --- item2: {reward_item2}€\n [$] Daily reward: {daily_reward[1]}€")
+    daily_reward_no_promotion_srategy.append(daily_reward[0])
+    daily_reward_promotion_srategy.append(daily_reward[1])
 
 
-class_final_distribution = np.zeros((4,4))
-iteration_matrix = []
-
-
-for i in range(4):
-    row_ind,col_ind = linear_sum_assignment(matching_matrix,maximize=True) # optimization 
-    print("\nScipy linear sum assignment\n\nMatrix:\n", matching_matrix, "\nOptimal Matching:\n",row_ind,col_ind, matching_matrix[row_ind,col_ind].sum())
-    # preparing matrix for next iteration
-    temp = np.zeros((4,4))
-    for ind in range(0,len(row_ind)):
-        temp[row_ind[ind],col_ind[ind]] =  matching_matrix[row_ind[ind],col_ind[ind]]
-        matching_matrix[row_ind[ind],col_ind[ind]] = -1
-    
-    iteration_matrix.append(temp)
-
-print(iteration_matrix)
-noPromoDistribution(iteration_matrix, class_final_distribution)
-promoDistribution(iteration_matrix, class_final_distribution)
-
-print(class_final_distribution)
-
-final_no_promo = np.multiply(class_final_distribution[:,0], no_promo/100 )
-final_yes_promo = np.multiply(class_final_distribution[:,1:4], total_promo/100)
-
-print(final_no_promo.round())
-print(final_yes_promo.round())
-for i in range(0,4):
-    sum_per_class=(np.sum(class_final_distribution[i,:]))
-    for j in range(0,4):
-        class_final_distribution[i,j] = int(class_final_distribution[i,j]*100/sum_per_class)/100
-print(class_final_distribution)
+plt.figure(0)
+plt.xlabel("run")
+plt.ylabel("Daily reward")
+plt.plot(daily_reward_no_promotion_srategy,'-o', color='black')
+plt.plot(daily_reward_promotion_srategy,'-o', color='red')
+plt.legend(['No Promotion Strategy','Promotion Strategy'])
+plt.show()
