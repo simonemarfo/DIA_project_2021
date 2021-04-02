@@ -2,7 +2,6 @@ import numpy as np
 from scipy.optimize import linear_sum_assignment # library that implement this algorithm
 import matplotlib.pyplot as plt
 
-print("prova")
 matrix = np.array([[600,580,640,700],
                    [590,610,720,540],
                    [610,670,530,490],
