@@ -7,7 +7,7 @@ from config import *
 def interpolate(x, y):
     new_x = np.linspace(x.min(), x.max(), num=int((x.max()-x.min())/5)) # step of 5€
     f = interp1d(x, y, kind='quadratic')
-    return new_x, f(new_x)
+    return new_x, f
 
 class Context():
     def __init__(self):
@@ -20,6 +20,9 @@ class Context():
         self.item1_probabilities = item1_probabilities # item1 seasonal probabilities: [{'id':0,'name':'season1', 'probabilities':[[]], {...}]
         self.item2_probabilities = item2_probabilities 
         self.customersDistribution = np.multiply(gaussDistributionParam,maxDailyCustomers) # mu,sigma parameters for gaussian distribution
+        self.amount_of_no_promos = no_promo1
+        self.discount_promos= promos     #P0=0% P1=10% P2=20% P3=30%
+
         
         
 
@@ -29,8 +32,8 @@ class Context():
         for season, ax in enumerate(axs):
             for c in self.classes_info:
                 idx = c['id']
-                f_x, f_y = interpolate(np.array(prices), np.array(probabilities[season]['probabilities'][idx]))
-                ax.plot(f_x,f_y,color=c['color'],label=c['name'])
+                f_x, f = interpolate(np.array(prices), np.array(probabilities[season]['probabilities'][idx]))
+                ax.plot(f_x,f(f_x),color=c['color'],label=c['name'])
                 ax.scatter(prices,probabilities[season]['probabilities'][idx],marker='.',color=c['color'])
                 ax.legend()
                 ax.set_title(probabilities[season]['name'])
@@ -57,8 +60,13 @@ class Context():
         return dailyCustomer
 
 
+    def conversion_rate(self, p, prices, probabilities):
+        f_x, f = interpolate(np.array(prices), np.array(probabilities))
+        return f(p)
 
-ctx = Context()
-ctx.plot_item1_conversion_rate()
-ctx.plot_item2_conversion_rate()
-print(ctx.customers_daily_instance())
+    def conversion_rate_first_element(self, p, customer_class, season = 0): #Season = 0 : default Spring/Summer
+        return self.conversion_rate(p, self.item1_prices, self.item1_probabilities[season]['probabilities'][customer_class])
+
+    def conversion_rate_second_element(self, p, customer_class, season = 0): #Season = 0 : default Spring/Summer
+        return self.conversion_rate(p, self.item2_prices, self.item2_probabilities[season]['probabilities'][customer_class])
+

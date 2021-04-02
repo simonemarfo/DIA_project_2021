@@ -1,32 +1,7 @@
 import numpy as np
 from scipy.optimize import linear_sum_assignment # library that implement this algorithm
 import matplotlib.pyplot as plt
-
-matrix = np.array([[600,580,640,700],
-                   [590,610,720,540],
-                   [610,670,530,490],
-                   [700,690,630,650]]).astype(float)
-
-total_clients = 700
-total_promo = 500
-no_promo = 200
-
-class_final_distribution = np.zeros((4,4))
-iteration_matrix = []
-
-
-for i in range(4):
-    row_ind,col_ind = linear_sum_assignment(matrix,maximize=True) # optimization 
-    print("\nScipy linear sum assignment\n\nMatrix:\n", matrix, "\nOptimal Matching:\n",row_ind,col_ind, matrix[row_ind,col_ind].sum())
-    # preparing matrix for next iteration
-    temp = np.zeros((4,4))
-    for ind in range(0,len(row_ind)):
-        temp[row_ind[ind],col_ind[ind]] =  matrix[row_ind[ind],col_ind[ind]]
-        matrix[row_ind[ind],col_ind[ind]] = -1
-    
-    iteration_matrix.append(temp)
-
-print(iteration_matrix)
+from Context import *
 
 # nopromo 
 def noPromoDistribution(iteration_matrix, class_final_distribution, verbose = False):
@@ -88,6 +63,67 @@ def promoDistribution(iteration_matrix, class_final_distribution, verbose = Fals
         print(f'promo per iteration :{promo_per_iteration}')
         print(f'Final class distribution promo matrix :\n{class_final_distribution}')
 
+ctx = Context()
+customer_daily = ctx.customers_daily_instance()
+total_clients = np.sum(customer_daily)
+no_promo = int(total_clients*ctx.amount_of_no_promos)
+total_promo = total_clients-no_promo
+item1_price_full = 2400.0
+item2_price_full = 630.0
+
+#Calculate of the customers that buy the first item
+first_item_acquirents = np.zeros((4))
+
+for i in range (0,4):
+    first_item_acquirents[i]=int(customer_daily[i]*ctx.conversion_rate_first_element(item1_price_full, i))
+
+#Matching problem, Initialization of the matrix
+#Every cell contains: conversion_rate*discounted_price*tot_clients of that class
+discounted_price = [item2_price_full,
+    item2_price_full*(1-ctx.discount_promos[1]),
+    item2_price_full*(1-ctx.discount_promos[2]),
+    item2_price_full*(1-ctx.discount_promos[3])]
+
+matching_matrix = np.zeros((4,4))
+
+
+for i in range (0,4): #classes
+    for j in range (0,4): #promos
+        matching_matrix[i,j] = int(discounted_price[j]*(ctx.conversion_rate_second_element(discounted_price[j],i))*first_item_acquirents[i])
+
+print("MATCHING MATRIX")
+print(matching_matrix)
+
+print("DISCOUNTED PRICE")
+print(discounted_price)
+print("TOT PROMO")
+print(total_promo)
+print("NO PROMO")
+print(no_promo)
+print("TOT CLIENTS CHE ENTRANO PER MOL BELLA MOL QUELLI CHE LO PAGANO")
+print(total_clients)
+print("CLIENTI GIORNALIERI")
+print(customer_daily)
+print("ACQUIRENTI PRIMO ELEMENTO")
+print(first_item_acquirents)
+
+
+class_final_distribution = np.zeros((4,4))
+iteration_matrix = []
+
+
+for i in range(4):
+    row_ind,col_ind = linear_sum_assignment(matching_matrix,maximize=True) # optimization 
+    print("\nScipy linear sum assignment\n\nMatrix:\n", matching_matrix, "\nOptimal Matching:\n",row_ind,col_ind, matching_matrix[row_ind,col_ind].sum())
+    # preparing matrix for next iteration
+    temp = np.zeros((4,4))
+    for ind in range(0,len(row_ind)):
+        temp[row_ind[ind],col_ind[ind]] =  matching_matrix[row_ind[ind],col_ind[ind]]
+        matching_matrix[row_ind[ind],col_ind[ind]] = -1
+    
+    iteration_matrix.append(temp)
+
+print(iteration_matrix)
 noPromoDistribution(iteration_matrix, class_final_distribution)
 promoDistribution(iteration_matrix, class_final_distribution)
 
@@ -98,3 +134,8 @@ final_yes_promo = np.multiply(class_final_distribution[:,1:4], total_promo/100)
 
 print(final_no_promo.round())
 print(final_yes_promo.round())
+for i in range(0,4):
+    sum_per_class=(np.sum(class_final_distribution[i,:]))
+    for j in range(0,4):
+        class_final_distribution[i,j] = int(class_final_distribution[i,j]*100/sum_per_class)/100
+print(class_final_distribution)

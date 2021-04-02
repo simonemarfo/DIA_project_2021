@@ -1,6 +1,6 @@
 items = [{'id':0, 'name':'Mountain Bike'},
          {'id':1, 'name':'Garmin'}]
-
+#FIXARE RANGE PREZZI; BELLA MOL; 6 valori proposti da mol;occhio ti guardiamo
 item1_prices = [2060.0,2200.0,2290.0,2400.0]
 item2_prices = [420.0,500.0,560.0,630.0]
 
@@ -14,8 +14,8 @@ gaussDistributionParam =[[.15,.03],
                  [.25,.04]]
                  
 #Fraction of customer with no promo(P0)
-no_promo1=.3
-no_promo2=.25
+no_promo1=.7
+no_promo2=.65
 
 item1_probabilities =[{'id':0,'name':'Spring-Summer', 'probabilities':[[.75,.5,.5,.5],  #MTB - Sport Addicted
                                                                  [.6,.3,.2,.1],         #MTB - Gifter
