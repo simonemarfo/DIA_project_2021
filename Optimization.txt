@@ -1,0 +1,30 @@
+var:
+
+i=classe
+j=codice sconto
+p1=prezzo del prodotto 1 
+p2=prezzo del prodotto 2
+c1=costo di produzione del prodotto 1=0
+c2=costo di produzione del prodotto 2=0
+q1i(p1)=domanda del prodotto 1 per la classe i = avg request per class i for product 1
+q2i(p)=domanda del prodotto 2 per la classe i = avg request per class i for product 2
+sji(p2)=prezzo scontato j applicato al prodotto 2 per la classe i
+dij=frazione di applicazione dello sconto j alla classe i
+maxdj=numero massimo di clienti a cui concedere lo sconto j
+
+p1*q1i(p1) revenue at price p for product 1 
+
+sji(p2)*q2i(sji(p2))*dij revenue at price discounted for product 2
+
+p1*q1i(p1) - c1*q1i(p1)
+
+sji(p2)*q2i(sji(p2))*dij -  q2i(sji(p2))*c2
+
+obj
+
+MAX sum over i/j [p1*q1i(p1) - c1*q1i(p1) + sji(p2)*q2i(sji(p2))*dij -  q2i(sji(p2))*c2]
+
+constraints
+
+for every j [[sum over i dij]=maxdj]
+
