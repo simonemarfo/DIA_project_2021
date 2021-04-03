@@ -93,7 +93,7 @@ def computeClassPromoDistribution(iteration_matrix,class_final_distribution,verb
 # Experiment 1 
 #
 
-item1_price_full = 2400.0
+item1_price_full = 2350.0
 item2_price_full = 630.0 
 class_final_distribution = np.zeros((4,4))  # this 4x4 matrix contains the probablilty that to a user, belonging to a category (row) is given a certaind discount (columns)
 
@@ -150,46 +150,60 @@ print(f"\n\nOPTIMAL SOLUTION: PROBABILITY DISTRIBUTION OF PROMOS PER CLASS\n{cla
 n_experiments = 50
 
 daily_reward_no_promotion_srategy = []
+daily_reward_best_promotion_srategy = []
 daily_reward_promotion_srategy = []
 
 for t in range(n_experiments):
-    daily_reward = [0,0]
+    daily_reward = [0,0,0]
     for category in range(len(customer_daily)):
         for customer in range(customer_daily[category]): # for each category emulate the user that purchase the good
-            ########################
-            # NO PROMOTION STRATEGY
-            ########################
-            
-            customer_probability = ctx.conversion_rate_first_element(item1_price_full,category) # buy first item 
+            # buy first item 
+            customer_probability = ctx.conversion_rate_first_element(item1_price_full,category)
             reward_item1 = ctx.purchase(customer_probability) * item1_price_full
             reward_item2 = 0.0 
             if(reward_item1 > 0): # propose second item
+                ########################
+                # NO PROMOTION STRATEGY
+                ########################
                 customer_probability = ctx.conversion_rate_second_element(item2_price_full,category)
                 reward_item2 = ctx.purchase(customer_probability) * item2_price_full
-            daily_reward[0] += reward_item1 + reward_item2
-            #print(f"[NP]Customer {customer}, category {category} -- item1: {reward_item1}€ --- item2: {reward_item2}€\n [$] Daily reward: {daily_reward[0]}€")
-            
+                daily_reward[0] += reward_item1 + reward_item2
 
-            ########################
-            # PROMOTION STRATEGY
-            ########################
-            customer_probability = ctx.conversion_rate_first_element(item1_price_full,category) # buy first item 
-            reward_item1 = ctx.purchase(customer_probability) * item1_price_full
-            reward_item2 = 0.0 
-            if(reward_item1 > 0): # propose second item with a discount
+                ########################
+                # BEST PROMOTION STRATEGY
+                ########################
+                reward_item2 = 0.0
+                d_price = np.min(discounted_price)
+                customer_probability = ctx.conversion_rate_second_element(d_price,category)
+                reward_item2 = ctx.purchase(customer_probability) * d_price
+                daily_reward[1] += reward_item1 + reward_item2
+
+
+                ########################
+                # PROMOTION STRATEGY
+                ########################
+                reward_item2 = 0.0
                 d_price = np.random.choice(discounted_price, p=class_final_distribution[category])
                 customer_probability = ctx.conversion_rate_second_element(d_price,category)
                 reward_item2 = ctx.purchase(customer_probability) * d_price
-            daily_reward[1] += reward_item1 + reward_item2
-            #print(f"[P]Customer {customer}, category {category} -- item1: {reward_item1}€ --- item2: {reward_item2}€\n [$] Daily reward: {daily_reward[1]}€")
-    daily_reward_no_promotion_srategy.append(daily_reward[0])
-    daily_reward_promotion_srategy.append(daily_reward[1])
+                daily_reward[2] += reward_item1 + reward_item2
 
+            #print(f"[NP]Customer {customer}, category {category} -- item1: {reward_item1}€ --- item2: {reward_item2}€\n [$] Daily reward: {daily_reward[0]}€")
+            #print(f"[BP]Customer {customer}, category {category} -- item1: {reward_item1}€ --- item2: {reward_item2}€\n [$] Daily reward: {daily_reward[1]}€")
+            #print(f"[P]Customer {customer}, category {category} -- item1: {reward_item1}€ --- item2: {reward_item2}€\n [$] Daily reward: {daily_reward[2]}€")              
+            
+    daily_reward_no_promotion_srategy.append(daily_reward[0])
+    daily_reward_best_promotion_srategy.append(daily_reward[1])
+    daily_reward_promotion_srategy.append(daily_reward[2])
+
+
+print(f"No strategy promotion: {np.sum(daily_reward_no_promotion_srategy)}\nBest Promotion strategy: {np.sum(daily_reward_best_promotion_srategy)}\nPromotion strategy: {np.sum(daily_reward_promotion_srategy)}")
 
 plt.figure(0)
 plt.xlabel("run")
 plt.ylabel("Daily reward")
 plt.plot(daily_reward_no_promotion_srategy,'-o', color='black')
+plt.plot(daily_reward_best_promotion_srategy,'-o', color='green')
 plt.plot(daily_reward_promotion_srategy,'-o', color='red')
-plt.legend(['No Promotion Strategy','Promotion Strategy'])
+plt.legend(['No Promotion Strategy','Best Promotion Strategy','Promotion Strategy'])
 plt.show()

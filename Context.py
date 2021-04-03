@@ -74,4 +74,8 @@ class Context():
     def purchase(self,probability):  
         return np.random.binomial(1,probability)
 
+#ctx = Context()
+#ctx.plot_item1_conversion_rate()
+#ctx.plot_item2_conversion_rate()
+
 
