@@ -70,8 +70,8 @@ for t in range(days): # Day simulation
                 learner.update(sub_matching,rewards_to_update)
 
                 # store results in the cumulative daily rewards 
-                cum_UCB_rewards += (reward_item2* discounted_price[sub_matching[1][category]])
-                cum_opt_rewards += (ctx.purchase_online_second_element(discounted_price[opt[1][category]],category) * discounted_price [opt[1][category]]) # simulate the purchase of the second item according to the optimal strategy
+                cum_UCB_rewards += (reward_item2 * discounted_price[sub_matching[1][category]])
+                cum_opt_rewards += (reward_item2 * discounted_price [opt[1][category]]) # purchase of the second item according to the optimal strategy 
 
     period_UCB_reward.append(cum_UCB_rewards)
     period_opt_reward.append(cum_opt_rewards)
@@ -79,7 +79,7 @@ for t in range(days): # Day simulation
     print('___________________')
     print(f'| Day: {t+1}')
     print(f'| Today customers distribution : {daily_customer}')
-    print(f'| Today cumulative reward (Online strategy): {cum_UCB_rewards}\n| Today cumulative reward (Optimal strategy): {cum_opt_rewards}\n| - Loss: {cum_opt_rewards - cum_UCB_rewards}')
+    print(f'| Today cumulative reward (Online strategy):  {cum_UCB_rewards}\n| Today cumulative reward (Optimal strategy): {cum_opt_rewards}\n| - Loss: {cum_opt_rewards - cum_UCB_rewards}')
     print(f'Current confidence per arm of the online learner:\n{learner.confidence}')
     print('___________________\n')
 
