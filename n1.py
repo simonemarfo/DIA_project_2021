@@ -110,18 +110,21 @@ print(f" Customers that bought {ctx.items_info[0]['name']} : {first_item_acquire
 print(f"\n[*]Matching matrix\n\t{matching_matrix}\n[*]Iteration matrix\n\t{iteration_matrix} ")
 print(f"\n\nOPTIMAL SOLUTION: PROBABILITY DISTRIBUTION OF PROMOS PER CLASS\n{class_final_distribution.round(2)}\n\n\n")
 
-# testing our solution. Comparing rewards of no-discounts vs optimal solutions
-optimal_solution_matrix = [[0, 0, 1, 0],
-                            [0, 1, 0, 0],
-                            [0, 0, 1, 0],
-                            [0, 0, 0, 1]]
+#
+# testing our solution
+#
 
-n_experiments = 50
+n_experiments = 10
 
-daily_reward_no_promotion_srategy = []
-daily_reward_best_promotion_srategy = []
-daily_reward_promotion_srategy = []
-daily_optimal_solution = []
+optimal_solution_matrix = np.zeros((4,4))
+row_ind, col_ind = (linear_sum_assignment(matching_matrix,maximize=True))
+for r,c in zip(row_ind,col_ind):
+    optimal_solution_matrix[r,c] = 1
+
+daily_reward_no_promotion_srategy = [] # rewards collected by experiment always appling P0 (no discount) 
+daily_reward_max_discount_srategy = [] # rewards collected by experiment always appling P3 (max discount)
+daily_reward_promotion_srategy = []    # rewards collected by experiment randomly extracting a promotion, according to our strategy
+daily_optimal_solution = []            # rewards collected by experiment always appling the best strategy 
 
 left_promo = total_promo
 
@@ -175,29 +178,28 @@ for t in range(n_experiments):
                 d_price = discounted_price[idx_discount]
                 customer_probability = ctx.conversion_rate_second_element(d_price,category)
                 reward_item2 = ctx.purchase(customer_probability) * d_price
-                daily_reward[3] += reward_item1 + reward_item2
-
-            #print(f"[NP]Customer {customer}, category {category} -- item1: {reward_item1}€ --- item2: {reward_item2}€\n [$] Daily reward: {daily_reward[0]}€")
-            #print(f"[BP]Customer {customer}, category {category} -- item1: {reward_item1}€ --- item2: {reward_item2}€\n [$] Daily reward: {daily_reward[1]}€")
-            #print(f"[P]Customer {customer}, category {category} -- item1: {reward_item1}€ --- item2: {reward_item2}€\n [$] Daily reward: {daily_reward[2]}€")              
+                daily_reward[3] += reward_item1 + reward_item2          
             
     daily_reward_no_promotion_srategy.append(daily_reward[0])
-    daily_reward_best_promotion_srategy.append(daily_reward[1])
+    daily_reward_max_discount_srategy.append(daily_reward[1])
     daily_reward_promotion_srategy.append(daily_reward[2])
     daily_optimal_solution.append(daily_reward[3])
 
 
-print(f"No strategy promotion (P0): {np.sum(daily_reward_no_promotion_srategy)}\n'Maximum Discount Strategy (P3): {np.sum(daily_reward_best_promotion_srategy)}\nPerformed Solution: {np.sum(daily_reward_promotion_srategy)}\nOptimal Solution: {np.sum(daily_optimal_solution)}")
-print(f"Left discount : {left_promo}")
-print(f"TO CONFRONT N2 OUR: {np.mean(daily_reward_promotion_srategy)}    OPTIMAL: {np.mean(daily_optimal_solution)}")
+print(f"No promotion strategy (P0): {np.sum(daily_reward_no_promotion_srategy)}\n'Maximum Discount Strategy (P3): {np.sum(daily_reward_max_discount_srategy)}\nPerformed Strategy: {np.sum(daily_reward_promotion_srategy)}\nOptimal Strategy: {np.sum(daily_optimal_solution)}")
+print(f"Mean reward with our promotion strategy: {np.mean(daily_reward_promotion_srategy)}\nMean reward with optimal strategy: {np.mean(daily_optimal_solution)}")
+print(f"Left discount (only last experiment): {left_promo}") # 
 
 
 plt.figure(0)
 plt.xlabel("run")
 plt.ylabel("Daily reward")
-plt.plot(daily_reward_no_promotion_srategy,'-o', color='black')
-plt.plot(daily_reward_best_promotion_srategy,'-o', color='green')
-plt.plot(daily_reward_promotion_srategy,'-o', color='red')
-plt.plot(daily_optimal_solution,'-o', color='blue')
-plt.legend(['No Promotion Strategy (P0)','Maximum Discount Strategy (P3)','Performed Solution','Optimal Solition'])
+plt.plot(daily_reward_no_promotion_srategy,'-o', color='grey', label = 'No Promotion Strategy (P0)')
+plt.plot(daily_reward_max_discount_srategy,'-o', color='darkgrey', label = 'Maximum Discount Strategy (P3)')
+plt.plot(daily_reward_promotion_srategy,'-o', color='red', label = 'Performed Strategy')
+plt.plot(n_experiments * [np.mean(daily_reward_promotion_srategy,axis=0)],'--', color='lightcoral', label = 'Mean Reward Performed Strategy')
+plt.plot(daily_optimal_solution,'-o', color='blue', label = 'Optimal Strategy')
+plt.plot(n_experiments * [np.mean(daily_optimal_solution,axis=0)],'--', color='cornflowerblue', label = 'Mean Reward Optimal Strategy' )
+
+plt.legend()
 plt.show()
