@@ -50,6 +50,17 @@ class Context():
     def plot_item2_conversion_rate(self):
         self.plot_conversion_rate(self.item2_prices,self.item2_probabilities,  'Conversion rate: second item')
 
+    def plot_customers_distribution(self):
+        from scipy.stats import norm
+        plt.figure(0)
+        x_mean = np.mean(self.customersDistribution[:,0])
+        x_axis = np.arange(0, x_mean*3 ,10)
+
+        for idx, d in enumerate(self.customersDistribution):
+            plt.plot(x_axis , norm.pdf(x_axis,d[0],d[1]), color=self.classes_info[idx]['color'],label=self.classes_info[idx]['name'])
+        plt.legend()
+        plt.title("Customers distribution")
+        plt.show()
 
     def customers_daily_instance(self): #TO COMPLETE 
         dailyCustomer = []
@@ -74,8 +85,6 @@ class Context():
     def purchase(self,probability):  
         return np.random.binomial(1,probability)
 
-#ctx = Context()
-#ctx.plot_item1_conversion_rate()
-#ctx.plot_item2_conversion_rate()
-
+# ctx = Context()
+# ctx.plot_customers_distribution()
 
