@@ -1,2 +1,2 @@
-Experiment 1:
-    controllare che la soluzione sia effettivamente ottimale. Controllare che applicando sempre la la promozione più alta al secondo item il guadagno sia inferiore rispetto all'applicazione della soluzione ottimale da noi trovata.
+ASSUMPTION:
+    Da step 1 allo step 6 consideriamo come seasonality Spring/Summer, STATIONARY ENVIRONMENT

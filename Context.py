@@ -72,19 +72,32 @@ class Context():
         return dailyCustomer
 
 
-    def conversion_rate(self, p, prices, probabilities):
+    def conversion_rate(self, current_price, prices, probabilities):                    
         f_x, f = interpolate(np.array(prices), np.array(probabilities))
-        return f(p)
+        return f(current_price)
 
-    def conversion_rate_first_element(self, p, customer_class, season = 0): #Season = 0 : default Spring/Summer
-        return self.conversion_rate(p, self.item1_prices, self.item1_probabilities[season]['probabilities'][customer_class])
+    def conversion_rate_first_element(self, current_price, customer_class, season = 0): #Season = 0 : default Spring/Summer
+        return self.conversion_rate(current_price, self.item1_prices, self.item1_probabilities[season]['probabilities'][customer_class])
 
-    def conversion_rate_second_element(self, p, customer_class, season = 0): #Season = 0 : default Spring/Summer
-        return self.conversion_rate(p, self.item2_prices, self.item2_probabilities[season]['probabilities'][customer_class])
+    def conversion_rate_second_element(self, current_price, customer_class, season = 0): #Season = 0 : default Spring/Summer
+        return self.conversion_rate(current_price, self.item2_prices, self.item2_probabilities[season]['probabilities'][customer_class])
 
     def purchase(self,probability):  
-        return np.random.binomial(1,probability)
+        return np.random.binomial(1,probability) 
 
-# ctx = Context()
-# ctx.plot_customers_distribution()
+    def purchase_online_first_element(self, current_price, customer_class, season = 0):  
+        probability = self.conversion_rate_first_element(current_price, customer_class, season)
+        return np.random.binomial(1,probability) 
+
+    def purchase_online_second_element(self, current_price, customer_class, season = 0):  
+        probability = self.conversion_rate_second_element(current_price, customer_class, season)
+        return np.random.binomial(1,probability) 
+
+"""
+ctx = Context()
+f=ctx.purchase_online_first_element(2000, 1)
+s=ctx.purchase_online_second_element(610, 3)
+print(f"first element {f}")
+print(f"second element {s}")
+"""
 

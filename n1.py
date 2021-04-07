@@ -189,6 +189,7 @@ for t in range(n_experiments):
 
 print(f"No strategy promotion (P0): {np.sum(daily_reward_no_promotion_srategy)}\n'Maximum Discount Strategy (P3): {np.sum(daily_reward_best_promotion_srategy)}\nPerformed Solution: {np.sum(daily_reward_promotion_srategy)}\nOptimal Solution: {np.sum(daily_optimal_solution)}")
 print(f"Left discount : {left_promo}")
+print(f"TO CONFRONT N2 OUR: {np.mean(daily_reward_promotion_srategy)}    OPTIMAL: {np.mean(daily_optimal_solution)}")
 
 
 plt.figure(0)
