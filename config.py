@@ -13,7 +13,7 @@ item2_prices = [250.0, 300.0, 350.0, 400.0, 450.0, 500.0, 550.0, 600.0, 630.0, 6
 promos = [.0,.1,.2,.3]    #P0=0% P1=10% P2=20% P3=30%
 
 #Customers per class
-maxDailyCustomers=5000
+maxDailyCustomers=1000
 gaussDistributionParam =[[.15,.03],
                         [.20,.03],
                         [.40,.05],

@@ -4,7 +4,7 @@ from Algorithms.UCB_Matching import *
 
 ctx= Context()
 
-days = 365 # 365 days of simulations
+days = 10 # 365 days of simulations
 
 item1_price_full = 2350.0
 item2_price_full = 630.0 
@@ -43,42 +43,51 @@ period_opt_reward = [] # rewards collected in a period (days) performing the onl
 learner = UCB_Matching(conversion_rate_second.size, *conversion_rate_second.shape) # Initialize UCB matching learner
 
 for t in range(days): # Day simulation
+    #4. Query the learner to know wath is the best matching strategy category-promotion 
+    sub_matching = learner.pull_arm() # suboptimal matching. row_ind, col_ind
+    rewards_to_update=[0,0,0,0]
     # 1. Generate daily customers according the Context distributions, divided in categories
     daily_customer = ctx.customers_daily_instance()
+    daily_customer_weight=daily_customer.copy()
     cum_UCB_rewards = 0
     cum_opt_rewards = 0
+    category=0
+    for customer in range(sum(daily_customer)): # for each category emulate the user that purchase the good 
+        flag=0
+        while(flag==0):
+            category=np.random.randint(0,4)
+            if (daily_customer[category]>0):
+                daily_customer[category]-=1
+                flag=1
+        #2. Purchase simulation of the first element. (no optimization strategy)
+        buy_item1 = ctx.purchase_online_first_element(item1_price_full,category) 
+        cum_UCB_rewards += buy_item1*item1_price_full
+        cum_opt_rewards += buy_item1*item1_price_full
+
+        #3. Propose the second item only if the first one was bought
+        if (buy_item1 > 0):
+            #5. Propose the second item to the user, using the promotion that retrieved by the learner (according to the user category)                    
+            buy_item2 = ctx.purchase_online_second_element(discounted_price[sub_matching[1][category]],category) # 0: not purchased, 1: purchased
+
+            #6. update the learner according to the obtained reward. rewards_to_update is a 4-zeros array, except for the element representing the current user category that contain the obtained reward
+            rewards_to_update[category] += buy_item2 * discounted_price[sub_matching[1][category]]
+
+            # store results in the cumulative daily rewards 
+            cum_UCB_rewards += (buy_item2 * discounted_price[sub_matching[1][category]])
+            cum_opt_rewards += (buy_item2 * discounted_price [opt[1][category]]) # purchase of the second item according to the optimal strategy 
     
-    for category in range(len(daily_customer)):
-        for customer in range(daily_customer[category]): # for each category emulate the user that purchase the good 
-
-            #2. Purchase simulation of the first element. (no optimization strategy)
-            reward_item1 = ctx.purchase_online_first_element(item1_price_full,category) * item1_price_full
-            cum_UCB_rewards += reward_item1
-            cum_opt_rewards += reward_item1
-
-            #3. Propose the second item only if the first one was bought
-            if (reward_item1 > 0):
-                #4. Query the learner to know wath is the best matching strategy category-promotion 
-                sub_matching = learner.pull_arm() # suboptimal matching. row_ind, col_ind
-
-                #5. Propose the second item to the user, using the promotion that retrieved by the learner (according to the user category)                    
-                reward_item2 = ctx.purchase_online_second_element(discounted_price[sub_matching[1][category]],category) # 0: not purchased, 1: purchased
-
-                #6. update the learner according to the obtained reward. rewards_to_update is a 4-zeros array, except for the element representing the current user category that contain the obtained reward
-                rewards_to_update = np.zeros ((4))
-                rewards_to_update[category] = reward_item2 
-                learner.update(sub_matching,rewards_to_update)
-
-                # store results in the cumulative daily rewards 
-                cum_UCB_rewards += (reward_item2 * discounted_price[sub_matching[1][category]])
-                cum_opt_rewards += (reward_item2 * discounted_price [opt[1][category]]) # purchase of the second item according to the optimal strategy 
-
+    #normalized_rewards=np.divide(rewards_to_update,daily_customer_weight)
+    #print(normalized_rewards)
+    print(rewards_to_update)
+    print(sub_matching)
+    print(buy_item2)
+    learner.update(sub_matching,rewards_to_update)
     period_UCB_reward.append(cum_UCB_rewards)
     period_opt_reward.append(cum_opt_rewards)
     
     print('___________________')
     print(f'| Day: {t+1}')
-    print(f'| Today customers distribution : {daily_customer}')
+    print(f'| Today customers distribution : {daily_customer_weight}')
     print(f'| Today cumulative reward (Online strategy):  {cum_UCB_rewards}\n| Today cumulative reward (Optimal strategy): {cum_opt_rewards}\n| - Loss: {cum_opt_rewards - cum_UCB_rewards}')
     print(f'Current confidence per arm of the online learner:\n{learner.confidence}')
     print('___________________\n')
