@@ -4,7 +4,7 @@ from Algorithms.UCB_Matching import *
 
 ctx= Context()
 
-days = 10 # 365 days of simulations
+days = 3 # 365 days of simulations
 
 item1_price_full = 2350.0
 item2_price_full = 630.0 
@@ -41,18 +41,36 @@ period_UCB_reward = [] # rewards collected in a period (days) performing the onl
 period_opt_reward = [] # rewards collected in a period (days) performing the online learning strategy
 
 learner = UCB_Matching(conversion_rate_second.size, *conversion_rate_second.shape) # Initialize UCB matching learner
-
+rewards=[0.,0.,0.,0.]
+maximum_reward=[0.,0.,0.,0.]
+customers=[1.,1.,1.,1.]
+cont=0
+maximum_daily_reward=0
+maximum_daily_reward_customer=1
+combination=[[]]
 for t in range(days): # Day simulation
     #4. Query the learner to know wath is the best matching strategy category-promotion 
+
     sub_matching = learner.pull_arm() # suboptimal matching. row_ind, col_ind
-    rewards_to_update=[0,0,0,0]
+    print(learner.test)
+    print(learner.empirical_means)
     # 1. Generate daily customers according the Context distributions, divided in categories
+    rewards=[0.,0.,0.,0.]
+    rewards_to_update=[0.,0.,0.,0.]
+    to_append=1
+    vet=sub_matching[1].tolist()
+    for s in range (len(combination)):
+        if(vet==combination[s]):
+            to_append=0
+    if(to_append):
+        combination.append(vet)
     daily_customer = ctx.customers_daily_instance()
     daily_customer_weight=daily_customer.copy()
     cum_UCB_rewards = 0
     cum_opt_rewards = 0
     category=0
-    for customer in range(sum(daily_customer)): # for each category emulate the user that purchase the good 
+    tot_client=sum(daily_customer)
+    for customer in range(tot_client): # for each category emulate the user that purchase the good 
         flag=0
         while(flag==0):
             category=np.random.randint(0,4)
@@ -76,12 +94,29 @@ for t in range(days): # Day simulation
             cum_UCB_rewards += (buy_item2 * discounted_price[sub_matching[1][category]])
             cum_opt_rewards += (buy_item2 * discounted_price [opt[1][category]]) # purchase of the second item according to the optimal strategy 
     
-    #normalized_rewards=np.divide(rewards_to_update,daily_customer_weight)
-    #print(normalized_rewards)
-    print(rewards_to_update)
+    for k in range(4):
+        if((rewards_to_update[k]/daily_customer_weight[k])*customers[k]>=maximum_reward[k]*0.9):
+            rewards[k]=1
+            if((rewards_to_update[k]/daily_customer_weight[k])*customers[k]>=maximum_reward[k]):
+                customers[k]=daily_customer_weight[k]
+                maximum_reward[k]=rewards_to_update[k]
+    """if(sum(rewards_to_update)/tot_client>=(maximum_daily_reward/maximum_daily_reward_customer)*0.9):
+        rewards=[1,1,1,1]
+        maximum_daily_reward=sum(rewards_to_update)
+        maximum_daily_reward_customer=tot_client"""
+    if(t<20):
+        rewards=[0,0,0,0]
+    print(opt)
     print(sub_matching)
-    print(buy_item2)
-    learner.update(sub_matching,rewards_to_update)
+    print(combination)
+    print(len(combination))
+    print(rewards)
+    print(rewards_to_update)
+    print(daily_customer_weight)
+    print(maximum_reward)
+    print(customers)
+  
+    learner.update(sub_matching,rewards)
     period_UCB_reward.append(cum_UCB_rewards)
     period_opt_reward.append(cum_opt_rewards)
     
