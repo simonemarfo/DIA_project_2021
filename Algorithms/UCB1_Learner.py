@@ -17,11 +17,11 @@ class UCB1_Learner(Learner):
         
     def update(self, pulled_arm, reward):
         self.t += 1
-        self.update_observations(pulled_arm,reward)
-        #self.collected_rewards = np.append(self.collected_rewards, reward)
+        #self.update_observations(pulled_arm,reward)
+        self.collected_rewards = np.append(self.collected_rewards, reward)
         self.empirical_means[pulled_arm] = (self.empirical_means[pulled_arm]*(self.t-1)+reward)/self.t
         for a in range(self.n_arms):
             number_pulled = max(1,len(self.rewards_per_arm[a]))
             self.confidence[a] = (2*np.log(self.t) / number_pulled)**0.5    
-        #self.rewards_per_arm[pulled_arm].append(reward)
+        self.rewards_per_arm[pulled_arm].append(reward)
         #two commented line has do the same thing of update_observations(), but professor split is. why?

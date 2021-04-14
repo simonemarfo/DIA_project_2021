@@ -15,7 +15,8 @@ class Context():
         self.items_info = items_info # items information: [{'id':0, 'name':'name1'},...]
         self.classes_info = classes_info # load the class information: [{'id':0, 'name':'class-1','color':'r'},...]
         self.n_classes = len(classes_info)
-        
+        self.item1_full_price=2200.0
+        self.item2_full_price=630.0
         self.item1_prices = item1_prices # candidates price for first item: [pr0, pr1, pr2, pr3]
         self.item2_prices = item2_prices # candidates price for second item
         self.item1_probabilities = item1_probabilities # item1 seasonal probabilities: [{'id':0,'name':'season1', 'probabilities':[[]], {...}]

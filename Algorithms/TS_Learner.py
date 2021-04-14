@@ -1,4 +1,4 @@
-from Learner import *
+from .Learner import *
 import numpy as np 
 
 class TS_Learner(Learner):

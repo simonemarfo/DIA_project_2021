@@ -1,0 +1,8 @@
+Random variables:
+daily_customer -> gaussian 
+    gaussDistributionParam =[[.15,.03], #media,varianza, *1000
+                            [.20,.03],
+                            [.40,.05],
+                            [.25,.04]]
+buy_item1 -> Bernoulli 
+buy_item2 -> Bernoulli
