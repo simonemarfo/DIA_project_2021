@@ -94,6 +94,11 @@ class Context():
         probability = self.conversion_rate_second_element(current_price, customer_class, season)
         return np.random.binomial(1,probability) 
 
+    def discuonted_second_item_prices(self, promo_assignment, item2_full_price=0):
+        if item2_full_price==0:
+            item2_full_price = self.item2_full_price
+        return np.multiply(np.subtract(1,np.take(self.discount_promos,promo_assignment)),item2_full_price)
+
 """
 ctx = Context()
 f=ctx.purchase_online_first_element(2000, 1)
