@@ -1,30 +1,59 @@
-var:
+ASSUMPTION: This is the mathematical formulation for the pure pricing problem of maximization of the total reward.
 
-i=classe
-j=codice sconto
-p1=prezzo del prodotto 1 
-p2=prezzo del prodotto 2
-c1=costo di produzione del prodotto 1=0
-c2=costo di produzione del prodotto 2=0
-q1i(p1)=domanda del prodotto 1 per la classe i = avg request per class i for product 1
-q2i(p)=domanda del prodotto 2 per la classe i = avg request per class i for product 2
-sji(p2)=prezzo scontato j applicato al prodotto 2 per la classe i
-dij=frazione di applicazione dello sconto j alla classe i
-maxdj=numero massimo di clienti a cui concedere lo sconto j
+VAR:
+i=class
+j=promo code -> {P0, P1, P2, P3} [%]
+p1=full price item 1  
+p2=full price item 2
+p2j= price of item2 applying the promo j
+c1=production cost item 1 = 0
+c2=production cost item 2 = 0
+q1i(p1)=conversion rate per class i for product 1
+q2i(p2)=conversion rate per class i for product 2
+sji(p2)=discounted price for class i based on promo j
+dij=amount of promo j distributed to class i
+maxd= max number of promos to distribute -> {#P1+#P2+#P3}
+avg_customer_i = avg number of customers for class i
 
-p1*q1i(p1) revenue at price p for product 1 
+ELABORATED VARS:
+p1*q1i(p1)*avg_customer_i = revenue at price p for product 1 
+ 
+sji(p2)*q2i(sji(p2))*dij*avg_customer_i = revenue for the couple promo-class for item2
 
-sji(p2)*q2i(sji(p2))*dij revenue at price discounted for product 2
+(p1*q1i(p1) - c1*q1i(p1))*avg_customer_i = reward item 1
 
-p1*q1i(p1) - c1*q1i(p1)
+(sji(p2)*q2i(sji(p2))*dij -  q2i(sji(p2))*c2)*avg_customer_i = reward item 2
 
-sji(p2)*q2i(sji(p2))*dij -  q2i(sji(p2))*c2
+OBJ. FUNCTION
+MAX sum over i,j [(p1*q1i(p1) - c1*q1i(p1) + sji(p2)*q2i(sji(p2))*dij -  q2i(sji(p2))*c2)*avg_customer_i]
 
-obj
+CONSTRAINTS
+for every j>0 [sum over i dij]=maxd
 
-MAX sum over i/j [p1*q1i(p1) - c1*q1i(p1) + sji(p2)*q2i(sji(p2))*dij -  q2i(sji(p2))*c2]
+We have fixed the full prices of the two item: p1, p2. We retrieve the discounted prices of p2, applying the promos j, retrieving the vector p2j.
+We know the average number of customers per class i (avg_customer_i), the conversion rate for both products (q1i(p1), q2i(p2)) and the maximum number of promos to distribute (maxd).
+We are assuming that the production costs of the two items are zero (c1, c2= 0). 
+It is possible to retrieve the total revenue for product 1 as the product between the price of the item 1, the conversion rate for the consider class and the average number of customers for that class:
+(p1*q1i(p1)*avg_customer_i).
+------------------------------------------------------------
+ASSUMPTION: Now, we consider the constraints of the shop to uses a randomized approach to assure that a fraction of the customers of a given class gets a specified promo according to the optimal solution.
+We achieve the solution of the problem using a matching approach. 
+To reach the optimal solution we have used an iterative approach: we build a matrix class promotion containing the mean expected rewards for every couple, calculated as the conversion rate of the item 2 multiplied with its discounted price.
+We exploit this matrix to perform the matching between the customer classess and the promo types, in order to maximize the total reward. 
+We select the best reward for every class, for 4 times, retrieving, at every iteration, the 4 combination promo-class and assigning an infinite weight to the obtained sub-optimal matching.
+Every matching is represented by a reward configuration that maximize the total reward. Every iteration is weighted and represent a different goodnesses of the solution, the first is the best, the last is the worst.
+Through the sub-optimal matchings, we have retrieved the fractions of different promos to assign to every customer class, based on the proportional weight of the previous sub-optimal matching.
+The proportions retrieved, are normalized class per class.
 
-constraints
+|           |
+| PSEUDOCODE|
+|           |
 
-for every j [[sum over i dij]=maxdj]
+SIMULATION OF A DAY:
+We have fixed the full prices of the two items, the number of customers per class, the discounted prices and the conversione rate for both products.
+We retrieve the customers that buy the first item, and on them we apply the algorithm previous described, in order to obtain the fractions of promo to assign to every class.
+After that we can simulate a typical day, proposing to a customer, whose class is known, the item 2 propsed with the eventually discounted price based on the probability retrieved by the optimal solution.
+We compared the obtained rewards with other different strategy: always proposing no promo (P0), always proposing the highest promo (P3) and proposing the optimal solution (matching retrieved from the first iteration, which means is the best solution)
+
+
 
