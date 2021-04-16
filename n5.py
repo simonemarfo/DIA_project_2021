@@ -94,11 +94,11 @@ for e in range(n_exp):
             max_rew[2]=max(rewards_to_update[2],max_rew[2])
             max_rew[3]=max(rewards_to_update[3],max_rew[3])
         else:
-            max_rew = np.multiply(max_rew,max_reward_pumping) # pumping 
-            rewards[0]=round(rewards_to_update[0]/(max_rew[0]),decimal_digits)
-            rewards[1]=round(rewards_to_update[1]/(max_rew[1]),decimal_digits)
-            rewards[2]=round(rewards_to_update[2]/(max_rew[2]),decimal_digits)
-            rewards[3]=round(rewards_to_update[3]/(max_rew[3]),decimal_digits)
+            rewards[0]=round(rewards_to_update[0]/(max_rew[0] * max_reward_pumping),decimal_digits)
+            rewards[1]=round(rewards_to_update[1]/(max_rew[1] * max_reward_pumping),decimal_digits)
+            rewards[2]=round(rewards_to_update[2]/(max_rew[2] * max_reward_pumping),decimal_digits)
+            rewards[3]=round(rewards_to_update[3]/(max_rew[3] * max_reward_pumping),decimal_digits)
+        
         print(rewards_to_update)
         print(rewards)
         print(sub_matching[1])
