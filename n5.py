@@ -38,10 +38,10 @@ opt = linear_sum_assignment(priced_conversion_rate_second, maximize=True) # opti
 #
 
 # experimet parameters
-n_exp = 10
+n_exp = 100
 delay = 10
-max_reward_pumping = 1.0
-decimal_digits = 1
+max_reward_pumping = 1.02
+decimal_digits = 2
 experiments = np.zeros((n_exp,days))
 for e in range(n_exp):
     period_UCB_reward = [] # rewards collected in a period (days) performing the online learning strategy
