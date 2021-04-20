@@ -64,8 +64,8 @@ for e in range(n_exp):
         category=0
         tot_client=sum(daily_customer)
         for customer in range(tot_client): # for each category emulate the user that purchase the good 
-            category = np.random.choice(np.nonzero(customer_per_class)[0])
-            customer_per_class[category] -= 1
+            category = np.random.choice(np.nonzero(daily_customer)[0])
+            daily_customer[category] -= 1
             #2. Purchase simulation of the first element. (no optimization strategy)
             buy_item1 = ctx.purchase_online_first_element(item1_price_full,category) 
             cum_UCB_rewards += buy_item1*item1_price_full
