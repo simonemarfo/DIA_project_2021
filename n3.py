@@ -18,8 +18,8 @@ for i in range(4):
 candidates_item1 = [2260.0,1910.0,2130.0, 2010.0, 2340.0]
 
 days = 10
-n_exp = 20
-observation = 5000
+n_exp = 5
+observation = (days//2)*1000
 ts_experiments = np.zeros((n_exp,observation))
 ucb_experiments = np.zeros((n_exp,observation))
 opt_experiments = np.zeros((n_exp,observation))
@@ -34,7 +34,7 @@ for e in range(n_exp):
     maximum_rewards = ( max(candidates_item1) + max(discounted_price)) # parameter used to normalize the reward
     for d in range(days):
 
-        # extract the daily customer. It is not unknown and is used to estimate the maximum possible reward
+        # extract the daily customer. It is known
         customer_per_class = ctx.customers_daily_instance()
         daily_customer_weight = customer_per_class.copy()
         tot_client=sum(customer_per_class)
@@ -73,11 +73,10 @@ for e in range(n_exp):
             print('___________________')
             print(f'| Day: {d+1} - Experiment {e+1}')
             print(f'| Today customers distribution : {daily_customer_weight}')
-            print(f'| Prices for {ctx.items_info[1]["name"]}: {discounted_price} € per customer category')
             print(f'| Customer #{customer} of category: {ctx.classes_info[category]["name"]}: ')
-            print(f'|\t[UCB] - {ctx.items_info[0]["name"]} : {candidates_item1[ucb_pulled_arm]} -> Total reward : {round(ucb_customer_reward,2)}')
-            print(f'|\t[TS] - {ctx.items_info[0]["name"]} : {candidates_item1[ts_pulled_arm]} -> Total reward : {round(ts_customer_reward,2)}')
-            print(f'|\t[OPT] - {ctx.items_info[0]["name"]} : {min(candidates_item1)} -> Total reward : {round(opt_customer_reward,2)}')
+            print(f'|\t[UCB] - {ctx.items_info[0]["name"]} : {candidates_item1[ucb_pulled_arm]} €, {ctx.items_info[1]["name"]} : {discounted_price[category]} € -> Total reward : {round(ucb_customer_reward,2)} €')
+            print(f'|\t[TS] - {ctx.items_info[0]["name"]} : {candidates_item1[ts_pulled_arm]} €, {ctx.items_info[1]["name"]} : {discounted_price[category]} € -> Total reward : {round(ts_customer_reward,2)} €')
+            print(f'|\t[OPT] - {ctx.items_info[0]["name"]} : {min(candidates_item1)} €, {ctx.items_info[1]["name"]} : {discounted_price[category]} € -> Total reward : {round(opt_customer_reward,2)} €')
             
             # collect all the rewards
             ts_reward.append(ts_customer_reward)
