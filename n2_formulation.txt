@@ -4,5 +4,15 @@ daily_customer -> gaussian
                             [.20,.03],
                             [.40,.05],
                             [.25,.04]]
-buy_item1 -> Bernoulli 
-buy_item2 -> Bernoulli
+    ** grafico **
+buy_item1 -> Bernoulli ~ 0,1 
+    ** grafico **
+buy_item2 -> Bernoulli ~ 0,1
+    ** grafico **
+
+reward1= buy_item1 * price_item1
+reward2= buy_item2 * price_item2
+
+time_horizon = 365 days
+
+Daily we extract the items prices using an online learner algorithm (pricing or matching), then we simulate the current day obtaining the number of customers per class usign the gaussian distribution, then we calculate the rewards, using the Bernoulli distribution probability to estimate if the single customer buys or not the item1 and item2 at the proposed price. Finally we update the learner, according to the rewards. This procedure is repeated for a time horizon of 365 days and during this period the purpose is to find a solution (composed by the prices and the  assignment of promotions) that maximise the total reward. 
