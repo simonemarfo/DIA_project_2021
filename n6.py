@@ -6,7 +6,7 @@ from Algorithms.TS_Learner import *
 ctx = Context()
 
 days = 10 # 365 days of simulations
-days_matching = 1
+days_matching = 365-days
 item1_full_price=0.0
 item2_full_price=0.0
 # define the prices candidates for the first and second item
@@ -16,8 +16,7 @@ candidates_item2 = [480.0, 550.0, 510.0, 420.0, 650.0]
 # find the optimal solutions 
 opt_rew_item1 = np.zeros((5))
 opt_rew_item2 = np.zeros((5))
-optimal_candidates1 = np.zeros((5)).astype(int)
-optimal_candidates2 = np.zeros((5)).astype(int)
+
 for i in range(len(candidates_item1)):
     for c in range(4):
             opt_rew_item1[i] += ctx.conversion_rate_first_element(candidates_item1[i],c) * candidates_item1[i] * ctx.customersDistribution[c,0]
@@ -29,19 +28,12 @@ for i in range(len(candidates_item2)):
 opt_item1 = np.argmax(opt_rew_item1)
 opt_item2 = np.argmax(opt_rew_item2)
 
-optimal_candidates1[0]=opt_item1
-optimal_candidates2[0]=opt_item2
-optimal_candidates1[1]=opt_item1
-optimal_candidates2[1]=opt_item2
-optimal_candidates1[2]=opt_item1
-optimal_candidates2[2]=opt_item2
-optimal_candidates1[3]=opt_item1
-optimal_candidates2[3]=opt_item2
+
 
 maximum_rewards_item1 = max(candidates_item1) + max(candidates_item2) # parameter used to normalize the reward
 maximum_rewards_item2 = max(candidates_item2) # parameter used to normalize the reward
 
-n_exp = 5
+n_exp = 1
 observation = (days//2)*1000
 experiments = np.zeros((n_exp,observation))
 experimets_item1_regret_curve = np.zeros((n_exp,observation))
@@ -76,7 +68,7 @@ for e in range(n_exp):
             ts_pulled_arm_item2 = ts_learner_item2.pull_arm() #select candidates for the second item
 
             ts_buy_or_not_item1 = ctx.purchase_online_first_element(candidates_item1[ts_pulled_arm_item1],category) 
-            opt_buy_or_not_item1 = ctx.purchase_online_first_element(candidates_item1[optimal_candidates1[category]],category)
+            opt_buy_or_not_item1 = ctx.purchase_online_first_element(candidates_item1[opt_item1],category)
             # compute the rewenue of the first and second item for both optimal solution and the online learning
             if ts_buy_or_not_item1:
                 ts_buy_or_not_item2 = ctx.purchase_online_second_element(candidates_item2[ts_pulled_arm_item2],category) 
@@ -86,11 +78,11 @@ for e in range(n_exp):
                 customer_reward_item1 = candidates_item1[ts_pulled_arm_item1]
 
             if (opt_buy_or_not_item1):
-                opt_buy_or_not_item2 = ctx.purchase_online_second_element(candidates_item2[optimal_candidates2[category]],category)
+                opt_buy_or_not_item2 = ctx.purchase_online_second_element(candidates_item2[opt_item2],category)
 
                 # calculate the reward
-                opt_customer_item2 =  candidates_item2[optimal_candidates2[category]] * opt_buy_or_not_item2
-                opt_customer_item1 = candidates_item1[optimal_candidates1[category]] 
+                opt_customer_item2 =  candidates_item2[opt_item2] * opt_buy_or_not_item2
+                opt_customer_item1 = candidates_item1[opt_item1] 
 
             # update the learner normalizing the reward. The learner for the second item is updated only the customer buy the first one
             ts_learner_item1.update(ts_pulled_arm_item1, (customer_reward_item1 + customer_reward_item2 )/maximum_rewards_item1)
@@ -102,7 +94,7 @@ for e in range(n_exp):
             print(f'| Today customers distribution : {daily_customer_weight}')
             print(f'| Customer #{customer} of category: {ctx.classes_info[category]["name"]}: ')
             print(f'|\t[TS] - Selected prices -> {ctx.items_info[0]["name"]} : {candidates_item1[ts_pulled_arm_item1]} €, {ctx.items_info[1]["name"]} : {candidates_item2[ts_pulled_arm_item2]} €\n|\t\t{ctx.items_info[0]["name"]} reward : {round(customer_reward_item1,2)} € -- {ctx.items_info[1]["name"]} reward : {round(customer_reward_item2,2)} € -- Total : {round(customer_reward_item1 + customer_reward_item2,2)} €')
-            print(f'|\t[OPT] -  Selected prices -> {ctx.items_info[0]["name"]} : {candidates_item1[optimal_candidates1[category]]} €, {ctx.items_info[1]["name"]} : {candidates_item2[optimal_candidates2[category]]} €\n|\t\t{ctx.items_info[0]["name"]} reward : {round(opt_customer_item1,2)} € -- {ctx.items_info[1]["name"]} reward : {round(opt_customer_item2,2)} € -- Total : {round(opt_customer_item1 + opt_customer_item2,2)} €')
+            print(f'|\t[OPT] -  Selected prices -> {ctx.items_info[0]["name"]} : {candidates_item1[opt_item1]} €, {ctx.items_info[1]["name"]} : {candidates_item2[opt_item2]} €\n|\t\t{ctx.items_info[0]["name"]} reward : {round(opt_customer_item1,2)} € -- {ctx.items_info[1]["name"]} reward : {round(opt_customer_item2,2)} € -- Total : {round(opt_customer_item1 + opt_customer_item2,2)} €')
 
             ts_reward_item1.append(customer_reward_item1)
             ts_reward_item2.append(customer_reward_item2)
@@ -138,8 +130,8 @@ for e in range(n_exp):
 
     learner = UCB_Matching(conversion_rate_second.size, *conversion_rate_second.shape) # Initialize UCB matching learner
     max_rew=[0,0,0,0]
-    delay = 20
-    max_reward_pumping = 1.02
+    delay = 29
+    max_reward_pumping = 1.1
     decimal_digits = 2
     for t in range(days_matching): # Day simulation
         #4. Query the learner to know wath is the best matching strategy category-promotion 
@@ -186,6 +178,11 @@ for e in range(n_exp):
             rewards[1]=round(rewards_to_update[1]/(max_rew[1] * max_reward_pumping),decimal_digits)
             rewards[2]=round(rewards_to_update[2]/(max_rew[2] * max_reward_pumping),decimal_digits)
             rewards[3]=round(rewards_to_update[3]/(max_rew[3] * max_reward_pumping),decimal_digits)
+        print(rewards_to_update)
+        print(rewards)
+        print(sub_matching[1])
+        print(opt[1])
+        print(daily_customer_weight)
         learner.update(sub_matching,rewards)
         period_UCB_reward.append(cum_UCB_rewards)
         period_opt_reward.append(cum_opt_rewards)
