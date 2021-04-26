@@ -5,7 +5,7 @@ from scipy.interpolate import interp1d
 from config import *
 
 def interpolate(x, y):
-    new_x = np.linspace(x.min(), x.max(), num=int((x.max()-x.min())/5)) # step of 5€
+    new_x = np.linspace(x.min(), x.max(), num=int((x.max()*1.1-x.min())/5)) # step of 5€
     f = interp1d(x, y, kind='quadratic')
     return new_x, f
 
@@ -101,9 +101,7 @@ class Context():
 
 """
 ctx = Context()
-f=ctx.purchase_online_first_element(2000, 1)
-s=ctx.purchase_online_second_element(610, 3)
-print(f"first element {f}")
-print(f"second element {s}")
+ctx.plot_item1_conversion_rate()
+ctx.plot_item2_conversion_rate()
 """
 
