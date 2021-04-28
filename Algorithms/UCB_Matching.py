@@ -9,12 +9,14 @@ class UCB_Matching(UCB1_Learner):
         self.n_cols = n_cols
         assert n_arms == n_cols * n_rows
         self.test=[[]]
+        self.top=[[]]
     
     def pull_arm(self):
         upper_conf = self.empirical_means + self.confidence
         upper_conf[np.isinf(upper_conf)] = 1e3
         self.test=-upper_conf.reshape(self.n_rows, self.n_cols)
         row_ind, col_ind = linear_sum_assignment(-upper_conf.reshape(self.n_rows, self.n_cols))
+        self.top=upper_conf
         return (row_ind,col_ind)
 
     def update(self,pulled_arms,rewards):
