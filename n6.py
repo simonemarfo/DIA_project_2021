@@ -5,7 +5,7 @@ from Algorithms.TS_Learner import *
 
 ctx = Context()
 
-days = 10 # 365 days of simulations
+days = 20 # 365 days of simulations
 days_matching = 365-days
 item1_full_price=0.0
 item2_full_price=0.0
@@ -33,7 +33,7 @@ opt_item2 = np.argmax(opt_rew_item2)
 maximum_rewards_item1 = max(candidates_item1) + max(candidates_item2) # parameter used to normalize the reward
 maximum_rewards_item2 = max(candidates_item2) # parameter used to normalize the reward
 
-n_exp = 1
+n_exp = 3
 observation = (days//2)*1000
 experiments = np.zeros((n_exp,observation))
 experimets_item1_regret_curve = np.zeros((n_exp,observation))
@@ -130,7 +130,7 @@ for e in range(n_exp):
 
     learner = UCB_Matching(conversion_rate_second.size, *conversion_rate_second.shape) # Initialize UCB matching learner
     max_rew=[0,0,0,0]
-    delay = 29
+    delay = 28
     max_reward_pumping = 1.1
     decimal_digits = 2
     for t in range(days_matching): # Day simulation
@@ -169,15 +169,16 @@ for e in range(n_exp):
         
         if(t<delay):
             rewards=[0,0,0,0]
-            max_rew[0]=max(rewards_to_update[0],max_rew[0])
-            max_rew[1]=max(rewards_to_update[1],max_rew[1])
-            max_rew[2]=max(rewards_to_update[2],max_rew[2])
-            max_rew[3]=max(rewards_to_update[3],max_rew[3])
+            max_rew[0]=max(rewards_to_update[0]/daily_customer_weight[0],max_rew[0])
+            max_rew[1]=max(rewards_to_update[1]/daily_customer_weight[1],max_rew[1])
+            max_rew[2]=max(rewards_to_update[2]/daily_customer_weight[2],max_rew[2])
+            max_rew[3]=max(rewards_to_update[3]/daily_customer_weight[3],max_rew[3])
         else:
-            rewards[0]=round(rewards_to_update[0]/(max_rew[0] * max_reward_pumping),decimal_digits)
-            rewards[1]=round(rewards_to_update[1]/(max_rew[1] * max_reward_pumping),decimal_digits)
-            rewards[2]=round(rewards_to_update[2]/(max_rew[2] * max_reward_pumping),decimal_digits)
-            rewards[3]=round(rewards_to_update[3]/(max_rew[3] * max_reward_pumping),decimal_digits)
+            rewards[0]=round(rewards_to_update[0]/(daily_customer_weight[0]*max_rew[0]*1.02),decimal_digits)
+            rewards[1]=round(rewards_to_update[1]/(daily_customer_weight[1]*max_rew[1]*1.02),decimal_digits)
+            rewards[2]=round(rewards_to_update[2]/(daily_customer_weight[2]*max_rew[2]*1.02),decimal_digits)
+            rewards[3]=round(rewards_to_update[3]/(daily_customer_weight[3]*max_rew[3]*1.02),decimal_digits)
+        
         print(rewards_to_update)
         print(rewards)
         print(sub_matching[1])

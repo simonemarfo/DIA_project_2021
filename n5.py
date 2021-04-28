@@ -38,17 +38,19 @@ opt = linear_sum_assignment(priced_conversion_rate_second, maximize=True) # opti
 #
 
 # experimet parameters
-n_exp = 100
-delay = 10
+n_exp = 5
+delay = 20
 max_reward_pumping = 1.02
 decimal_digits = 2
 experiments = np.zeros((n_exp,days))
+to_observe = np.zeros((4,4))
 for e in range(n_exp):
     period_UCB_reward = [] # rewards collected in a period (days) performing the online learning strategy
     period_opt_reward = [] # rewards collected in a period (days) performing the online learning strategy
 
     learner = UCB_Matching(conversion_rate_second.size, *conversion_rate_second.shape) # Initialize UCB matching learner
     max_rew=[0,0,0,0]
+
     for t in range(days): # Day simulation
         #4. Query the learner to know wath is the best matching strategy category-promotion 
 
@@ -56,7 +58,7 @@ for e in range(n_exp):
 
         # 1. Generate daily customers according the Context distributions, divided in categories
         rewards_to_update=[0.,0.,0.,0.]
-
+        n_cli=0
         daily_customer = ctx.customers_daily_instance()
         daily_customer_weight=daily_customer.copy()
         cum_UCB_rewards = 0
@@ -64,6 +66,7 @@ for e in range(n_exp):
         category=0
         tot_client=sum(daily_customer)
         for customer in range(tot_client): # for each category emulate the user that purchase the good 
+            n_cli+=1
             category = np.random.choice(np.nonzero(daily_customer)[0])
             daily_customer[category] -= 1
             #2. Purchase simulation of the first element. (no optimization strategy)
@@ -78,22 +81,22 @@ for e in range(n_exp):
 
                 #6. update the learner according to the obtained reward. rewards_to_update is a 4-zeros array, except for the element representing the current user category that contain the obtained reward
                 rewards_to_update[category] += buy_item2 * discounted_price[sub_matching[1][category]]
+                to_observe[sub_matching[1][category],category]+=discounted_price[sub_matching[1][category]]
 
                 # store results in the cumulative daily rewards 
                 cum_UCB_rewards += (buy_item2 * discounted_price[sub_matching[1][category]])
                 cum_opt_rewards += (buy_item2 * discounted_price [opt[1][category]]) # purchase of the second item according to the optimal strategy 
-        
         if(t<delay):
             rewards=[0,0,0,0]
-            max_rew[0]=max(rewards_to_update[0],max_rew[0])
-            max_rew[1]=max(rewards_to_update[1],max_rew[1])
-            max_rew[2]=max(rewards_to_update[2],max_rew[2])
-            max_rew[3]=max(rewards_to_update[3],max_rew[3])
+            max_rew[0]=max(rewards_to_update[0]/daily_customer_weight[0],max_rew[0])
+            max_rew[1]=max(rewards_to_update[1]/daily_customer_weight[1],max_rew[1])
+            max_rew[2]=max(rewards_to_update[2]/daily_customer_weight[2],max_rew[2])
+            max_rew[3]=max(rewards_to_update[3]/daily_customer_weight[3],max_rew[3])
         else:
-            rewards[0]=round(rewards_to_update[0]/(max_rew[0] * max_reward_pumping),decimal_digits)
-            rewards[1]=round(rewards_to_update[1]/(max_rew[1] * max_reward_pumping),decimal_digits)
-            rewards[2]=round(rewards_to_update[2]/(max_rew[2] * max_reward_pumping),decimal_digits)
-            rewards[3]=round(rewards_to_update[3]/(max_rew[3] * max_reward_pumping),decimal_digits)
+            rewards[0]=round(rewards_to_update[0]/(daily_customer_weight[0]*max_rew[0]),decimal_digits)
+            rewards[1]=round(rewards_to_update[1]/(daily_customer_weight[1]*max_rew[1]),decimal_digits)
+            rewards[2]=round(rewards_to_update[2]/(daily_customer_weight[2]*max_rew[2]),decimal_digits)
+            rewards[3]=round(rewards_to_update[3]/(daily_customer_weight[3]*max_rew[3]),decimal_digits)
         
         print(rewards_to_update)
         print(rewards)
