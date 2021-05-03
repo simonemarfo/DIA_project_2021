@@ -12,8 +12,8 @@ item2_full_price=0.0
 # define the prices candidates for the first and second item
 candidates_item1 = [2260.0, 1900.0, 2130.0, 1920.0, 2340.0]
 candidates_item2 = [450.0, 550.0, 510.0, 470.0, 650.0]
-window_size1=int(np.sqrt(days*1000)*10)
-window_size2=int(np.sqrt(days*500)*10)
+window_size1=int(np.sqrt(days)*10)
+window_size2=int(np.sqrt(days)*10)
 #discounted_price = ctx.discuonted_second_item_prices(promotion_assignment) # retrun the discounted prices for every customer category, according to the pormotion assignment
 # find the optimal solutions
 opt_item1=np.zeros((3),dtype=int)
@@ -40,7 +40,7 @@ print(opt_item2)
 maximum_rewards_item1 = max(candidates_item1) + max(candidates_item2) # parameter used to normalize the reward
 maximum_rewards_item2 = max(candidates_item2) # parameter used to normalize the reward
 
-n_exp = 10
+n_exp = 1
 observation = (days//2)*1000
 experiments = np.zeros((n_exp,observation))
 experimets_item1_regret_curve = np.zeros((n_exp,observation))

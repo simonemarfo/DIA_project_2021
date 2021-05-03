@@ -1,4 +1,4 @@
-from TS_Learner import *
+from .TS_Learner import *
 
 class SWTS_Learner(TS_Learner):
     def __init__(self,n_arms,window_size):
