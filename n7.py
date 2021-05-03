@@ -1,54 +1,64 @@
 from Context import *    
 import matplotlib.pyplot as plt
 from Algorithms.UCB_Matching import *
-from Algorithms.TS_Learner import *
+from Algorithms.SWTS_Learner import *
 
 ctx = Context()
 
-days = 20 # 365 days of simulations
+days = 365 # 365 days of simulations
 days_matching = 365-days
 item1_full_price=0.0
 item2_full_price=0.0
 # define the prices candidates for the first and second item
-candidates_item1 = [2260.0, 1910.0, 2130.0, 2010.0, 2340.0]
-candidates_item2 = [480.0, 550.0, 510.0, 420.0, 650.0]
+candidates_item1 = [2260.0, 1900.0, 2130.0, 1920.0, 2340.0]
+candidates_item2 = [450.0, 550.0, 510.0, 470.0, 650.0]
+window_size1=int(np.sqrt(days*1000)*10)
+window_size2=int(np.sqrt(days*500)*10)
 #discounted_price = ctx.discuonted_second_item_prices(promotion_assignment) # retrun the discounted prices for every customer category, according to the pormotion assignment
-# find the optimal solutions 
-opt_rew_item1 = np.zeros((5))
-opt_rew_item2 = np.zeros((5))
+# find the optimal solutions
+opt_item1=np.zeros((3),dtype=int)
+opt_item2=np.zeros((3),dtype=int)
+for season in range (3): 
+    opt_rew_item1 = np.zeros((5))
+    opt_rew_item2 = np.zeros((5))
 
-for i in range(len(candidates_item1)):
-    for c in range(4):
-            opt_rew_item1[i] += ctx.conversion_rate_first_element(candidates_item1[i],c) * candidates_item1[i] * ctx.customersDistribution[c,0]
+    for i in range(len(candidates_item1)):
+        for c in range(4):
+                opt_rew_item1[i] += ctx.conversion_rate_first_element(candidates_item1[i],c,season) * candidates_item1[i] * ctx.customersDistribution[c,0]
 
-for i in range(len(candidates_item2)):
-    for c in range(4):
-        opt_rew_item2[i] += ctx.conversion_rate_second_element(candidates_item2[i],c) * candidates_item2[i] * ctx.customersDistribution[c,0]
+    for i in range(len(candidates_item2)):
+        for c in range(4):
+            opt_rew_item2[i] += ctx.conversion_rate_second_element(candidates_item2[i],c,season) * candidates_item2[i] * ctx.customersDistribution[c,0]
 
-opt_item1 = np.argmax(opt_rew_item1)
-opt_item2 = np.argmax(opt_rew_item2)
+    opt_item1[season] = int(np.argmax(opt_rew_item1))
+    opt_item2[season] = int(np.argmax(opt_rew_item2))
 
+print(opt_item1)
+print(opt_item2)
 
 
 maximum_rewards_item1 = max(candidates_item1) + max(candidates_item2) # parameter used to normalize the reward
 maximum_rewards_item2 = max(candidates_item2) # parameter used to normalize the reward
 
-n_exp = 3
+n_exp = 10
 observation = (days//2)*1000
 experiments = np.zeros((n_exp,observation))
 experimets_item1_regret_curve = np.zeros((n_exp,observation))
 experimets_item2_regret_curve = np.zeros((n_exp,observation))
 experiments_matching = np.zeros((n_exp,days_matching))
 for e in range(n_exp):
-    ts_learner_item1 = TS_Learner(len(candidates_item1))
-    ts_learner_item2 = TS_Learner(len(candidates_item2))
+    SWTS_learner_item1 = SWTS_Learner(len(candidates_item1),window_size1)
+    SWTS_learner_item2 = SWTS_Learner(len(candidates_item2),window_size2)
 
     opt_reward_item1 = []
     opt_reward_item2 = [] 
     ts_reward_item1 = []
     ts_reward_item2 = []    
-
     for d in range(days):
+        if(d>=360):
+            season=2
+        else:
+            season=int(d//(days//3))
         # extract the daily customer. It is UNKNOWN
         customer_per_class = ctx.customers_daily_instance() 
         daily_customer_weight = customer_per_class.copy()
@@ -64,52 +74,53 @@ for e in range(n_exp):
             customer_per_class[category] -= 1
 
             # ask to the learner to pull the most promising price that maximize the reward
-            ts_pulled_arm_item1 = ts_learner_item1.pull_arm()
-            ts_pulled_arm_item2 = ts_learner_item2.pull_arm() #select candidates for the second item
+            ts_pulled_arm_item1 = SWTS_learner_item1.pull_arm()
+            ts_pulled_arm_item2 = SWTS_learner_item2.pull_arm() #select candidates for the second item
 
-            ts_buy_or_not_item1 = ctx.purchase_online_first_element(candidates_item1[ts_pulled_arm_item1],category) 
-            opt_buy_or_not_item1 = ctx.purchase_online_first_element(candidates_item1[opt_item1],category)
+            ts_buy_or_not_item1 = ctx.purchase_online_first_element(candidates_item1[ts_pulled_arm_item1],category,season) 
+            opt_buy_or_not_item1 = ctx.purchase_online_first_element(candidates_item1[opt_item1[season]],category,season)
             # compute the rewenue of the first and second item for both optimal solution and the online learning
             if ts_buy_or_not_item1:
-                ts_buy_or_not_item2 = ctx.purchase_online_second_element(candidates_item2[ts_pulled_arm_item2],category) 
+                ts_buy_or_not_item2 = ctx.purchase_online_second_element(candidates_item2[ts_pulled_arm_item2],category,season) 
                 
                 # calculate the reward
                 customer_reward_item2 = candidates_item2[ts_pulled_arm_item2] * ts_buy_or_not_item2
                 customer_reward_item1 = candidates_item1[ts_pulled_arm_item1]
 
             if (opt_buy_or_not_item1):
-                opt_buy_or_not_item2 = ctx.purchase_online_second_element(candidates_item2[opt_item2],category)
+                opt_buy_or_not_item2 = ctx.purchase_online_second_element(candidates_item2[opt_item2[season]],category,season)
 
                 # calculate the reward
-                opt_customer_item2 =  candidates_item2[opt_item2] * opt_buy_or_not_item2
-                opt_customer_item1 = candidates_item1[opt_item1] 
+                opt_customer_item2 =  candidates_item2[opt_item2[season]] * opt_buy_or_not_item2
+                opt_customer_item1 = candidates_item1[opt_item1[season]] 
 
             # update the learner normalizing the reward. The learner for the second item is updated only the customer buy the first one
-            ts_learner_item1.update(ts_pulled_arm_item1, (customer_reward_item1 + customer_reward_item2 )/maximum_rewards_item1)
+            SWTS_learner_item1.update(ts_pulled_arm_item1, (customer_reward_item1 + customer_reward_item2 )/maximum_rewards_item1)
             if ts_buy_or_not_item1:
-                ts_learner_item2.update(ts_pulled_arm_item2, customer_reward_item2/maximum_rewards_item2)
+                SWTS_learner_item2.update(ts_pulled_arm_item2, customer_reward_item2/maximum_rewards_item2)
 
             print('___________________')
             print(f'| Day: {d+1} - Experiment {e+1}')
             print(f'| Today customers distribution : {daily_customer_weight}')
             print(f'| Customer #{customer} of category: {ctx.classes_info[category]["name"]}: ')
             print(f'|\t[TS] - Selected prices -> {ctx.items_info[0]["name"]} : {candidates_item1[ts_pulled_arm_item1]} €, {ctx.items_info[1]["name"]} : {candidates_item2[ts_pulled_arm_item2]} €\n|\t\t{ctx.items_info[0]["name"]} reward : {round(customer_reward_item1,2)} € -- {ctx.items_info[1]["name"]} reward : {round(customer_reward_item2,2)} € -- Total : {round(customer_reward_item1 + customer_reward_item2,2)} €')
-            print(f'|\t[OPT] -  Selected prices -> {ctx.items_info[0]["name"]} : {candidates_item1[opt_item1]} €, {ctx.items_info[1]["name"]} : {candidates_item2[opt_item2]} €\n|\t\t{ctx.items_info[0]["name"]} reward : {round(opt_customer_item1,2)} € -- {ctx.items_info[1]["name"]} reward : {round(opt_customer_item2,2)} € -- Total : {round(opt_customer_item1 + opt_customer_item2,2)} €')
+            print(f'|\t[OPT] -  Selected prices -> {ctx.items_info[0]["name"]} : {candidates_item1[opt_item1[season]]} €, {ctx.items_info[1]["name"]} : {candidates_item2[opt_item2[season]]} €\n|\t\t{ctx.items_info[0]["name"]} reward : {round(opt_customer_item1,2)} € -- {ctx.items_info[1]["name"]} reward : {round(opt_customer_item2,2)} € -- Total : {round(opt_customer_item1 + opt_customer_item2,2)} €')
 
             ts_reward_item1.append(customer_reward_item1)
             ts_reward_item2.append(customer_reward_item2)
             opt_reward_item1.append(opt_customer_item1)
             opt_reward_item2.append(opt_customer_item2)
-            #print(ts_learner_item2.beta_parameters)
+            #print(SWTS_learner_item2.beta_parameters)
     # end experiment 
     experiments[e,:]= np.cumsum(np.array(opt_reward_item1[:observation]) + np.array(opt_reward_item2[:observation])) - np.cumsum(np.array(ts_reward_item1[:observation]) + np.array(ts_reward_item2[:observation]))
     experimets_item1_regret_curve[e,:]= np.cumsum(opt_reward_item1[:observation]) - np.cumsum(ts_reward_item1[:observation])
     experimets_item2_regret_curve[e,:]= np.cumsum(opt_reward_item2[:observation]) - np.cumsum(ts_reward_item2[:observation])
     
     #-------------------------MATCHING------------------------------------------------------------------
-    #Retrieve the best prices from the ts_learner
-    item1_price_full = candidates_item1[np.argmax(ts_learner_item1.beta_parameters)//2]
-    item2_price_full = candidates_item2[np.argmax(ts_learner_item2.beta_parameters)//2]
+    #Retrieve the best prices from the SWTS_learner
+    """
+    item1_price_full = candidates_item1[np.argmax(SWTS_learner_item1.beta_parameters)//2]
+    item2_price_full = candidates_item2[np.argmax(SWTS_learner_item2.beta_parameters)//2]
     #discount for the second item 
     discounted_price = [item2_price_full,
         item2_price_full*(1-ctx.discount_promos[1]),
@@ -196,18 +207,18 @@ for e in range(n_exp):
         print(f'Current confidence per arm of the online learner:\n{learner.confidence}')
         print('___________________\n')
     experiments_matching[e,:] = np.cumsum(period_opt_reward) - np.cumsum(period_UCB_reward)
-
+    """
 
 
 
 
 # plot regret of UCB
-
+"""
 plt.figure(1)
 plt.plot(experiments_matching.mean(axis=0))
 plt.ylabel('Regret')
 plt.xlabel('t')
-plt.title("Exp. Matching")
+plt.title("Exp. Matching")"""
       
             
     
