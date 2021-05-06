@@ -14,7 +14,7 @@ class UCB_Matching(UCB1_Learner):
         upper_conf[np.isinf(upper_conf)] = 1e3
         row_ind, col_ind = linear_sum_assignment(-upper_conf.reshape(self.n_rows, self.n_cols))
         return (row_ind,col_ind)
-    """
+    
     def update(self,pulled_arms,rewards):
         self.t += 1 
         pulled_arm_flat = np.ravel_multi_index(pulled_arms,(self.n_rows,self.n_cols))
@@ -23,27 +23,24 @@ class UCB_Matching(UCB1_Learner):
             self.empirical_means[pulled_arm] = (self.empirical_means[pulled_arm]*(self.t-1) + reward) / self.t
         for a in range(self.n_arms):
             n_sample = len(self.rewards_per_arm[a])
-            self.confidence[a] = (2*np.log(self.t) / n_sample)**0.5 if n_sample > 0 else np.inf"""
+            self.confidence[a] = (2*np.log(self.t) / n_sample)**0.5 if n_sample > 0 else np.inf
 
-    
-    def update(self,pulled_arms,rewards,non_fixed_emp_mean = -1):
-        self.t += 1 
+"""
+    def update(self,pulled_arms,rewards,category):
+        self.t += 1
         pulled_arm_flat = np.ravel_multi_index(pulled_arms,(self.n_rows,self.n_cols))
-        if non_fixed_emp_mean == -1 :
-            for pulled_arm, reward in zip(pulled_arm_flat,rewards):
-                self.update_observations(pulled_arm,reward)
-                self.empirical_means[pulled_arm] = (self.empirical_means[pulled_arm]*(self.t-1) + reward) / self.t
-        else:
-            for pulled_arm, reward in zip(pulled_arm_flat,rewards):
-                self.update_observations(pulled_arm,reward)
-            idx = pulled_arms[0][non_fixed_emp_mean] * 4 + pulled_arms[1][non_fixed_emp_mean]
-            self.empirical_means[ idx ] = (self.empirical_means[idx]*(self.t-1) + rewards[non_fixed_emp_mean]) / self.t
+
+        for pulled_arm, reward in zip(pulled_arm_flat,rewards):
+            self.update_observations(pulled_arm,reward)
+
+        idx = pulled_arms[0][category] * 4 + pulled_arms[1][category]
+        self.empirical_means[ idx ] = (self.empirical_means[idx]*(self.t-1) + rewards[category]) / self.t
                 
         for a in range(self.n_arms):
             n_sample = len(self.rewards_per_arm[a])
             self.confidence[a] = (2*np.log(self.t) / n_sample)**0.5 if n_sample > 0 else np.inf
 
-"""
+
 from Environment import Environment        
 import matplotlib.pyplot as plt
 

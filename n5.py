@@ -6,7 +6,7 @@ ctx= Context()
 
 days = 365 # 365 days of simulations
 
-item1_price_full = 2350.0
+item1_price_full = 1980.0
 item2_price_full = 630.0 
 
 #discount for the second item 
@@ -39,15 +39,11 @@ opt = linear_sum_assignment(priced_conversion_rate_second, maximize=True) # opti
 
 # experimet parameters
 n_exp = 1
-
-delay = 4
-# max_reward_pumping = 1.02
-# decimal_digits = 2
-
-avg_reward = np.zeros((4,4))
-support = np.zeros((4,4))
-
+delay = 20
+max_reward_pumping = 1.02
+decimal_digits = 2
 experiments = np.zeros((n_exp,days))
+to_observe = np.zeros((4,4))
 
 for e in range(n_exp):
     period_UCB_reward = [] # rewards collected in a period (days) performing the online learning strategy
@@ -58,11 +54,12 @@ for e in range(n_exp):
 
     for t in range(days): # Day simulation
         #4. Query the learner to know wath is the best matching strategy category-promotion 
-        if t < delay:
-            sub_matching = learner.pull_arm() # suboptimal matching. row_ind, col_ind
+
+        sub_matching = learner.pull_arm() # suboptimal matching. row_ind, col_ind
 
         # 1. Generate daily customers according the Context distributions, divided in categories
         rewards_to_update=[0.,0.,0.,0.]
+        n_cli=0
         daily_customer = ctx.customers_daily_instance()
         daily_customer_weight=daily_customer.copy()
         cum_UCB_rewards = 0
@@ -70,9 +67,7 @@ for e in range(n_exp):
         category=0
         tot_client=sum(daily_customer)
         for customer in range(tot_client): # for each category emulate the user that purchase the good 
-            if t >= delay:
-                sub_matching = learner.pull_arm() # suboptimal matching. row_ind, col_ind
-                
+            n_cli+=1
             category = np.random.choice(np.nonzero(daily_customer)[0])
             daily_customer[category] -= 1
             #2. Purchase simulation of the first element. (no optimization strategy)
@@ -85,41 +80,32 @@ for e in range(n_exp):
                 #5. Propose the second item to the user, using the promotion that retrieved by the learner (according to the user category)                    
                 buy_item2 = ctx.purchase_online_second_element(discounted_price[sub_matching[1][category]],category) # 0: not purchased, 1: purchased
 
-                if t < delay:
-                    #6. update the learner according to the obtained reward. rewards_to_update is a 4-zeros array, except for the element representing the current user category that contain the obtained reward
-                    rewards_to_update[category] += buy_item2 * discounted_price[sub_matching[1][category]]
-                else:
-                    reward = buy_item2 * discounted_price[sub_matching[1][category]]
-                    update_array = np.zeros((4))
-                    for c in range(4):
-                        update_array[c] = avg_reward[c,sub_matching[1][c]] / support[c,sub_matching[1][c]]
-                    # update avg_reward and support 
-                    support[category,sub_matching[1][category]] += 1
-                    avg_reward[category,sub_matching[1][category]] += reward
-                    update_array[category] = reward
-                    # reward to be normalized 
-                    update_array = np.divide(update_array,item2_price_full)
-                    learner.update(sub_matching,update_array,category)
-                    print(reward)
-                    print(update_array)
-                    print(sub_matching)
-                    print(support)
-                    print(avg_reward)
-                    print(learner.confidence)
-                    print(learner.empirical_means)
-                            
-                
+                #6. update the learner according to the obtained reward. rewards_to_update is a 4-zeros array, except for the element representing the current user category that contain the obtained reward
+                rewards_to_update[category] += buy_item2 * discounted_price[sub_matching[1][category]]
+                to_observe[sub_matching[1][category],category]+=discounted_price[sub_matching[1][category]]
+
                 # store results in the cumulative daily rewards 
                 cum_UCB_rewards += (buy_item2 * discounted_price[sub_matching[1][category]])
                 cum_opt_rewards += (buy_item2 * discounted_price [opt[1][category]]) # purchase of the second item according to the optimal strategy 
+        if(t<delay):
+            rewards=[0,0,0,0]
+            max_rew[0]=max(rewards_to_update[0]/daily_customer_weight[0],max_rew[0])
+            max_rew[1]=max(rewards_to_update[1]/daily_customer_weight[1],max_rew[1])
+            max_rew[2]=max(rewards_to_update[2]/daily_customer_weight[2],max_rew[2])
+            max_rew[3]=max(rewards_to_update[3]/daily_customer_weight[3],max_rew[3])
+        else:
+            rewards[0]=round(rewards_to_update[0]/(daily_customer_weight[0]*max_rew[0]),decimal_digits)
+            rewards[1]=round(rewards_to_update[1]/(daily_customer_weight[1]*max_rew[1]),decimal_digits)
+            rewards[2]=round(rewards_to_update[2]/(daily_customer_weight[2]*max_rew[2]),decimal_digits)
+            rewards[3]=round(rewards_to_update[3]/(daily_customer_weight[3]*max_rew[3]),decimal_digits)
         
-        if t < delay:
-            for c in range(4):
-                support[c, sub_matching[1][c]] = daily_customer_weight[c]
-                avg_reward[c, sub_matching[1][c]] = rewards_to_update[c]
-            learner.update(sub_matching,[0,0,0,0])
-            
-                            
+        print(rewards_to_update)
+        print(rewards)
+        print(sub_matching[1])
+        print(opt[1])
+        print(daily_customer_weight)
+
+        learner.update(sub_matching,rewards)
         period_UCB_reward.append(cum_UCB_rewards)
         period_opt_reward.append(cum_opt_rewards)
         
@@ -127,7 +113,6 @@ for e in range(n_exp):
         print(f'| Day: {t+1} - Experiment: {e+1}')
         print(f'| Today customers distribution : {daily_customer_weight}')
         print(f'| Today cumulative reward (Online strategy):  {cum_UCB_rewards}\n| Today cumulative reward (Optimal strategy): {cum_opt_rewards}\n| - Loss: {cum_opt_rewards - cum_UCB_rewards}')
-        print(f'Optimal:\n{opt}')
         print(f'Current confidence per arm of the online learner:\n{learner.confidence}')
         print('___________________\n')
     experiments[e,:] = np.cumsum(period_opt_reward) - np.cumsum(period_UCB_reward)
