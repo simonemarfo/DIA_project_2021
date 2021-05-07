@@ -5,15 +5,15 @@ from Algorithms.SWTS_Learner import *
 
 ctx = Context()
 
-days = 365 # 365 days of simulations
+days = 120 # 365 days of simulations
 days_matching = 365-days
 item1_full_price=0.0
 item2_full_price=0.0
 # define the prices candidates for the first and second item
 candidates_item1 = [2260.0, 1900.0, 2130.0, 1920.0, 2340.0]
 candidates_item2 = [450.0, 550.0, 510.0, 470.0, 650.0]
-window_size1=int(np.sqrt(days)*10)
-window_size2=int(np.sqrt(days)*10)
+window_size1=int(np.sqrt(days*1000)*20)
+window_size2=int(np.sqrt(days*450)*20)
 #discounted_price = ctx.discuonted_second_item_prices(promotion_assignment) # retrun the discounted prices for every customer category, according to the pormotion assignment
 # find the optimal solutions
 opt_item1=np.zeros((3),dtype=int)
@@ -35,7 +35,6 @@ for season in range (3):
 
 print(opt_item1)
 print(opt_item2)
-
 
 maximum_rewards_item1 = max(candidates_item1) + max(candidates_item2) # parameter used to normalize the reward
 maximum_rewards_item2 = max(candidates_item2) # parameter used to normalize the reward
@@ -97,7 +96,7 @@ for e in range(n_exp):
             # update the learner normalizing the reward. The learner for the second item is updated only the customer buy the first one
             SWTS_learner_item1.update(ts_pulled_arm_item1, (customer_reward_item1 + customer_reward_item2 )/maximum_rewards_item1)
             if ts_buy_or_not_item1:
-                SWTS_learner_item2.update(ts_pulled_arm_item2, customer_reward_item2/maximum_rewards_item2)
+                SWTS_learner_item2.update(ts_pulled_arm_item2, (customer_reward_item2)/maximum_rewards_item2)
 
             print('___________________')
             print(f'| Day: {d+1} - Experiment {e+1}')
