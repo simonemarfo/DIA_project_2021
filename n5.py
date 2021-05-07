@@ -40,9 +40,6 @@ opt = linear_sum_assignment(priced_conversion_rate_second, maximize=True) # opti
 # experimet parameters
 n_exp = 1
 
-#delay = 10
-#max_reward_pumping = 1.02
-#decimal_digits = 2
 
 observation = (days//2)*1000
 experiments = np.zeros((n_exp,observation))
@@ -57,7 +54,6 @@ for e in range(n_exp):
     day_opt_reward = []
 
     learner = UCB_Matching(conversion_rate_second.size, *conversion_rate_second.shape) # Initialize UCB matching learner
-    #max_rew=[0,0,0,0]
     prev_size = 0
     for d in range(days): # Day simulation
         # 1. Generate daily customers according the Context distributions, divided in categories
@@ -122,13 +118,10 @@ for e in range(n_exp):
 
                 print(update_array)
                 learner.update(sub_matching,update_array)
-
-                
-                
+  
                 #update the learner
                 pulled_category = [ [sub_matching[0][category]],[sub_matching[1][category]] ]
                 reward = [ customer_UCB_reward / item2_price_full]
-                #learner.update(pulled_category,reward)
 
                 print('___________________')
                 print(f'| Day: {d+1} - Experiment {e+1}')
@@ -150,7 +143,6 @@ for e in range(n_exp):
         prev_size = len(period_UCB_reward)
 
         print(f'Current confidence per arm of the online learner:\n{learner.confidence}')
-        #input("next ...")
     experiments[e,:] = np.cumsum(period_opt_reward[:observation]) - np.cumsum(period_UCB_reward[:observation])
     days_experiments[e,:] = np.cumsum(day_opt_reward) - np.cumsum(day_UCB_reward)
 
