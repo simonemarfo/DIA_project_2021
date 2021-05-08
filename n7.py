@@ -5,15 +5,15 @@ from Algorithms.SWTS_Learner import *
 
 ctx = Context()
 
-days = 120 # 365 days of simulations
+days = 365 # 365 days of simulations
 days_matching = 365-days
-item1_full_price=0.0
-item2_full_price=0.0
+
 # define the prices candidates for the first and second item
 candidates_item1 = [2260.0, 1900.0, 2130.0, 1920.0, 2340.0]
 candidates_item2 = [450.0, 550.0, 510.0, 470.0, 650.0]
-window_size1=int(np.sqrt(days*1000)*20)
-window_size2=int(np.sqrt(days*450)*20)
+# TODO parametrico
+window_size1=int(np.sqrt(days*1000)*30)
+window_size2=int(np.sqrt(days*600)*30)
 #discounted_price = ctx.discuonted_second_item_prices(promotion_assignment) # retrun the discounted prices for every customer category, according to the pormotion assignment
 # find the optimal solutions
 opt_item1=np.zeros((3),dtype=int)
@@ -40,32 +40,59 @@ maximum_rewards_item1 = max(candidates_item1) + max(candidates_item2) # paramete
 maximum_rewards_item2 = max(candidates_item2) # parameter used to normalize the reward
 
 n_exp = 1
-observation = (days//2)*1000
-experiments = np.zeros((n_exp,observation))
-experimets_item1_regret_curve = np.zeros((n_exp,observation))
-experimets_item2_regret_curve = np.zeros((n_exp,observation))
-experiments_matching = np.zeros((n_exp,days_matching))
+observation = int((days)*1000*0.9) # observe only 90% of clients 
+SWTS_total_experiments = np.zeros((n_exp,observation)) # Sliding window Thompson sampling
+SWTS_experimets_item1_regret_curve = np.zeros((n_exp,observation))
+SWTS_experimets_item2_regret_curve = np.zeros((n_exp,observation)) 
+TS_total_experiments = np.zeros((n_exp,observation)) #Thompson sampling
+TS_experimets_item1_regret_curve = np.zeros((n_exp,observation))
+TS_experimets_item2_regret_curve = np.zeros((n_exp,observation))
+days_SWTS_total_experiments = np.zeros((n_exp,days)) # days experiments plot
+days_SWTS_item1_experiments = np.zeros((n_exp,days))
+days_SWTS_item2_experiments = np.zeros((n_exp,days))
+days_TS_total_experiments = np.zeros((n_exp,days))
+days_TS_item1_experiments = np.zeros((n_exp,days))
+days_TS_item2_experiments = np.zeros((n_exp,days))
+
+experiments_matching = np.zeros((n_exp,days_matching)) # matching 
 for e in range(n_exp):
     SWTS_learner_item1 = SWTS_Learner(len(candidates_item1),window_size1)
     SWTS_learner_item2 = SWTS_Learner(len(candidates_item2),window_size2)
+    TS_learner_item1 = TS_Learner(len(candidates_item1))
+    TS_learner_item2 = TS_Learner(len(candidates_item2))
 
     opt_reward_item1 = []
     opt_reward_item2 = [] 
+    swts_reward_item1 = []
+    swts_reward_item2 = []   
     ts_reward_item1 = []
-    ts_reward_item2 = []    
+    ts_reward_item2 = []  
+    
+    daily_opt_reward_item1 = []
+    daily_opt_reward_item2 = [] 
+    daily_swts_reward_item1 = []
+    daily_swts_reward_item2 = []   
+    daily_ts_reward_item1 = []
+    daily_ts_reward_item2 = []
+    daily_opt_item1_ptr = 0
+    daily_opt_item2_ptr = 0
+    daily_swts_item1_ptr = 0
+    daily_swts_item2_ptr = 0
+    daily_ts_item1_ptr = 0
+    daily_ts_item2_ptr = 0
+
     for d in range(days):
-        if(d>=360):
-            season=2
-        else:
-            season=int(d//(days//3))
+        season = int(d//((days + 1)//3))
         # extract the daily customer. It is UNKNOWN
         customer_per_class = ctx.customers_daily_instance() 
         daily_customer_weight = customer_per_class.copy()
         tot_client = sum(customer_per_class)
         # simulate the day client by client
         for customer in range(tot_client):
-            customer_reward_item1 = 0.0
-            customer_reward_item2 = 0.0
+            swts_customer_reward_item1 = 0.0
+            swts_customer_reward_item2 = 0.0
+            ts_customer_reward_item1 = 0.0
+            ts_customer_reward_item2 = 0.0
             opt_customer_item1 = 0.0 # opt reward
             opt_customer_item2 = 0.0 # opt reward
 
@@ -73,47 +100,86 @@ for e in range(n_exp):
             customer_per_class[category] -= 1
 
             # ask to the learner to pull the most promising price that maximize the reward
-            ts_pulled_arm_item1 = SWTS_learner_item1.pull_arm()
-            ts_pulled_arm_item2 = SWTS_learner_item2.pull_arm() #select candidates for the second item
+            swts_pulled_arm_item1 = SWTS_learner_item1.pull_arm()
+            swts_pulled_arm_item2 = SWTS_learner_item2.pull_arm() #select candidates for the second item
 
+            ts_pulled_arm_item1 = TS_learner_item1.pull_arm()
+            ts_pulled_arm_item2 = TS_learner_item2.pull_arm() 
+
+            swts_buy_or_not_item1 = ctx.purchase_online_first_element(candidates_item1[swts_pulled_arm_item1],category,season) 
             ts_buy_or_not_item1 = ctx.purchase_online_first_element(candidates_item1[ts_pulled_arm_item1],category,season) 
             opt_buy_or_not_item1 = ctx.purchase_online_first_element(candidates_item1[opt_item1[season]],category,season)
             # compute the rewenue of the first and second item for both optimal solution and the online learning
+            if swts_buy_or_not_item1:
+                swts_buy_or_not_item2 = ctx.purchase_online_second_element(candidates_item2[swts_pulled_arm_item2],category,season) 
+                # calculate the reward
+                swts_customer_reward_item2 = candidates_item2[swts_pulled_arm_item2] * swts_buy_or_not_item2
+                swts_customer_reward_item1 = candidates_item1[swts_pulled_arm_item1]
+
             if ts_buy_or_not_item1:
                 ts_buy_or_not_item2 = ctx.purchase_online_second_element(candidates_item2[ts_pulled_arm_item2],category,season) 
-                
                 # calculate the reward
-                customer_reward_item2 = candidates_item2[ts_pulled_arm_item2] * ts_buy_or_not_item2
-                customer_reward_item1 = candidates_item1[ts_pulled_arm_item1]
+                ts_customer_reward_item2 = candidates_item2[ts_pulled_arm_item2] * ts_buy_or_not_item2
+                ts_customer_reward_item1 = candidates_item1[ts_pulled_arm_item1]
 
-            if (opt_buy_or_not_item1):
+            if opt_buy_or_not_item1:
                 opt_buy_or_not_item2 = ctx.purchase_online_second_element(candidates_item2[opt_item2[season]],category,season)
-
                 # calculate the reward
                 opt_customer_item2 =  candidates_item2[opt_item2[season]] * opt_buy_or_not_item2
                 opt_customer_item1 = candidates_item1[opt_item1[season]] 
 
             # update the learner normalizing the reward. The learner for the second item is updated only the customer buy the first one
-            SWTS_learner_item1.update(ts_pulled_arm_item1, (customer_reward_item1 + customer_reward_item2 )/maximum_rewards_item1)
+            SWTS_learner_item1.update(swts_pulled_arm_item1, (swts_customer_reward_item1 + swts_customer_reward_item2 )/maximum_rewards_item1)
+            TS_learner_item1.update(ts_pulled_arm_item1, (ts_customer_reward_item1 + ts_customer_reward_item2 )/maximum_rewards_item1)
+            if swts_buy_or_not_item1:
+                SWTS_learner_item2.update(swts_pulled_arm_item2, (swts_customer_reward_item2)/maximum_rewards_item2)
             if ts_buy_or_not_item1:
-                SWTS_learner_item2.update(ts_pulled_arm_item2, (customer_reward_item2)/maximum_rewards_item2)
+                TS_learner_item2.update(ts_pulled_arm_item2, (ts_customer_reward_item2)/maximum_rewards_item2)
 
             print('___________________')
             print(f'| Day: {d+1} - Experiment {e+1}')
             print(f'| Today customers distribution : {daily_customer_weight}')
             print(f'| Customer #{customer} of category: {ctx.classes_info[category]["name"]}: ')
-            print(f'|\t[TS] - Selected prices -> {ctx.items_info[0]["name"]} : {candidates_item1[ts_pulled_arm_item1]} €, {ctx.items_info[1]["name"]} : {candidates_item2[ts_pulled_arm_item2]} €\n|\t\t{ctx.items_info[0]["name"]} reward : {round(customer_reward_item1,2)} € -- {ctx.items_info[1]["name"]} reward : {round(customer_reward_item2,2)} € -- Total : {round(customer_reward_item1 + customer_reward_item2,2)} €')
+            print(f'|\t[SWTS] - Selected prices -> {ctx.items_info[0]["name"]} : {candidates_item1[swts_pulled_arm_item1]} €, {ctx.items_info[1]["name"]} : {candidates_item2[swts_pulled_arm_item2]} €\n|\t\t{ctx.items_info[0]["name"]} reward : {round(swts_customer_reward_item1,2)} € -- {ctx.items_info[1]["name"]} reward : {round(swts_customer_reward_item2,2)} € -- Total : {round(swts_customer_reward_item1 + swts_customer_reward_item2,2)} €')
+            print(f'|\t[TS] - Selected prices -> {ctx.items_info[0]["name"]} : {candidates_item1[ts_pulled_arm_item1]} €, {ctx.items_info[1]["name"]} : {candidates_item2[ts_pulled_arm_item2]} €\n|\t\t{ctx.items_info[0]["name"]} reward : {round(ts_customer_reward_item1,2)} € -- {ctx.items_info[1]["name"]} reward : {round(ts_customer_reward_item2,2)} € -- Total : {round(ts_customer_reward_item1 + ts_customer_reward_item2,2)} €')
             print(f'|\t[OPT] -  Selected prices -> {ctx.items_info[0]["name"]} : {candidates_item1[opt_item1[season]]} €, {ctx.items_info[1]["name"]} : {candidates_item2[opt_item2[season]]} €\n|\t\t{ctx.items_info[0]["name"]} reward : {round(opt_customer_item1,2)} € -- {ctx.items_info[1]["name"]} reward : {round(opt_customer_item2,2)} € -- Total : {round(opt_customer_item1 + opt_customer_item2,2)} €')
 
-            ts_reward_item1.append(customer_reward_item1)
-            ts_reward_item2.append(customer_reward_item2)
+            swts_reward_item1.append(swts_customer_reward_item1)
+            swts_reward_item2.append(swts_customer_reward_item2)
+            ts_reward_item1.append(ts_customer_reward_item1)
+            ts_reward_item2.append(ts_customer_reward_item2)
             opt_reward_item1.append(opt_customer_item1)
             opt_reward_item2.append(opt_customer_item2)
-            #print(SWTS_learner_item2.beta_parameters)
+        #daily append
+        daily_opt_reward_item1.append(sum(opt_reward_item1[daily_opt_item1_ptr:]))
+        daily_opt_reward_item2.append(sum(opt_reward_item2[daily_opt_item2_ptr:]))
+        daily_opt_item1_ptr = len(opt_reward_item1)
+        daily_opt_item2_ptr = len(opt_reward_item2)
+        daily_swts_reward_item1.append(sum(swts_reward_item1[daily_swts_item1_ptr:]))
+        daily_swts_reward_item2.append(sum(swts_reward_item2[daily_swts_item2_ptr:]))
+        daily_swts_item1_ptr = len(swts_reward_item1)
+        daily_swts_item2_ptr = len(swts_reward_item2)
+        daily_ts_reward_item1.append(sum(ts_reward_item1[daily_ts_item1_ptr:]))
+        daily_ts_reward_item2.append(sum(ts_reward_item2[daily_ts_item2_ptr:]))
+        daily_ts_item1_ptr = len(ts_reward_item1)
+        daily_ts_item2_ptr = len(ts_reward_item2)
+        
     # end experiment 
-    experiments[e,:]= np.cumsum(np.array(opt_reward_item1[:observation]) + np.array(opt_reward_item2[:observation])) - np.cumsum(np.array(ts_reward_item1[:observation]) + np.array(ts_reward_item2[:observation]))
-    experimets_item1_regret_curve[e,:]= np.cumsum(opt_reward_item1[:observation]) - np.cumsum(ts_reward_item1[:observation])
-    experimets_item2_regret_curve[e,:]= np.cumsum(opt_reward_item2[:observation]) - np.cumsum(ts_reward_item2[:observation])
+    SWTS_total_experiments[e,:]= np.cumsum(np.array(opt_reward_item1[:observation]) + np.array(opt_reward_item2[:observation])) - np.cumsum(np.array(swts_reward_item1[:observation]) + np.array(swts_reward_item2[:observation]))
+    SWTS_experimets_item1_regret_curve[e,:]= np.cumsum(opt_reward_item1[:observation]) - np.cumsum(swts_reward_item1[:observation])
+    SWTS_experimets_item2_regret_curve[e,:]= np.cumsum(opt_reward_item2[:observation]) - np.cumsum(swts_reward_item2[:observation])
+
+    TS_total_experiments[e,:]= np.cumsum(np.array(opt_reward_item1[:observation]) + np.array(opt_reward_item2[:observation])) - np.cumsum(np.array(ts_reward_item1[:observation]) + np.array(ts_reward_item2[:observation]))
+    TS_experimets_item1_regret_curve[e,:]= np.cumsum(opt_reward_item1[:observation]) - np.cumsum(ts_reward_item1[:observation])
+    TS_experimets_item2_regret_curve[e,:]= np.cumsum(opt_reward_item2[:observation]) - np.cumsum(ts_reward_item2[:observation])
+
+    days_SWTS_total_experiments[e:] = np.cumsum(np.add(daily_opt_reward_item1, daily_opt_reward_item2)) - np.cumsum(np.add(daily_swts_reward_item1, daily_swts_reward_item2))
+    days_SWTS_item1_experiments[e:] = np.cumsum(daily_opt_reward_item1) - np.cumsum(daily_swts_reward_item1)
+    days_SWTS_item2_experiments[e:] = np.cumsum(daily_opt_reward_item2) - np.cumsum(daily_swts_reward_item2)
+
+    days_TS_total_experiments[e:] = np.cumsum(np.add(daily_opt_reward_item1, daily_opt_reward_item2)) - np.cumsum(np.add(daily_ts_reward_item1, daily_ts_reward_item2))
+    days_TS_item1_experiments[e:] = np.cumsum(daily_opt_reward_item1) - np.cumsum(daily_ts_reward_item1)
+    days_TS_item2_experiments[e:] = np.cumsum(daily_opt_reward_item2) - np.cumsum(daily_ts_reward_item2)
     
     #-------------------------MATCHING------------------------------------------------------------------
     #Retrieve the best prices from the SWTS_learner
@@ -211,22 +277,29 @@ for e in range(n_exp):
 
 
 
-# plot regret of UCB
-"""
+# plot regret
 plt.figure(1)
-plt.plot(experiments_matching.mean(axis=0))
-plt.ylabel('Regret')
-plt.xlabel('t')
-plt.title("Exp. Matching")"""
+plt.xlabel("Days")
+plt.ylabel("Regret")
+plt.plot(np.mean(days_SWTS_total_experiments,axis=0),'-', color='darkorange', label = 'SWTS - Total regret')
+plt.plot(np.mean(days_SWTS_item1_experiments,axis=0),'-', color='blue', label = 'SWTS - Item1 regret')
+plt.plot(np.mean(days_SWTS_item2_experiments,axis=0),'-', color='green', label = 'SWTS - Item2 regret')
+plt.plot(np.mean(days_TS_total_experiments,axis=0),'-', color='orange', label = 'TS - Total regret')
+plt.plot(np.mean(days_TS_item1_experiments,axis=0),'-', color='cornflowerblue', label = 'TS - Item1 regret')
+plt.plot(np.mean(days_TS_item2_experiments,axis=0),'-', color='limegreen', label = 'TS - Item2 regret')
+plt.title("Pricing")
+plt.legend()
       
-            
-    
+
 plt.figure(2)
 plt.xlabel("#sales")
 plt.ylabel("Regret")
-plt.plot(np.mean(experiments,axis=0),'-', color='darkorange', label = 'Total regret')
-plt.plot(np.mean(experimets_item1_regret_curve,axis=0),'-', color='blue', label = 'Item1 regret')
-plt.plot(np.mean(experimets_item2_regret_curve,axis=0),'-', color='green', label = 'Item2 regret')
+plt.plot(np.mean(SWTS_total_experiments,axis=0),'-', color='darkorange', label = 'SWTS - Total regret')
+plt.plot(np.mean(SWTS_experimets_item1_regret_curve,axis=0),'-', color='blue', label = 'SWTS - Item1 regret')
+plt.plot(np.mean(SWTS_experimets_item2_regret_curve,axis=0),'-', color='green', label = 'SWTS - Item2 regret')
+plt.plot(np.mean(TS_total_experiments,axis=0),'-', color='orange', label = 'TS - Total regret')
+plt.plot(np.mean(TS_experimets_item1_regret_curve,axis=0),'-', color='cornflowerblue', label = 'TS - Item1 regret')
+plt.plot(np.mean(TS_experimets_item2_regret_curve,axis=0),'-', color='limegreen', label = 'TS - Item2 regret')
 plt.title("Pricing")
 plt.legend()
 
