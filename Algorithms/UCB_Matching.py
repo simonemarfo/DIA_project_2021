@@ -1,6 +1,7 @@
 from .UCB1_Learner import *
 import numpy as np
 from scipy.optimize import linear_sum_assignment
+from itertools import permutations
 
 class UCB_Matching(UCB1_Learner):
     def __init__(self,n_arms,n_rows,n_cols):
@@ -24,6 +25,8 @@ class UCB_Matching(UCB1_Learner):
         for a in range(self.n_arms):
             n_sample = len(self.rewards_per_arm[a])
             self.confidence[a] = (2*np.log(self.t) / n_sample)**0.5 if n_sample > 0 else np.inf
+
+
 
 """
     def update(self,pulled_arms,rewards,category):

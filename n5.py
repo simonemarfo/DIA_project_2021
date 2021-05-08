@@ -4,7 +4,7 @@ from Algorithms.UCB_Matching import *
 
 ctx= Context()
 
-days = 15 # 365 days of simulations
+days = 40 # 365 days of simulations
 
 item1_price_full = 1980.0
 item2_price_full = 630.0 
@@ -38,13 +38,14 @@ opt = linear_sum_assignment(priced_conversion_rate_second, maximize=True) # opti
 #
 
 # experimet parameters
-n_exp = 1
+n_exp = 3
 
 
 observation = (days//2)*1000
 experiments = np.zeros((n_exp,observation))
 days_experiments = np.zeros((n_exp,days))
 for e in range(n_exp):
+    permutation = list(permutations(range(0,4)))
     period_UCB_reward = [] # rewards collected in a period (days) performing the online learning strategy
     period_opt_reward = [] # rewards collected in a period (days) performing the online learning strategy
     tot_rew = np.zeros((4,4))
@@ -59,6 +60,7 @@ for e in range(n_exp):
         # 1. Generate daily customers according the Context distributions, divided in categories
         #rewards_to_update=[0.,0.,0.,0.]
         cont = 0
+        n_cli = 0
         daily_customer = ctx.customers_daily_instance()
         daily_customer_weight=daily_customer.copy()
 
@@ -98,8 +100,14 @@ for e in range(n_exp):
             #3. Propose the second item only if the first one was bought
             if (buy_item1 > 0):
                 #4. Query the learner to know wath is the best matching strategy category-promotion 
-                sub_matching = learner.pull_arm() # suboptimal matching. row_ind, col_ind
-
+                if d<3:
+                    row_ind = list(range(0,4))
+                    col_ind = permutation[n_cli % 24]
+                    sub_matching = [row_ind,col_ind]
+                    n_cli+=1
+                else:
+                    sub_matching = learner.pull_arm() # suboptimal matching. row_ind, col_ind
+                
                 propose_price = discounted_price[sub_matching[1][category]]
                 #5. Propose the second item to the user, using the promotion that retrieved by the learner (according to the user category)                    
                 buy_item2 = ctx.purchase_online_second_element(propose_price,category) # 0: not purchased, 1: purchased
@@ -117,7 +125,11 @@ for e in range(n_exp):
                         update_array[c] = tot_rew[c][sub_matching[1][c]] / (support[c][sub_matching[1][c]] * item2_price_full) 
 
                 print(update_array)
-                learner.update(sub_matching,update_array)
+                if d<3:
+                    #learner.update(sub_matching,[0,0,0,0])
+                    pass
+                else:
+                    learner.update(sub_matching,update_array)
   
                 #update the learner
                 pulled_category = [ [sub_matching[0][category]],[sub_matching[1][category]] ]
