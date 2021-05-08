@@ -11,8 +11,8 @@ sys.stdout = open("test_conversion_rate_out.txt","w")
 ctx = Context()
 item1_range = np.arange(1900,2350,5,dtype = int)
 comb_item1 = combinations(item1_range,3)
-item2_range = np.arange(450,650,5,dtype = int) # parte da 450 per via dello sconto
-comb_item2 = combinations(item2_prices,3)
+item2_range = np.arange(360,650,5,dtype = int) # parte da 360 per via dello sconto
+comb_item2 = combinations(item2_range,3)
 
 all_diff_item1 = []
 for el in comb_item1:

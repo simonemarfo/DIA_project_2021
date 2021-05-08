@@ -9,8 +9,8 @@ days = 120 # 365 days of simulations
 days_matching = 365-days
 
 # define the prices candidates for the first and second item
-candidates_item1 = [2260.0, 1900.0, 2130.0, 1920.0, 2340.0]
-candidates_item2 = [450.0, 550.0, 510.0, 470.0, 650.0]
+candidates_item1 = [1910.0, 1900.0, 2130.0, 1920.0, 2340.0]
+candidates_item2 = [400.0, 550.0, 510.0, 380.0, 365.0]
 # TODO parametrico
 window_size1=int(np.sqrt(days*1000)*30)
 window_size2=int(np.sqrt(days*600)*30) # TODO: aggiungere un metodo nel learner per fare un resize della window. Calcolare la window per item due in  runtime, con la media delle proposed item (?) 
@@ -35,7 +35,7 @@ for season in range (3):
 
 print(opt_item1)
 print(opt_item2)
-exit()
+
 maximum_rewards_item1 = max(candidates_item1) + max(candidates_item2) # parameter used to normalize the reward
 maximum_rewards_item2 = max(candidates_item2) # parameter used to normalize the reward
 
