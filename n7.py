@@ -6,7 +6,7 @@ from itertools import permutations
 
 ctx = Context()
 
-days = 120 # 365 days of simulations
+days = 365 # 365 days of simulations
 
 # define the prices candidates for the first and second item
 candidates_item1 = [2110.0, 1900.0, 2130.0, 1920.0, 2340.0]
@@ -123,6 +123,7 @@ for e in range(n_exp):
             tot_rew = np.zeros((4,4))
             support = np.zeros((4,4))
             matching = True
+            UCB_matching_learner = UCB_Matching(np.zeros((4,4)).size, *np.zeros((4,4)).shape)
             item2_fixed_price = candidates_item2[np.argmax(SWTS_learner_item2.beta_parameters)//2]
             # calculating optimal matching
             discounted_price = [item2_fixed_price,
@@ -301,19 +302,22 @@ for e in range(n_exp):
     days_matching_item1_experiments[e:] = np.cumsum(daily_matching_opt_reward_item1) - np.cumsum(daily_matching_reward_item1)
     days_matching_item2_experiments[e:] = np.cumsum(daily_matching_opt_reward_item2) - np.cumsum(daily_matching_reward_item2)
 
+season_coo=[120,240]
 # plot regret
 plt.figure(1)
 plt.xlabel("Days")
 plt.ylabel("Regret")
-plt.plot(np.mean(days_SWTS_total_experiments,axis=0),'-', color='darkorange', label = 'SWTS - Total regret')
+plt.plot(np.mean(days_SWTS_total_experiments,axis=0),'-', color='black', label = 'SWTS - Total regret')
 plt.plot(np.mean(days_SWTS_item1_experiments,axis=0),'-', color='blue', label = 'SWTS - Item1 regret')
 plt.plot(np.mean(days_SWTS_item2_experiments,axis=0),'-', color='green', label = 'SWTS - Item2 regret')
-plt.plot(np.mean(days_TS_total_experiments,axis=0),'-', color='orange', label = 'TS - Total regret')
-plt.plot(np.mean(days_TS_item1_experiments,axis=0),'-', color='cornflowerblue', label = 'TS - Item1 regret')
-plt.plot(np.mean(days_TS_item2_experiments,axis=0),'-', color='limegreen', label = 'TS - Item2 regret')
-plt.plot(np.mean(days_matching_total_experiments,axis=0),'-', color='purple', label = 'UCB Matching - Total regret')
-plt.plot(np.mean(days_matching_item1_experiments,axis=0),'-', color='magenta', label = 'UCB Matching - Item1 regret')
-plt.plot(np.mean(days_matching_item2_experiments,axis=0),'-', color='deeppink', label = 'UCB Matching - Item2 regret')
+plt.plot(np.mean(days_TS_total_experiments,axis=0),'-', color='mediumaquamarine', label = 'TS - Total regret')
+plt.plot(np.mean(days_TS_item1_experiments,axis=0),'-', color='red', label = 'TS - Item1 regret')
+plt.plot(np.mean(days_TS_item2_experiments,axis=0),'-', color='grey', label = 'TS - Item2 regret')
+plt.axvline(x=season_coo[0],linestyle=':',color='orange')
+plt.axvline(x=season_coo[1],linestyle=':',color='orange')
+#plt.plot(np.mean(days_matching_total_experiments,axis=0),'-', color='purple', label = 'UCB Matching - Total regret')
+#plt.plot(np.mean(days_matching_item1_experiments,axis=0),'-', color='olive', label = 'UCB Matching - Item1 regret')
+
 plt.title("Pricing")
 plt.legend()
       
@@ -321,17 +325,31 @@ plt.legend()
 plt.figure(2)
 plt.xlabel("#sales")
 plt.ylabel("Regret")
-plt.plot(np.mean(SWTS_total_experiments,axis=0),'-', color='darkorange', label = 'SWTS - Total regret')
+plt.plot(np.mean(SWTS_total_experiments,axis=0),'-', color='black', label = 'SWTS - Total regret')
 plt.plot(np.mean(SWTS_experimets_item1_regret_curve,axis=0),'-', color='blue', label = 'SWTS - Item1 regret')
 plt.plot(np.mean(SWTS_experimets_item2_regret_curve,axis=0),'-', color='green', label = 'SWTS - Item2 regret')
-plt.plot(np.mean(TS_total_experiments,axis=0),'-', color='orange', label = 'TS - Total regret')
-plt.plot(np.mean(TS_experimets_item1_regret_curve,axis=0),'-', color='cornflowerblue', label = 'TS - Item1 regret')
-plt.plot(np.mean(TS_experimets_item2_regret_curve,axis=0),'-', color='limegreen', label = 'TS - Item2 regret')
-plt.plot(np.mean(matching_total_experiments,axis=0),'-', color='purple', label = 'UCB Matching - Total regret')
-plt.plot(np.mean(matching_experimets_item1_regret_curve,axis=0),'-', color='magenta', label = 'UCB Matching - Item1 regret')
-plt.plot(np.mean(matching_experimets_item2_regret_curve,axis=0),'-', color='deeppink', label = 'UCB Matching - Item2 regret')
+plt.plot(np.mean(TS_total_experiments,axis=0),'-', color='mediumaquamarine', label = 'TS - Total regret')
+plt.plot(np.mean(TS_experimets_item1_regret_curve,axis=0),'-', color='red', label = 'TS - Item1 regret')
+plt.plot(np.mean(TS_experimets_item2_regret_curve,axis=0),'-', color='grey', label = 'TS - Item2 regret')
+#plt.plot(np.mean(matching_total_experiments,axis=0),'-', color='purple', label = 'UCB Matching - Total regret')
+#plt.plot(np.mean(matching_experimets_item1_regret_curve,axis=0),'-', color='olive', label = 'UCB Matching - Item1 regret')
 plt.title("Pricing")
 plt.legend()
 
+plt.figure(3)
+plt.xlabel("Days")
+plt.ylabel("Regret")
+plt.plot(np.mean(days_matching_item2_experiments,axis=0),'-', color='pink', label = 'UCB Matching - Item2 regret')
+plt.axvline(x=season_coo[0],linestyle=':',color='orange')
+plt.axvline(x=season_coo[1],linestyle=':',color='orange')
+plt.title("Matching")
+plt.legend()
+
+plt.figure(4)
+plt.xlabel("#sales")
+plt.ylabel("Regret")
+plt.plot(np.mean(matching_experimets_item2_regret_curve,axis=0),'-', color='pink', label = 'UCB Matching - Item2 regret')
+plt.title("Matching")
+plt.legend()
 
 plt.show()
