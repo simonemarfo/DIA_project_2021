@@ -5,9 +5,10 @@ from Algorithms.SWTS_Learner import *
 from itertools import permutations
 
 ctx = Context()
-
-days = 365 # 365 days of simulations
-matching_dalay = 30 # estimated time horizon in which the pricing phase reach a stable value (for item 2 )
+emp_delay=5
+days = 150 # 365 days of simulations
+n_exp = 1
+matching_dalay = 20 # estimated time horizon in which the pricing phase reach a stable value (for item 2 )
 seasonality = [0*(days//3), 1*(days//3), 2*(days//3)] # days at which the new season start
 # define the prices candidates for the first and second item
 candidates_item1 = [2110.0, 1900.0, 2130.0, 1920.0, 2340.0]
@@ -40,7 +41,7 @@ print(opt_item2)
 maximum_rewards_item1 = max(candidates_item1) + max(candidates_item2) # parameter used to normalize the reward
 maximum_rewards_item2 = max(candidates_item2) # parameter used to normalize the reward
 
-n_exp = 6
+
 observation = int((days)*1000*0.9) # observe only 90% of clients 
 SWTS_total_experiments = np.zeros((n_exp,observation)) # Sliding window Thompson sampling
 SWTS_experimets_item1_regret_curve = np.zeros((n_exp,observation))
@@ -119,6 +120,7 @@ for e in range(n_exp):
     season = 0
     for d in range(days):
         if d in seasonality: # new season begin
+            input()
             season = seasonality.index(d)
             matching = False #first day of the new season perform pricing without matching
 
@@ -131,6 +133,9 @@ for e in range(n_exp):
             matching = True
             UCB_matching_learner = UCB_Matching(np.zeros((4,4)).size, *np.zeros((4,4)).shape) # new learner
             item2_fixed_price = candidates_item2[np.argmax(SWTS_learner_item2.beta_parameters)//2] # fix a price for the item2
+            #item2_fixed_price=630.0
+            print(f"OPTIMALE PRICE ITEM 2 TO MATCHING:{item2_fixed_price}")
+            input("BELLA MOL")
             day_matching_counter = 0 # used for the delay to learn the rewards
             # matrix used as support
             tot_rew = np.zeros((4,4))
@@ -144,9 +149,10 @@ for e in range(n_exp):
             priced_conversion_rate_second = np.zeros((4,4))
             for i in range (0,4): #classes
                 for j in range (0,4): #promos
-                    priced_conversion_rate_second[i,j] = (ctx.conversion_rate_second_element(discounted_price[j], i)) * discounted_price[j]
+                    priced_conversion_rate_second[i,j] = (ctx.conversion_rate_second_element(discounted_price[j], i,season)) * discounted_price[j]
             matching_opt = linear_sum_assignment(priced_conversion_rate_second, maximize=True) # optimal solution row_ind, col_ind
-
+        if matching:
+            day_matching_counter += 1
         tot_client = sum(customer_per_class)
         # simulate the day client by client
         for customer in range(tot_client):
@@ -203,15 +209,16 @@ for e in range(n_exp):
             #  -------------------- MATCHING --------------
             if opt_buy_or_not_item1 and matching: 
                 matching_opt_customer_item1 =  candidates_item1[opt_item1[season]] 
-                matching_opt_customer_item2 =  ctx.purchase_online_second_element(discounted_price[matching_opt[1][category]],category) * discounted_price[matching_opt[1][category]]
+                matching_opt_customer_item2 =  ctx.purchase_online_second_element(discounted_price[matching_opt[1][category]],category,season) * discounted_price[matching_opt[1][category]]
 
                 
             if swts_buy_or_not_item1 and matching:
-                if day_matching_counter < 3:
+                if day_matching_counter <= emp_delay:
                     row_ind = list(range(0,4))
-                    col_ind = permutation[n_cli % 24]
+                    col_ind = permutation[n_cli % len(permutation)]
                     sub_matching = [row_ind,col_ind]
                     n_cli+=1
+                    #input()
                 else:
                     sub_matching = UCB_matching_learner.pull_arm() # suboptimal matching. row_ind, col_ind
 
@@ -230,9 +237,9 @@ for e in range(n_exp):
                     else:
                         update_array[c] = tot_rew[c][sub_matching[1][c]] / (support[c][sub_matching[1][c]] * item2_fixed_price) 
                 #learner update
-                if day_matching_counter>3:
+                if day_matching_counter > emp_delay:
                     UCB_matching_learner.update(sub_matching,update_array)
-                day_matching_counter += 1
+        
 
             # update the learner normalizing the reward. The learner for the second item is updated only the customer buy the first one
             SWTS_learner_item1.update(swts_pulled_arm_item1, (swts_customer_reward_item1 + swts_customer_reward_item2 )/maximum_rewards_item1)
