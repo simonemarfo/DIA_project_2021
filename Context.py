@@ -99,9 +99,9 @@ class Context():
             item2_full_price = self.item2_full_price
         return np.multiply(np.subtract(1,np.take(self.discount_promos,promo_assignment)),item2_full_price)
 
-"""
-ctx = Context()
-ctx.plot_item1_conversion_rate()
-ctx.plot_item2_conversion_rate()
-"""
+
+# ctx = Context()
+# ctx.plot_item1_conversion_rate()
+# ctx.plot_item2_conversion_rate()
+
 
