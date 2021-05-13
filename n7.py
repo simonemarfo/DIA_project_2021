@@ -120,7 +120,6 @@ for e in range(n_exp):
     season = 0
     for d in range(days):
         if d in seasonality: # new season begin
-            input()
             season = seasonality.index(d)
             matching = False #first day of the new season perform pricing without matching
 
@@ -134,8 +133,6 @@ for e in range(n_exp):
             UCB_matching_learner = UCB_Matching(np.zeros((4,4)).size, *np.zeros((4,4)).shape) # new learner
             item2_fixed_price = candidates_item2[np.argmax(SWTS_learner_item2.beta_parameters)//2] # fix a price for the item2
             #item2_fixed_price=630.0
-            print(f"OPTIMALE PRICE ITEM 2 TO MATCHING:{item2_fixed_price}")
-            input("BELLA MOL")
             day_matching_counter = 0 # used for the delay to learn the rewards
             # matrix used as support
             tot_rew = np.zeros((4,4))
