@@ -1,7 +1,7 @@
-from UCB_Matching import UCB_Matching
+from .UCB_Matching import UCB_Matching
 import numpy as np
 from scipy.optimize import linear_sum_assignment
-from Cumsum import CUMSUM
+from .CUMSUM_UCB_Matching import CUMSUM 
 
 class CUMSUM_UCB_Matching(UCB_Matching):
     def __init__(self, n_arms, n_rows, n_cols, M=100, eps=0.05, h=20, alpha=0.01):
@@ -21,20 +21,29 @@ class CUMSUM_UCB_Matching(UCB_Matching):
             costs_random = np.random.randint(0, 10, size=(self.n_rows,self.n_cols))
             return linear_sum_assignment(costs_random)
 
-    def update(self, pulled_arms, rewards):
+    def update(self, pulled_arms, rewards, tot_rew, support):
         self.t+=1
         pulled_arm_flat = np.ravel_multi_index(pulled_arms, (self.n_rows,self.n_cols))
         for pulled_arm, reward in zip(pulled_arm_flat,rewards):
+            print(f"G_PLUS PRE-UPDATE: {self.change_detection[pulled_arm].g_plus}; OF ARM: {pulled_arm}")
+            print(f"G_MINUS PRE-UPDATE: {self.change_detection[pulled_arm].g_minus}; OF ARM: {pulled_arm}")
             if self.change_detection[pulled_arm].update(reward):
+                print(f"G_PLUS POST-UPDATE: {self.change_detection[pulled_arm].g_plus}; OF ARM: {pulled_arm}")
+                print(f"G_MINUS POST-UPDATE: {self.change_detection[pulled_arm].g_minus}; OF ARM: {pulled_arm}")
                 self.detections[pulled_arm].append(self.t)
                 self.valid_rewards_per_arms[pulled_arm] = []
                 self.change_detection[pulled_arm].reset()
+                tot_rew[pulled_arm//4] [pulled_arm % 4] =0.0
+                support[pulled_arm//4] [pulled_arm % 4] =0
+                input("STO RESETTANDO MO")
+            
             self.update_observations(pulled_arm, reward)
             self.empirical_means[pulled_arm] = np.mean(self.valid_rewards_per_arms[pulled_arm])
         total_valid_samples = sum([len(x) for x in self.valid_rewards_per_arms])
         for a in range(self.n_arms):
             n_samples=len(self.valid_rewards_per_arms[a])
             self.confidence[a] = (2*np.log(total_valid_samples)/n_samples)**0.5 if n_samples>0 else np.inf
+        return tot_rew,support
     
     def update_observations(self, pulled_arm, reward):
         self.rewards_per_arm[pulled_arm].append(reward)
