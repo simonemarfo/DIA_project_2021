@@ -4,10 +4,8 @@ from Algorithms.SWTS_Learner import *
 from Algorithms.promo_category_UCB_CD_learner import *
 
 ctx = Context()
-emp_delay=1
-days = 60 # 365 days of simulations
+days = 150 # 365 days of simulations
 n_exp = 1
-matching_dalay = 0 # estimated time horizon in which the pricing phase reach a stable value (for item 2 )
 seasonality = [0*(days//3), 1*(days//3), 2*(days//3)] # days at which the new season start
 # define the prices candidates for the first and second item
 candidates_item1 = [2110.0, 1900.0, 2130.0, 1920.0, 2340.0]
@@ -16,7 +14,7 @@ candidates_item2 = [365.0, 400.0, 550.0, 510.0, 380.0]
 window_size1 = int(np.sqrt(days*1000)*30)
 window_size2 = int(np.sqrt(days*600)*30) # TODO: aggiungere un metodo nel learner per fare un resize della window. Calcolare la window per item due in  runtime, con la media delle proposed item (?) 
 
-# find the optimal solutions
+# find pricing the optimal solutions
 opt_item1=np.zeros((3),dtype=int)
 opt_item2=np.zeros((3),dtype=int)
 for season in range (3): 
@@ -108,30 +106,13 @@ for e in range(n_exp):
     sub_matching = 0
 
     day_matching_counter = 0 
-    matching = True
     item2_fixed_price = 0 
 
     season = 0
     for d in range(days):
-        if d in seasonality: # new season begin
-            input()
+        if d in seasonality: # new season begins
             season = seasonality.index(d)
-            matching = True #first day of the new season perform pricing without matching
-
-        n_cli= 0 # used to initialize matching phase
-        # extract the daily customer. It is UNKNOWN
-        customer_per_class = ctx.customers_daily_instance() 
-        daily_customer_weight = customer_per_class.copy()
-        # turn on matching
-        if d == (seasonality[season] + matching_dalay):
-            matching = True
-            #UCB_matching_learner = UCB_Matching(np.zeros((4,4)).size, *np.zeros((4,4)).shape) # new learner
-            #item2_fixed_price = candidates_item2[np.argmax(SWTS_learner_item2.beta_parameters)//2] # fix a price for the item2
-            item2_fixed_price=630.0 - (100*season)
-            print(f"OPTIMALE PRICE ITEM 2 TO MATCHING:{item2_fixed_price}")
-            input("BELLA MOL")
-            day_matching_counter = 0 # used for the delay to learn the rewards
-            # calculate the discounted prices
+            item2_fixed_price= 630.0 - (100*season)
             discounted_price = [item2_fixed_price,
                 item2_fixed_price*(1-ctx.discount_promos[1]),
                 item2_fixed_price*(1-ctx.discount_promos[2]),
@@ -142,8 +123,12 @@ for e in range(n_exp):
                 for j in range (0,4): #promos
                     priced_conversion_rate_second[i,j] = (ctx.conversion_rate_second_element(discounted_price[j], i,season)) * discounted_price[j]
             matching_opt = linear_sum_assignment(priced_conversion_rate_second, maximize=True) # optimal solution row_ind, col_ind
-        if matching:
-            day_matching_counter += 1
+            input("next season ... ")
+
+        # extract the daily customer. It is UNKNOWN
+        customer_per_class = ctx.customers_daily_instance() 
+        daily_customer_weight = customer_per_class.copy()
+           
         tot_client = sum(customer_per_class)
         # simulate the day client by client
         for customer in range(tot_client):
@@ -161,24 +146,24 @@ for e in range(n_exp):
 
             category = np.random.choice(np.nonzero(customer_per_class)[0])
             customer_per_class[category] -= 1
-            #input()
             # ask to the learner to pull the most promising price that maximize the reward
             opt_buy_or_not_item1 = ctx.purchase_online_first_element(candidates_item1[opt_item1[season]],category,season)
                 
             #  -------------------- MATCHING -------------
-            print(sub_matching)
-            print(matching_opt)
             if opt_buy_or_not_item1:
-                sub_matching=UCB_cd_matching_learner.pull_arm()
+                # determine propose price
+                sub_matching = UCB_cd_matching_learner.pull_arm()
                 propose_price =  discounted_price[sub_matching[1][category]]
+                propose_price_opt =  discounted_price[matching_opt[1][category]]
+                # purchase
                 UCB_buy_or_not_item2 = ctx.purchase_online_second_element(propose_price,category,season) 
+                opt_buy_or_not_item2 = ctx.purchase_online_second_element(propose_price_opt,category,season)
                 # calculate the reward
                 matching_customer_reward_item2 = propose_price * UCB_buy_or_not_item2
-                propose_price_opt =  discounted_price[matching_opt[1][category]]
-                opt_buy_or_not_item2 = ctx.purchase_online_second_element(propose_price_opt,category,season)
-                matching_opt_customer_item2=propose_price_opt*opt_buy_or_not_item2
+                matching_opt_customer_item2 = propose_price_opt * opt_buy_or_not_item2
                 #learner update
                 UCB_cd_matching_learner.update(sub_matching,matching_customer_reward_item2,category)
+                
         
             print('___________________')
             print(f'| Day: {d+1} - Experiment {e+1}')
@@ -187,6 +172,9 @@ for e in range(n_exp):
             #print(f'|\t[SWTS] - Selected prices -> {ctx.items_info[0]["name"]} : {candidates_item1[swts_pulled_arm_item1]} €, {ctx.items_info[1]["name"]} : {candidates_item2[swts_pulled_arm_item2]} €\n|\t\t{ctx.items_info[0]["name"]} reward : {round(swts_customer_reward_item1,2)} € -- {ctx.items_info[1]["name"]} reward : {round(swts_customer_reward_item2,2)} € -- Total : {round(swts_customer_reward_item1 + swts_customer_reward_item2,2)} €')
             #print(f'|\t[TS] - Selected prices -> {ctx.items_info[0]["name"]} : {candidates_item1[ts_pulled_arm_item1]} €, {ctx.items_info[1]["name"]} : {candidates_item2[ts_pulled_arm_item2]} €\n|\t\t{ctx.items_info[0]["name"]} reward : {round(ts_customer_reward_item1,2)} € -- {ctx.items_info[1]["name"]} reward : {round(ts_customer_reward_item2,2)} € -- Total : {round(ts_customer_reward_item1 + ts_customer_reward_item2,2)} €')
             print(f'|\t[OPT] -  Selected prices -> {ctx.items_info[0]["name"]} : {candidates_item1[opt_item1[season]]} €, {ctx.items_info[1]["name"]} : {candidates_item2[opt_item2[season]]} €\n|\t\t{ctx.items_info[0]["name"]} reward : {round(opt_customer_item1,2)} € -- {ctx.items_info[1]["name"]} reward : {round(opt_customer_item2,2)} € -- Total : {round(opt_customer_item1 + opt_customer_item2,2)} €')
+            print(f' Matching base price: {item2_fixed_price}')
+            print(f'[MATCHING] {sub_matching}')
+            print(f'[OPT MATCH] {matching_opt}')
 
             #swts_reward_item1.append(swts_customer_reward_item1)
             #swts_reward_item2.append(swts_customer_reward_item2)
@@ -288,9 +276,6 @@ plt.plot(np.mean(days_matching_item2_experiments,axis=0),'-', color='pink', labe
 plt.axvline(x=seasonality[0],linestyle=':',color='orange')
 plt.axvline(x=seasonality[1],linestyle=':',color='orange')
 plt.axvline(x=seasonality[2],linestyle=':',color='orange')
-plt.axvspan(seasonality[0], seasonality[0] + matching_dalay, facecolor='orange', alpha=0.2)
-plt.axvspan(seasonality[1], seasonality[1] + matching_dalay, facecolor='orange', alpha=0.2)
-plt.axvspan(seasonality[2], seasonality[2] + matching_dalay, facecolor='orange', alpha=0.2)
 plt.title("Matching")
 plt.legend()
 

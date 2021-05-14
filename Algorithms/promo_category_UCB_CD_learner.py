@@ -29,25 +29,22 @@ class promo_category_UCB_CD_learner(CUMSUM_UCB_Matching):
             pass
         else:
             self.t+=1
+            # calculate the rewards to pass to the learner
             rewards=np.zeros((self.n_rows))
             for c in range(self.n_rows):
                 if(self.support[c][pulled_arms[1][c]]==0):
                     pass
                 else:
                     rewards[c]=self.tot_rew[c][pulled_arms[1][c]]/(self.support[c][pulled_arms[1][c]]*self.normalizing_value)
+            # update/change detection/reset
             pulled_arm_flat = np.ravel_multi_index(pulled_arms, (self.n_rows,self.n_cols))
-            print(self.support)
-            print(self.tot_rew)
-
             for pulled_arm, reward in zip(pulled_arm_flat,rewards):
-                if self.change_detection[pulled_arm].update(reward) and self.support[pulled_arm//4][pulled_arm%4]>self.starting_delay/self.n_arms :
+                if self.change_detection[pulled_arm].update(reward) :#and self.support[pulled_arm//4][pulled_arm%4]>self.starting_delay/self.n_arms:
                     self.detections[pulled_arm].append(self.t)
                     self.valid_rewards_per_arms[pulled_arm] = []
                     self.change_detection[pulled_arm].reset()
-                    self.tot_rew[pulled_arm//4][pulled_arm%4]=self.tot_rew[pulled_arm//4][pulled_arm%4]/self.support[pulled_arm//4][pulled_arm%4]
-                    self.support[pulled_arm//4][pulled_arm%4]=1
-                    print(self.support)
-                    print(self.tot_rew)
+                    #self.tot_rew[pulled_arm//4][pulled_arm%4]=0
+                    #self.support[pulled_arm//4][pulled_arm%4]=0
                 self.update_observations(pulled_arm, reward)
                 self.empirical_means[pulled_arm] = np.mean(self.valid_rewards_per_arms[pulled_arm])
             total_valid_samples = sum([len(x) for x in self.valid_rewards_per_arms])
