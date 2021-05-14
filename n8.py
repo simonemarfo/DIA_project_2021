@@ -1,9 +1,7 @@
 from Context import *    
 import matplotlib.pyplot as plt
-from Algorithms.UCB_Matching import *
 from Algorithms.SWTS_Learner import *
-from itertools import permutations
-from Algorithms.CD_UCB_Matching import *
+from Algorithms.promo_category_UCB_CD_learner import *
 
 ctx = Context()
 emp_delay=1
@@ -71,9 +69,8 @@ for e in range(n_exp):
     SWTS_learner_item2 = SWTS_Learner(len(candidates_item2),window_size2)
     TS_learner_item1 = TS_Learner(len(candidates_item1))
     TS_learner_item2 = TS_Learner(len(candidates_item2))
-
     #UCB_matching_learner = UCB_Matching(np.zeros((4,4)).size, *np.zeros((4,4)).shape) # Initialize UCB matching learner
-    UCB_cd_matching_learner = CUMSUM_UCB_Matching( np.zeros((4,4)).size, *np.zeros((4,4)).shape, M=500, eps=0.05, h=20, alpha=0.01)
+    UCB_cd_matching_learner = promo_category_UCB_CD_learner( np.zeros((4,4)).size, *np.zeros((4,4)).shape, M=100, eps=0.05, h=20, alpha=0.01,starting_delay=1000,normalizing_value=630.0)
     opt_reward_item1 = []
     opt_reward_item2 = [] 
     swts_reward_item1 = []
@@ -110,12 +107,8 @@ for e in range(n_exp):
 
     sub_matching = 0
 
-    # matching occurrency matrix 
-    tot_rew = np.zeros((4,4))
-    support = np.zeros((4,4))
     day_matching_counter = 0 
     matching = True
-    permutation = list(permutations(range(0,4)))
     item2_fixed_price = 0 
 
     season = 0
@@ -173,39 +166,19 @@ for e in range(n_exp):
             opt_buy_or_not_item1 = ctx.purchase_online_first_element(candidates_item1[opt_item1[season]],category,season)
                 
             #  -------------------- MATCHING -------------
-                
+            print(sub_matching)
+            print(matching_opt)
             if opt_buy_or_not_item1:
-                if day_matching_counter <= emp_delay:
-                    row_ind = list(range(0,4))
-                    col_ind = permutation[n_cli % len(permutation)]
-                    sub_matching = [row_ind,col_ind]
-                    n_cli+=1
-                    #input()
-                else:
-                    sub_matching = UCB_cd_matching_learner.pull_arm() # suboptimal matching. row_ind, col_ind
-                    print(f' MATCHING')
-                    print(f'|\t[MATCHING] -  {sub_matching}')
-                    print(f'|\t[OPT MATCH] -  {matching_opt}')
-                    #print(f'|\t[G_PLUS] -  {UCB_cd_matching_learner.change_detection[category*4+sub_matching[1][category]].g_plus}')
-                    #print(f'|\t[G_MINUS] -  {UCB_cd_matching_learner.change_detection[category*4+sub_matching[1][category]].g_minus}')
-
+                sub_matching=UCB_cd_matching_learner.pull_arm()
                 propose_price =  discounted_price[sub_matching[1][category]]
                 UCB_buy_or_not_item2 = ctx.purchase_online_second_element(propose_price,category,season) 
                 # calculate the reward
                 matching_customer_reward_item2 = propose_price * UCB_buy_or_not_item2
-                support[category][sub_matching[1][category]] += 1
-                tot_rew[category][sub_matching[1][category]] += matching_customer_reward_item2
-                update_array = np.zeros((4))
-                for c in range(4):
-                    if support[c][sub_matching[1][c]] == 0:
-                        pass
-                    else:
-                        update_array[c] = tot_rew[c][sub_matching[1][c]] / (support[c][sub_matching[1][c]] * item2_fixed_price) 
+                propose_price_opt =  discounted_price[matching_opt[1][category]]
+                opt_buy_or_not_item2 = ctx.purchase_online_second_element(propose_price_opt,category,season)
+                matching_opt_customer_item2=propose_price_opt*opt_buy_or_not_item2
                 #learner update
-                if day_matching_counter > emp_delay:
-                    tot_rew,support=UCB_cd_matching_learner.update(sub_matching,update_array,tot_rew,support)
-                    print(f"TOT REW: {tot_rew}")
-                    print(f"SUPPORT: {support}")
+                UCB_cd_matching_learner.update(sub_matching,matching_customer_reward_item2,category)
         
             print('___________________')
             print(f'| Day: {d+1} - Experiment {e+1}')
