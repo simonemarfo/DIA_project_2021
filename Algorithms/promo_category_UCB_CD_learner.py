@@ -43,8 +43,8 @@ class promo_category_UCB_CD_learner(CUMSUM_UCB_Matching):
                     self.detections[pulled_arm].append(self.t)
                     self.valid_rewards_per_arms[pulled_arm] = []
                     self.change_detection[pulled_arm].reset()
-                    self.tot_rew[pulled_arm//4][pulled_arm%4]=0
-                    self.support[pulled_arm//4][pulled_arm%4]=0
+                    self.tot_rew[pulled_arm//4][pulled_arm%4]=self.tot_rew[pulled_arm//4][pulled_arm%4]/self.support[pulled_arm//4][pulled_arm%4]
+                    self.support[pulled_arm//4][pulled_arm%4]=1
                 self.update_observations(pulled_arm, reward)
                 self.empirical_means[pulled_arm] = np.mean(self.valid_rewards_per_arms[pulled_arm])
             total_valid_samples = sum([len(x) for x in self.valid_rewards_per_arms])

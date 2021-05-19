@@ -4,7 +4,7 @@ from Algorithms.SWTS_Learner import *
 from Algorithms.promo_category_UCB_CD_learner import *
 
 ctx = Context()
-days = 150 # 365 days of simulations
+days = 120 # 365 days of simulations
 n_exp = 1
 seasonality = [0*(days//3), 1*(days//3), 2*(days//3)] # days at which the new season start
 # define the prices candidates for the first and second item
@@ -23,7 +23,7 @@ for season in range (3):
 
     for i in range(len(candidates_item1)):
         for c in range(4):
-                opt_rew_item1[i] += ctx.conversion_rate_first_element(candidates_item1[i],c,season) * candidates_item1[i] * ctx.customersDistribution[c,0]
+            opt_rew_item1[i] += ctx.conversion_rate_first_element(candidates_item1[i],c,season) * candidates_item1[i] * ctx.customersDistribution[c,0]
 
     for i in range(len(candidates_item2)):
         for c in range(4):
@@ -68,7 +68,7 @@ for e in range(n_exp):
     TS_learner_item1 = TS_Learner(len(candidates_item1))
     TS_learner_item2 = TS_Learner(len(candidates_item2))
     #UCB_matching_learner = UCB_Matching(np.zeros((4,4)).size, *np.zeros((4,4)).shape) # Initialize UCB matching learner
-    UCB_cd_matching_learner = promo_category_UCB_CD_learner( np.zeros((4,4)).size, *np.zeros((4,4)).shape, M=100, eps=0.05, h=20, alpha=0.01,starting_delay=1000,normalizing_value=630.0)
+    UCB_cd_matching_learner = promo_category_UCB_CD_learner( np.zeros((4,4)).size, *np.zeros((4,4)).shape, M=50, eps=0.05, h=20, alpha=0.01,starting_delay=1000,normalizing_value=630.0)
     opt_reward_item1 = []
     opt_reward_item2 = [] 
     swts_reward_item1 = []
