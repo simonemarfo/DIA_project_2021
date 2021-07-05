@@ -43,7 +43,7 @@ class Context():
                 ax.set_xlabel("price")
                 ax.set_ylabel("probabiliy")
                 ax.set_ylim(0,1)
-
+        fig.set_size_inches(20,17)
         plt.show()
     
     def plot_item1_conversion_rate(self):
