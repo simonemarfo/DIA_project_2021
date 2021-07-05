@@ -123,16 +123,16 @@ for e in range(n_exp):
             print(f'| Today customers distribution : {daily_customer_weight}')
             print(f'| Customer #{customer} of category: {ctx.classes_info[category]["name"]}: ')
             print(f'| {cus_swts_price_item1 = } --- {cus_swts_price_item2 = }')
-            print(f'| {cus_ts_price_item1 = } --- {cus_ts_price_item2 = }')
+            print(f'| {cus_swts_cd_price_item1 = } --- {cus_swts_cd_price_item2 = }')
             print(f'| {opt_price_item1 = } --- {opt_price_item2 = }')
             if np.array_equal(sub_swts_matching,opt_matching) :
                 print(f'/ <swts matching> : \x1b[6;30;42m{sub_swts_matching}\x1b[0m --> {round(cus_swts_price_item2_discounted,2) = }')
             else:
                 print(f'/ <swts matching> : {sub_swts_matching} --> {round(cus_swts_price_item2_discounted,2) = }')
-            if np.array_equal(sub_ts_matching,opt_matching):
-                print(f'/ <ts   matching> : \x1b[6;30;42m{sub_ts_matching}\x1b[0m --> {round(cus_ts_price_item2_discounted,2) = }')
+            if np.array_equal(sub_swts_cd_matching,opt_matching):
+                print(f'/ <ts   matching> : \x1b[6;30;42m{sub_swts_cd_matching}\x1b[0m --> {round(cus_swts_cd_price_item2_discounted,2) = }')
             else:
-                print(f'/ <ts   matching> : {sub_ts_matching} --> {round(cus_ts_price_item2_discounted,2) = }')
+                print(f'/ <ts   matching> : {sub_swts_cd_matching} --> {round(cus_swts_cd_price_item2_discounted,2) = }')
             print(f'\ <opt  matching> : {opt_matching} --> {round(opt_price_item2_discounted,2) = }')
 
             # storing rewards
