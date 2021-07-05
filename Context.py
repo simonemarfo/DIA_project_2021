@@ -187,4 +187,3 @@ class Context():
 #ctx = Context()
 #ctx.plot_item1_conversion_rate()
 #ctx.plot_item2_conversion_rate()
-#ctx.plot_customers_distribution()
