@@ -1,0 +1,8 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\babel@toc {english}{}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Section}{2}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{2}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{References}{2}% 

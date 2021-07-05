@@ -1,0 +1,653 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.11.2)  5 JUL 2021 14:26
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**"c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/main.tex"
+(c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/main.tex
+LaTeX2e <2019-10-01> patch level 1
+(c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/styleFile.tex (d:/Programmi/texlive/2019/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2019/08/27 v1.4j Standard LaTeX document class
+(d:/Programmi/texlive/2019/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2019/08/27 v1.4j Standard LaTeX file (size option)
+)
+\c@part=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+) (d:/Programmi/texlive/2019/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2018/04/16 v5.8 Page Geometry
+ (d:/Programmi/texlive/2019/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+) (d:/Programmi/texlive/2019/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
+) (d:/Programmi/texlive/2019/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+) (d:/Programmi/texlive/2019/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count88
+\Gm@cntv=\count89
+\c@Gm@tempcnt=\count90
+\Gm@bindingoffset=\dimen103
+\Gm@wd@mp=\dimen104
+\Gm@odd@mp=\dimen105
+\Gm@even@mp=\dimen106
+\Gm@layoutwidth=\dimen107
+\Gm@layoutheight=\dimen108
+\Gm@layouthoffset=\dimen109
+\Gm@layoutvoffset=\dimen110
+\Gm@dimlist=\toks15
+) (d:/Programmi/texlive/2019/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2018/08/11 v2.0j Standard LaTeX package
+ (d:/Programmi/texlive/2019/texmf-dist/tex/latex/base/t1enc.def
+File: t1enc.def 2018/08/11 v2.0j Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
+)) (d:/Programmi/texlive/2019/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2018/08/11 v1.3c Input encoding file
+\inpenc@prehook=\toks16
+\inpenc@posthook=\toks17
+) (d:/Programmi/texlive/2019/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2019/10/15 3.35 The Babel package
+ (d:/Programmi/texlive/2019/texmf-dist/tex/generic/babel/switch.def
+File: switch.def 2019/10/15 3.35 Babel switching mechanism
+) (d:/Programmi/texlive/2019/texmf-dist/tex/generic/babel-italian/italian.ldf
+Language: italian 2019/01/05 v.1.4.01 Italian support for the babel system
+ (d:/Programmi/texlive/2019/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2019/10/15 3.35 Babel common definitions
+\babel@savecnt=\count91
+\U@D=\dimen111
+ (d:/Programmi/texlive/2019/texmf-dist/tex/generic/babel/txtbabel.def)
+\bbl@dirlevel=\count92
+)
+\it@lettering=\count93
+\it@doublequoteactive=\count94
+\it@ISOcompliance=\count95
+) (d:/Programmi/texlive/2019/texmf-dist/tex/generic/babel-english/english.ldf
+Language: english 2017/06/06 v3.3r English support from the babel system
+\l@canadian = a dialect from \language\l@american 
+\l@australian = a dialect from \language\l@british 
+\l@newzealand = a dialect from \language\l@british 
+)) (d:/Programmi/texlive/2019/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count96
+) (d:/Programmi/texlive/2019/texmf-dist/tex/latex/tocloft/tocloft.sty
+Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
+Package tocloft Info: The document has section divisions on input line 51.
+\cftparskip=\skip43
+\cftbeforetoctitleskip=\skip44
+\cftaftertoctitleskip=\skip45
+\cftbeforepartskip=\skip46
+\cftpartnumwidth=\skip47
+\cftpartindent=\skip48
+\cftbeforesecskip=\skip49
+\cftsecindent=\skip50
+\cftsecnumwidth=\skip51
+\cftbeforesubsecskip=\skip52
+\cftsubsecindent=\skip53
+\cftsubsecnumwidth=\skip54
+\cftbeforesubsubsecskip=\skip55
+\cftsubsubsecindent=\skip56
+\cftsubsubsecnumwidth=\skip57
+\cftbeforeparaskip=\skip58
+\cftparaindent=\skip59
+\cftparanumwidth=\skip60
+\cftbeforesubparaskip=\skip61
+\cftsubparaindent=\skip62
+\cftsubparanumwidth=\skip63
+\cftbeforeloftitleskip=\skip64
+\cftafterloftitleskip=\skip65
+\cftbeforefigskip=\skip66
+\cftfigindent=\skip67
+\cftfignumwidth=\skip68
+\c@lofdepth=\count97
+\c@lotdepth=\count98
+\cftbeforelottitleskip=\skip69
+\cftafterlottitleskip=\skip70
+\cftbeforetabskip=\skip71
+\cfttabindent=\skip72
+\cfttabnumwidth=\skip73
+) (d:/Programmi/texlive/2019/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footers
+\f@nch@headwidth=\skip74
+\f@nch@O@elh=\skip75
+\f@nch@O@erh=\skip76
+\f@nch@O@olh=\skip77
+\f@nch@O@orh=\skip78
+\f@nch@O@elf=\skip79
+\f@nch@O@erf=\skip80
+\f@nch@O@olf=\skip81
+\f@nch@O@orf=\skip82
+) (d:/Programmi/texlive/2019/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+ (d:/Programmi/texlive/2019/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2019/10/08 v1.3c Standard LaTeX Graphics (DPC,SPQR)
+ (d:/Programmi/texlive/2019/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+) (d:/Programmi/texlive/2019/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 105.
+ (d:/Programmi/texlive/2019/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen112
+\Gin@req@width=\dimen113
+) (d:/Programmi/texlive/2019/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+ (d:/Programmi/texlive/2019/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+ (d:/Programmi/texlive/2019/texmf-dist/tex/latex/colortbl/colortbl.sty
+Package: colortbl 2018/12/12 v1.0d Color table columns (DPC)
+ (d:/Programmi/texlive/2019/texmf-dist/tex/latex/tools/array.sty
+Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
+\col@sep=\dimen114
+\ar@mcellbox=\box27
+\extrarowheight=\dimen115
+\NC@list=\toks18
+\extratabsurround=\skip83
+\backup@length=\skip84
+\ar@cellbox=\box28
+)
+\everycr=\toks19
+\minrowclearance=\skip85
+)
+\rownum=\count99
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+ (d:/Programmi/texlive/2019/texmf-dist/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
+)) (d:/Programmi/texlive/2019/texmf-dist/tex/latex/tabu/tabu.sty
+Package: tabu 2019/01/11 v2.9 - flexible LaTeX tabulars (FC+tabu-fixed)
+ (d:/Programmi/texlive/2019/texmf-dist/tex/latex/varwidth/varwidth.sty
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box29
+\sift@deathcycles=\count100
+\@vwid@loff=\dimen116
+\@vwid@roff=\dimen117
+)
+\c@taburow=\count101
+\tabu@nbcols=\count102
+\tabu@cnt=\count103
+\tabu@Xcol=\count104
+\tabu@alloc=\count105
+\tabu@nested=\count106
+\tabu@target=\dimen118
+\tabu@spreadtarget=\dimen119
+\tabu@naturalX=\dimen120
+\tabucolX=\dimen121
+\tabu@Xsum=\dimen122
+\extrarowdepth=\dimen123
+\abovetabulinesep=\dimen124
+\belowtabulinesep=\dimen125
+\tabustrutrule=\dimen126
+\tabu@thebody=\toks20
+\tabu@footnotes=\toks21
+\tabu@box=\box30
+\tabu@arstrutbox=\box31
+\tabu@hleads=\box32
+\tabu@vleads=\box33
+\tabu@cellskip=\skip86
+) (d:/Programmi/texlive/2019/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 2016/02/03 v2.11b `tabularx' package (DPC)
+\TX@col@width=\dimen127
+\TX@old@table=\dimen128
+\TX@old@col=\dimen129
+\TX@target=\dimen130
+\TX@delta=\dimen131
+\TX@cols=\count107
+\TX@ftn=\toks22
+) (d:/Programmi/texlive/2019/texmf-dist/tex/latex/ltablex/ltablex.sty
+Package: ltablex 2014/08/13 v1.1 Modified tabularx
+ (d:/Programmi/texlive/2019/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2019/02/06 v4.12 Multi-page Table package (DPC)
+\LTleft=\skip87
+\LTright=\skip88
+\LTpre=\skip89
+\LTpost=\skip90
+\LTchunksize=\count108
+\LTcapwidth=\dimen132
+\LT@head=\box34
+\LT@firsthead=\box35
+\LT@foot=\box36
+\LT@lastfoot=\box37
+\LT@cols=\count109
+\LT@rows=\count110
+\c@LT@tables=\count111
+\c@LT@chunks=\count112
+\LT@p@ftn=\toks23
+)) (d:/Programmi/texlive/2019/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count113
+\float@exts=\toks24
+\float@box=\box38
+\@float@everytoks=\toks25
+\@floatcapt=\box39
+) (d:/Programmi/texlive/2019/texmf-dist/tex/latex/multirow/multirow.sty
+Package: multirow 2019/05/31 v2.5 Span multiple rows of a table
+\multirow@colwidth=\skip91
+\multirow@cntb=\count114
+\multirow@dima=\skip92
+\bigstrutjot=\dimen133
+) (d:/Programmi/texlive/2019/texmf-dist/tex/latex/xurl/xurl.sty
+Package: xurl 2018/12/23 v 0.07 modify URL breaks
+ (d:/Programmi/texlive/2019/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip10
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)) (d:/Programmi/texlive/2019/texmf-dist/tex/latex/csquotes/csquotes.sty
+Package: csquotes 2019/05/10 v5.2e context-sensitive quotations (JAW)
+\csq@reset=\count115
+\csq@gtype=\count116
+\csq@glevel=\count117
+\csq@qlevel=\count118
+\csq@maxlvl=\count119
+\csq@tshold=\count120
+\csq@ltx@everypar=\toks26
+ (d:/Programmi/texlive/2019/texmf-dist/tex/latex/csquotes/csquotes.def
+File: csquotes.def 2019/05/10 v5.2e csquotes generic definitions (JAW)
+)
+Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
+Package csquotes Info: ... configuration file loaded successfully.
+ (d:/Programmi/texlive/2019/texmf-dist/tex/latex/csquotes/csquotes.cfg
+File: csquotes.cfg 
+)) (d:/Programmi/texlive/2019/texmf-dist/tex/latex/biblatex/biblatex.sty
+Package: biblatex 2019/08/31 v3.13a programmable bibliographies (PK/MW)
+ (d:/Programmi/texlive/2019/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2019/07/25 v0.30 Utility functions of pdfTeX for LuaTeX (HO)
+ (d:/Programmi/texlive/2019/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+) (d:/Programmi/texlive/2019/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+) (d:/Programmi/texlive/2019/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+) (d:/Programmi/texlive/2019/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+ (d:/Programmi/texlive/2019/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+ (d:/Programmi/texlive/2019/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+))) (d:/Programmi/texlive/2019/texmf-dist/tex/latex/logreq/logreq.sty
+Package: logreq 2010/08/04 v1.0 xml request logger
+\lrq@indent=\count121
+ (d:/Programmi/texlive/2019/texmf-dist/tex/latex/logreq/logreq.def
+File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
+)) (d:/Programmi/texlive/2019/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\c@tabx@nest=\count122
+\c@listtotal=\count123
+\c@listcount=\count124
+\c@liststart=\count125
+\c@liststop=\count126
+\c@citecount=\count127
+\c@citetotal=\count128
+\c@multicitecount=\count129
+\c@multicitetotal=\count130
+\c@instcount=\count131
+\c@maxnames=\count132
+\c@minnames=\count133
+\c@maxitems=\count134
+\c@minitems=\count135
+\c@citecounter=\count136
+\c@maxcitecounter=\count137
+\c@savedcitecounter=\count138
+\c@uniquelist=\count139
+\c@uniquename=\count140
+\c@refsection=\count141
+\c@refsegment=\count142
+\c@maxextratitle=\count143
+\c@maxextratitleyear=\count144
+\c@maxextraname=\count145
+\c@maxextradate=\count146
+\c@maxextraalpha=\count147
+\c@abbrvpenalty=\count148
+\c@highnamepenalty=\count149
+\c@lownamepenalty=\count150
+\c@maxparens=\count151
+\c@parenlevel=\count152
+\blx@tempcnta=\count153
+\blx@tempcntb=\count154
+\blx@tempcntc=\count155
+\blx@maxsection=\count156
+\blx@maxsegment@0=\count157
+\blx@notetype=\count158
+\blx@parenlevel@text=\count159
+\blx@parenlevel@foot=\count160
+\blx@sectionciteorder@0=\count161
+\blx@entrysetcounter=\count162
+\labelnumberwidth=\skip93
+\labelalphawidth=\skip94
+\biblabelsep=\skip95
+\bibitemsep=\skip96
+\bibnamesep=\skip97
+\bibinitsep=\skip98
+\bibparsep=\skip99
+\bibhang=\skip100
+\blx@bcfin=\read1
+\blx@bcfout=\write3
+\blx@langwohyphens=\language85
+\c@mincomprange=\count163
+\c@maxcomprange=\count164
+\c@mincompwidth=\count165
+Package biblatex Info: Trying to load biblatex default data model...
+Package biblatex Info: ... file 'blx-dm.def' found.
+ (d:/Programmi/texlive/2019/texmf-dist/tex/latex/biblatex/blx-dm.def
+File: blx-dm.def 2019/08/31 v3.13a biblatex localization (PK/MW)
+)
+Package biblatex Info: Trying to load biblatex citestyle data model...
+Package biblatex Info: ... file 'numeric.dbx' not found.
+Package biblatex Info: Trying to load biblatex custom data model...
+Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
+\c@afterword=\count166
+\c@savedafterword=\count167
+\c@annotator=\count168
+\c@savedannotator=\count169
+\c@author=\count170
+\c@savedauthor=\count171
+\c@bookauthor=\count172
+\c@savedbookauthor=\count173
+\c@commentator=\count174
+\c@savedcommentator=\count175
+\c@editor=\count176
+\c@savededitor=\count177
+\c@editora=\count178
+\c@savededitora=\count179
+\c@editorb=\count180
+\c@savededitorb=\count181
+\c@editorc=\count182
+\c@savededitorc=\count183
+\c@foreword=\count184
+\c@savedforeword=\count185
+\c@holder=\count186
+\c@savedholder=\count187
+\c@introduction=\count188
+\c@savedintroduction=\count189
+\c@namea=\count190
+\c@savednamea=\count191
+\c@nameb=\count192
+\c@savednameb=\count193
+\c@namec=\count194
+\c@savednamec=\count195
+\c@translator=\count196
+\c@savedtranslator=\count197
+\c@shortauthor=\count198
+\c@savedshortauthor=\count199
+\c@shorteditor=\count266
+\c@savedshorteditor=\count267
+\c@labelname=\count268
+\c@savedlabelname=\count269
+\c@institution=\count270
+\c@savedinstitution=\count271
+\c@lista=\count272
+\c@savedlista=\count273
+\c@listb=\count274
+\c@savedlistb=\count275
+\c@listc=\count276
+\c@savedlistc=\count277
+\c@listd=\count278
+\c@savedlistd=\count279
+\c@liste=\count280
+\c@savedliste=\count281
+\c@listf=\count282
+\c@savedlistf=\count283
+\c@location=\count284
+\c@savedlocation=\count285
+\c@organization=\count286
+\c@savedorganization=\count287
+\c@origlocation=\count288
+\c@savedoriglocation=\count289
+\c@origpublisher=\count290
+\c@savedorigpublisher=\count291
+\c@publisher=\count292
+\c@savedpublisher=\count293
+\c@language=\count294
+\c@savedlanguage=\count295
+\c@origlanguage=\count296
+\c@savedoriglanguage=\count297
+\c@pageref=\count298
+\c@savedpageref=\count299
+\shorthandwidth=\skip101
+\shortjournalwidth=\skip102
+\shortserieswidth=\skip103
+\shorttitlewidth=\skip104
+\shortauthorwidth=\skip105
+\shorteditorwidth=\skip106
+\locallabelnumberwidth=\skip107
+\locallabelalphawidth=\skip108
+\localshorthandwidth=\skip109
+\localshortjournalwidth=\skip110
+\localshortserieswidth=\skip111
+\localshorttitlewidth=\skip112
+\localshortauthorwidth=\skip113
+\localshorteditorwidth=\skip114
+Package biblatex Info: Trying to load compatibility code...
+Package biblatex Info: ... file 'blx-compat.def' found.
+ (d:/Programmi/texlive/2019/texmf-dist/tex/latex/biblatex/blx-compat.def
+File: blx-compat.def 2019/08/31 v3.13a biblatex compatibility (PK/MW)
+)
+Package biblatex Info: Trying to load generic definitions...
+Package biblatex Info: ... file 'biblatex.def' found.
+ (d:/Programmi/texlive/2019/texmf-dist/tex/latex/biblatex/biblatex.def
+File: biblatex.def 2019/08/31 v3.13a biblatex compatibility (PK/MW)
+\c@textcitecount=\count300
+\c@textcitetotal=\count301
+\c@textcitemaxnames=\count302
+\c@biburlbigbreakpenalty=\count303
+\c@biburlbreakpenalty=\count304
+\c@biburlnumpenalty=\count305
+\c@biburlucpenalty=\count306
+\c@biburllcpenalty=\count307
+\biburlbigskip=\muskip11
+\biburlnumskip=\muskip12
+\biburlucskip=\muskip13
+\biburllcskip=\muskip14
+\c@smartand=\count308
+)
+Package biblatex Info: Trying to load bibliography style 'numeric'...
+Package biblatex Info: ... file 'numeric.bbx' found.
+ (d:/Programmi/texlive/2019/texmf-dist/tex/latex/biblatex/bbx/numeric.bbx
+File: numeric.bbx 2019/08/31 v3.13a biblatex bibliography style (PK/MW)
+Package biblatex Info: Trying to load bibliography style 'standard'...
+Package biblatex Info: ... file 'standard.bbx' found.
+ (d:/Programmi/texlive/2019/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
+File: standard.bbx 2019/08/31 v3.13a biblatex bibliography style (PK/MW)
+\c@bbx:relatedcount=\count309
+\c@bbx:relatedtotal=\count310
+))
+Package biblatex Info: Trying to load citation style 'numeric'...
+Package biblatex Info: ... file 'numeric.cbx' found.
+ (d:/Programmi/texlive/2019/texmf-dist/tex/latex/biblatex/cbx/numeric.cbx
+File: numeric.cbx 2019/08/31 v3.13a biblatex citation style (PK/MW)
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\parencite'.
+Package biblatex Info: Redefining '\footcite'.
+Package biblatex Info: Redefining '\footcitetext'.
+Package biblatex Info: Redefining '\smartcite'.
+Package biblatex Info: Redefining '\supercite'.
+Package biblatex Info: Redefining '\textcite'.
+Package biblatex Info: Redefining '\textcites'.
+Package biblatex Info: Redefining '\cites'.
+Package biblatex Info: Redefining '\parencites'.
+Package biblatex Info: Redefining '\smartcites'.
+)
+Package biblatex Info: Trying to load configuration file...
+Package biblatex Info: ... file 'biblatex.cfg' found.
+ (d:/Programmi/texlive/2019/texmf-dist/tex/latex/biblatex/biblatex.cfg
+File: biblatex.cfg 
+)))
+Package csquotes Info: Checking for multilingual support...
+Package csquotes Info: ... found 'babel' package.
+Package csquotes Info: Adjusting default style.
+Package csquotes Info: Redefining alias 'default' -> 'english'.
+Package biblatex Info: Trying to load language 'english'...
+Package biblatex Info: ... file 'english.lbx' found.
+ (d:/Programmi/texlive/2019/texmf-dist/tex/latex/biblatex/lbx/english.lbx
+File: english.lbx 2019/08/31 v3.13a biblatex localization (PK/MW)
+)
+Package biblatex Info: Trying to load language 'italian'...
+Package biblatex Info: ... file 'italian.lbx' found.
+ (d:/Programmi/texlive/2019/texmf-dist/tex/latex/biblatex/lbx/italian.lbx
+File: italian.lbx 2019/08/31 v3.13a biblatex localization (PK/MW)
+) (c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/main.aux)
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: letterpaper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(92.14519pt, 430.00462pt, 92.14519pt)
+* v-part:(T,H,B)=(95.39737pt, 556.47656pt, 143.09605pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=430.00462pt
+* \textheight=556.47656pt
+* \oddsidemargin=19.8752pt
+* \evensidemargin=19.8752pt
+* \topmargin=-13.87262pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=44.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+LaTeX Info: Redefining \it@ocap on input line 2.
+LaTeX Info: Redefining \it@ccap on input line 2.
+(d:/Programmi/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count311
+\scratchdimen=\dimen134
+\scratchbox=\box40
+\nofMPsegments=\count312
+\nofMParguments=\count313
+\everyMPshowfont=\toks27
+\MPscratchCnt=\count314
+\MPscratchDim=\dimen135
+\MPnumerator=\count315
+\makeMPintoPDFobject=\count316
+\everyMPtoPDFconversion=\toks28
+) (d:/Programmi/texlive/2019/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+ (d:/Programmi/texlive/2019/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+ (d:/Programmi/texlive/2019/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+))
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 438.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+ (d:/Programmi/texlive/2019/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+))
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Automatic encoding selection.
+(biblatex)             Assuming data encoding 'utf8'.
+\openout3 = `main.bcf'.
+
+Package biblatex Info: Trying to load bibliographic data...
+Package biblatex Info: ... file 'main.bbl' found.
+ (c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/main.bbl)
+Package biblatex Info: Reference section=0 on input line 2.
+Package biblatex Info: Reference segment=0 on input line 2.
+ (c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Files/firstPage.tex
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <14.4> on input line 5.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 5.
+<Images/PolimiLogo.png, id=1, 405.515pt x 125.46875pt>
+File: Images/PolimiLogo.png Graphic file (type png)
+<use Images/PolimiLogo.png>
+Package pdftex.def Info: Images/PolimiLogo.png  used on input line 7.
+(pdftex.def)             Requested size: 202.75699pt x 62.7342pt.
+ [1
+
+{d:/Programmi/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Images/PolimiLogo.png>]) (c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/main.toc
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 4.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 4.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 4.
+)
+\tf@toc=\write4
+\openout4 = `main.toc'.
+
+ [1] (c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Files/section.tex)
+
+LaTeX Warning: Empty bibliography on input line 17.
+
+[2
+
+] (c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/main.aux)
+Package logreq Info: Writing requests to 'main.run.xml'.
+\openout1 = `main.run.xml'.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 12172 strings out of 492167
+ 208360 string characters out of 6124419
+ 701686 words of memory out of 5000000
+ 16366 multiletter control sequences out of 15000+600000
+ 11914 words of font info for 32 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 42i,7n,47p,1566b,1681s stack positions out of 5000i,500n,10000p,200000b,80000s
+{d:/Programmi/texlive/2019/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}<d:/Programmi/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb><d:/Programmi/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb><d:/Programmi/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb><d:/Programmi/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb><d:/Programmi/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb>
+Output written on "c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/main.pdf" (3 pages, 76655 bytes).
+PDF statistics:
+ 37 PDF objects out of 1000 (max. 8388607)
+ 24 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+

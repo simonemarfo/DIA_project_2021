@@ -5,11 +5,11 @@ from Algorithms.TS_Learner import *
 
 ctx = Context()
 days = 365 # 365 days of simulations
-n_exp = 10
+n_exp = 3
 
 # define the prices candidates for the first and second item
-candidates_item1 = [2110.0, 1900.0, 2130.0, 1920.0, 2340.0]
-candidates_item2 = [365.0, 400.0, 550.0, 510.0, 380.0]
+candidates_item1 = [2110.0, 1900.0, 2420.0, 2690.0]
+candidates_item2 = [360.0, 410.0, 530.0, 600.0]
 
 # optimal solution for the seasoson with this candidates
 opt_prices,opt_matching, best_daily_reward = ctx.correlated_optimal_solution(candidates_item1,candidates_item2,season=0) # return  best_prices[p1,p2],best_matching, best_reward
@@ -46,6 +46,7 @@ for e in range(n_exp):
             ts_pulled_arm = ts_learner.pull_arm() # number between 0..24
             cus_price_item1 = candidates_item1[ts_pulled_arm // len(candidates_item1)]
             cus_price_item2 = candidates_item2[ts_pulled_arm % len(candidates_item2)]
+
             # query the corresponding superarm learner 
             sub_matching = matching_learners[ts_pulled_arm].pull_arm() # suboptimal matching. row_ind, col_ind
             cus_price_item2_discounted = cus_price_item2 * (1-ctx.discount_promos[ sub_matching[1][category] ])
@@ -69,7 +70,8 @@ for e in range(n_exp):
 
             # update learners
             ts_learner.update(ts_pulled_arm, (customer_reward_item1 + customer_reward_item2 )/normalizing_value)
-            matching_learners[ts_pulled_arm].update(sub_matching, customer_reward_item2, category=category)
+            if cus_buy_or_not_item1:
+                matching_learners[ts_pulled_arm].update(sub_matching, customer_reward_item2, category=category)
             
             print('___________________')
             print(f'| Day: {d+1} - Experiment {e+1}')
@@ -80,7 +82,6 @@ for e in range(n_exp):
             print(f'/ <sub matching> : {sub_matching} --> {round(cus_price_item2_discounted,2) = }')
             print(f'\ <opt matching> : {opt_matching} --> {round(opt_price_item2_discounted,2) = }')
 
-        
             # storing rewards
             daily_cus_reward += (customer_reward_item1 + customer_reward_item2 )
             daily_opt_reward += (opt_customer_reward_item1 + opt_customer_reward_item2 )

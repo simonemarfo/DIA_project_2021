@@ -1,0 +1,33 @@
+\documentclass [12pt,letterpaper]{article}
+%Page margins, header and footer positions
+\usepackage{geometry}
+\usepackage[T1]{fontenc} % font encoding
+\usepackage[utf8]{inputenc} 
+\usepackage[italian,english]{babel}
+
+%To display filling dots in the TOC for all entries
+\usepackage[titles]{tocloft}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+
+%Define new header and footer style
+\usepackage{fancyhdr}
+
+%graphics
+\usepackage{graphicx}
+\usepackage[dvipsnames, table]{xcolor}
+
+%tables
+\usepackage{tabu}
+\usepackage{tabularx}
+\usepackage{ltablex}
+\usepackage{longtable}
+\usepackage{float} % To allow the use of H modifier in long tables
+\usepackage{multirow}
+
+%url write style
+\usepackage{xurl}
+
+%bibliography
+\usepackage{csquotes}
+\usepackage[backend=biber, sorting=none, citestyle=numeric]{biblatex}
+\addbibresource{bibliography.bib}

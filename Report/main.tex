@@ -1,0 +1,19 @@
+\input{styleFile}
+\begin{document}
+	%Title page
+	\input{Files/firstPage}
+	%Table of contents
+	\tableofcontents
+	%----
+    \clearpage
+    %---
+	\section*{Section}
+    \label{sect:Section}
+    \addcontentsline{toc}{section}{Section}
+	\input{Files/section}	
+    %---
+    \label{sect:References}
+    \addcontentsline{toc}{section}{References}
+    \printbibliography[title={References}]
+	%---	
+\end{document}

@@ -4,15 +4,11 @@ from Algorithms.promo_category_UCB_learner import *
 from Algorithms.TS_Learner import *
 from Algorithms.SWTS_Learner import *
 
-#colors
-import os
-os.system("")
-
 ctx = Context()
 days = 365 # 365 days of simulations
-n_exp = 1
+n_exp = 3
 seasonality = [0*(days//3), 1*(days//3), 2*(days//3)] # days at which the new season start
-window_size = int(np.sqrt(days*1000) * 80)
+window_size = int(np.sqrt(days*1000) * 30)
 season = 0
 
 # define the prices candidates for the first and second item
@@ -113,9 +109,10 @@ for e in range(n_exp):
             # update learners
             swts_learner.update(swts_pulled_arm, (cus_swts_reward_item1 + cus_swts_reward_item2 )/normalizing_value)
             ts_learner.update(ts_pulled_arm, (cus_ts_reward_item1 + cus_ts_reward_item2 )/normalizing_value)
-
-            matching_swts_learners[swts_pulled_arm].update(sub_swts_matching, cus_swts_reward_item2, category=category)
-            matching_ts_learners[ts_pulled_arm].update(sub_ts_matching, cus_ts_reward_item2, category=category)
+            if cus_swts_buy_or_not_item1:
+                matching_swts_learners[swts_pulled_arm].update(sub_swts_matching, cus_swts_reward_item2, category=category)
+            if cus_ts_buy_or_not_item1:
+                matching_ts_learners[ts_pulled_arm].update(sub_ts_matching, cus_ts_reward_item2, category=category)
 
             print('___________________')
             print(f'| Day: {d+1} - Experiment {e+1}')
@@ -124,14 +121,8 @@ for e in range(n_exp):
             print(f'| {cus_swts_price_item1 = } --- {cus_swts_price_item2 = }')
             print(f'| {cus_ts_price_item1 = } --- {cus_ts_price_item2 = }')
             print(f'| {opt_price_item1 = } --- {opt_price_item2 = }')
-            if np.array_equal(sub_swts_matching,opt_matching) :
-                print(f'/ <swts matching> : \x1b[6;30;42m{sub_swts_matching}\x1b[0m --> {round(cus_swts_price_item2_discounted,2) = }')
-            else:
-                print(f'/ <swts matching> : {sub_swts_matching} --> {round(cus_swts_price_item2_discounted,2) = }')
-            if np.array_equal(sub_ts_matching,opt_matching):
-                print(f'/ <ts   matching> : \x1b[6;30;42m{sub_ts_matching}\x1b[0m --> {round(cus_ts_price_item2_discounted,2) = }')
-            else:
-                print(f'/ <ts   matching> : {sub_ts_matching} --> {round(cus_ts_price_item2_discounted,2) = }')
+            print(f'/ <swts matching> : {sub_swts_matching} --> {round(cus_swts_price_item2_discounted,2) = }')
+            print(f'/ <ts   matching> : {sub_ts_matching} --> {round(cus_ts_price_item2_discounted,2) = }')
             print(f'\ <opt  matching> : {opt_matching} --> {round(opt_price_item2_discounted,2) = }')
 
             # storing rewards
