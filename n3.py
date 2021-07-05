@@ -18,7 +18,7 @@ for i in range(4):
 candidates_item1 = [2260.0,1910.0,2130.0, 2010.0, 2340.0]
 
 days = 10
-n_exp = 5
+n_exp = 20
 observation = (days//2)*1000
 ts_experiments = np.zeros((n_exp,observation))
 ucb_experiments = np.zeros((n_exp,observation))

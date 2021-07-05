@@ -171,8 +171,26 @@ INPUT d:/Programmi/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
 INPUT d:/Programmi/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm
 INPUT d:/Programmi/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm
 OUTPUT c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/main.toc
-INPUT c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Files/section.tex
-INPUT c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Files/section.tex
+INPUT c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Files/introduction.tex
+INPUT c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Files/introduction.tex
+INPUT c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Files/formal_model.tex
+INPUT c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Files/formal_model.tex
+INPUT c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Files/random_variables.tex
+INPUT c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Files/random_variables.tex
+INPUT c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Files/experimetn_context.tex
+INPUT c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Files/experimetn_context.tex
+INPUT c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Files/n3.tex
+INPUT c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Files/n3.tex
+INPUT c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Files/n4.tex
+INPUT c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Files/n4.tex
+INPUT c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Files/n5.tex
+INPUT c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Files/n5.tex
+INPUT c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Files/n6.tex
+INPUT c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Files/n6.tex
+INPUT c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Files/n7.tex
+INPUT c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Files/n7.tex
+INPUT c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Files/n8.tex
+INPUT c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Files/n8.tex
 INPUT c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/main.aux
 INPUT c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/main.run.xml
 OUTPUT c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/main.run.xml

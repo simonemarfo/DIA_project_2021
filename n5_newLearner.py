@@ -101,8 +101,8 @@ for e in range(n_exp):
                 
             
             # item1 + item2 reward curve 
-            period_UCB_reward.append(customer_UCB_reward)#(customer_item1_reward + customer_UCB_reward)
-            period_opt_reward.append(customer_opt_reward)#(customer_item1_reward + customer_opt_reward)
+            period_UCB_reward.append(customer_UCB_reward) # (customer_item1_reward + customer_UCB_reward)
+            period_opt_reward.append(customer_opt_reward) # (customer_item1_reward + customer_opt_reward)
         
         day_UCB_reward.append(sum(period_UCB_reward[prev_size:]))
         day_opt_reward.append(sum(period_opt_reward[prev_size:]))

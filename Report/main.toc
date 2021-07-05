@@ -1,8 +1,26 @@
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
 \babel@toc {english}{}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Section}{2}% 
+\contentsline {section}{Introduction}{2}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{}{2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{References}{2}% 
+\contentsline {section}{Formnal Model}{2}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Random Varaibles}{2}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Experiment Context}{2}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Online pricing for first item}{2}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Online pricing for first item with purchase simulation}{2}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Matching problem: promo assignment}{3}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Pricing and Matching problem}{3}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Seasonal Pricing and Matching problem: Sliding Window}{3}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Seasonal Pricing and Matching problem: Change Detection}{4}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{References}{4}% 
