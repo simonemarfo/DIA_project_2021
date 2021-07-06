@@ -1,4 +1,13 @@
 \subparagraph*{Problem explaination}
+The problem requires to optimize the assignment of the problem using an assignment algorithm, in the following scenario:
+\begin{itemize}
+	\item The prices are fixed
+	\item All the parameter need to be learnt
+\end{itemize}
 \subparagraph*{Strategy}
+DIRE CHE BANDIT PROBLEM è e RIVEDERE SE QUELLI PRECEDENTI SONO GIUSTI. AGGIUNGERE UN PO' DI TEORIA
+We simulate the randomly arrival of the customers and the purchase of the first item. In case of purchase of the first item, we retrieve the optimal matching for the user categories from the learner (UCB matching) and we propose the second item to him, at the discounted price based on the matching suggested by the learner. The learner provides us a set of arms, so we cannot update it with the reward given by the single customer. We introduce two matrixes of shape (|User category |, |Type of promo|), every cell represents the matching between a specific customer category and a specific promo.The first matrix contains the sum of the rewards for that matching, the second contains the number of occurences that the matching has been chosen. At the beginning of the simulation, we use the first 1000 samples (customers) to initialize the two matrix, forcing all the possible combinations of matching. In this way we can update the learner, customer by customer, using the average reward for every matching. 
+\subparagraph*{UCB Matching}
+NOTATION AND PSEUDOCODE
 \subparagraph*{Results}
 \subparagraph*{Considerations}

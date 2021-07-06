@@ -1,0 +1,55 @@
+\subsection{Assumption}
+This is the mathematical formulation for the pure pricing problem of maximization of the total reward. We consider the production costs of both the item equals to zero.
+
+\subsection{Variables definition}
+\begin{itemize}
+\item $i$= user class 
+\item $j$ = promo code -> P0 = 0\%, P1 = 10\%, P2 = 20\%, P3 = 30\%
+\item $p1$ = full price item 1
+\item $p2$ = full price item 2
+\item $p2_j$ = price of item 2 when applied the promo j
+\item $c1$ = production cost item 1 = 0
+\item $c2$ = production cost item 2 = 0
+\item $q1_i(p1)$ = conversion rate for user class i, for product 1, based on price p1
+\item $q2_i(p2)$ = conversion rate for user class i, for product 2, based on price p2
+\item $s_{ji}(p2)$ = discounted price of item 2, for user class i, based on promo j
+\item $d_{ij}$ = amount of promo j distributed to user class i
+\item $maxd$ = max number of promos to distribute -> \#P1+\#P2+\#P3
+\item $avgCustomer_i$= avg number of customers for class i
+\end{itemize}
+
+
+\subsection{Formulation of elaborated variables}
+\begin{itemize}
+\item $p1*q1_i(p1)*avgCustomer_i$ = revenue at price p for product 1 
+\item $s_{ji}(p2)*q2_i(s_{ji}(p2))*d_{ij}*avgCustomer_i$ = revenue for the couple promo-class for item2
+\item $(p1*q1_i(p1)-c1*q1_i(p1))*avgCustomer_i$ = reward item 1 
+\item $(q2_i(p2)*(s_{ji}(p2)*q2_i(s_{ji}(p2))*d_{ij}-q2_i(s_{ji}(p2)))*c2)*avgCustomer_i$ = reward item 2
+\end{itemize}
+
+\subsection{Objective Function}
+$\textrm {max} ( \sum \limits _{i = 0, j = 0} ^{i = 4, j = 4}[(p1*q1_i(p1) - c1*q1_i(p1) + q2_i(p2)(s_{ji}(p2)*q2_i(s_{ji}(p2))*d_{ij} -  q2_i(s_{ji}(p2))*c2))*avgCustomer_i])$
+
+\textbf{s.t:} $ \forall j>0 : [\sum \limits _{i = 0} ^{i = 4} d_{ij}] = maxd $
+\\
+We have fixed the full prices of the two items: $p1$, $p2$. We retrieve the discounted prices of $p2$, applying the promos $j$.<br>
+We know: the average number of customers per class i $avgCustomer_i$, the conversion rate for both products ($q1_i(p1)$, $q2_i(p2)$) and the maximum number of promos to distribute ($maxd$).
+We are assuming that the production costs of the two items are zero ($c1$, $c2$ = 0). 
+It is possible to retrieve the total revenue for product 1 as the product between the price of the item 1, the conversion rate for the considered class and the average number of customers for that class:
+$(p1 * q1_i(p1) * avgCustomer_i)$. For the second item the calculation of the reward is the same except for the fact that the product is buyed only if also the first one is purchased (so we multiply also the conversion rate of the first item) and the price is discounted by the selected promo. 
+
+The solution of our optimization problem consists in the distribution of the fraction of promo codes among the user classes.
+
+\subsection{Promo Assignment Assumption and Implementation}
+
+Now, we consider the constraints that the shop uses a randomized approach to assure that a fraction of the customers of a given class gets a specified promo according to the optimal solution.
+We achieve the solution of the problem using a matching approach. 
+To reach the optimal solution we have used an iterative approach: we build a matrix class promotion containing the mean expected rewards for every couple, calculated as the conversion rate of the second item multiplied with its discounted price.
+We exploit this matrix to perform the matching between the customer classes and the promo types, in order to maximize the total reward. 
+We select the best reward for every class, for 4 times, retrieving, at every iteration, the 4 combination promo-class and assigning an infinite weight to the obtained sub-optimal matching.
+Every matching is represented by a reward configuration that maximize the total reward. Every iteration is weighted and represent a different goodnesses of the solution, the first is the best, the last is the worst.
+Through the sub-optimal matchings, we have retrieved the fractions of different promos to assign to every customer class, based on the proportional weight of the previous sub-optimal matching.
+The proportions retrieved, are normalized class per class.
+
+
+
