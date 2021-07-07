@@ -184,6 +184,7 @@ class Context():
         return best_prices,best_matching, best_reward
 
 
-#ctx = Context()
-#ctx.plot_item1_conversion_rate()
-#ctx.plot_item2_conversion_rate()
+""" ctx = Context()
+ctx.plot_item1_conversion_rate()
+ctx.plot_item2_conversion_rate()
+ctx.plot_customers_distribution() """

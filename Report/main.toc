@@ -1,46 +1,26 @@
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
 \babel@toc {english}{}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Introduction}{2}{}%
+\contentsline {section}{Introduction}{2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {0.1}Scenario}{2}{}%
+\contentsline {paragraph}{}{2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {0.2}Environment}{2}{}%
+\contentsline {section}{Formnal Model}{4}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{2}{}%
+\contentsline {section}{Random Varaibles}{8}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {0.3}Steps}{2}{}%
+\contentsline {section}{Experiment Context}{12}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {0.4}Context Modeling}{3}{}%
+\contentsline {section}{Online pricing for first item}{12}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Formnal Model}{4}{}%
+\contentsline {section}{Online pricing for first item with purchase simulation}{15}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {0.5}Assumption}{4}{}%
+\contentsline {section}{Matching problem: promo assignment}{15}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {0.6}Variables definition}{4}{}%
+\contentsline {section}{Pricing and Matching problem}{16}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {0.7}Formulation of elaborated variables}{5}{}%
+\contentsline {section}{Seasonal Pricing and Matching problem: Sliding Window}{16}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {0.8}Objective Function}{5}{}%
+\contentsline {section}{Seasonal Pricing and Matching problem: Change Detection}{17}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {0.9}Promo Assignment Assumption and Implementation}{5}{}%
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{Random Varaibles}{6}{}%
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {0.10}Online Approach}{8}{}%
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{Experiment Context}{9}{}%
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{Online pricing for first item}{9}{}%
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{Online pricing for first item with purchase simulation}{11}{}%
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{Matching problem: promo assignment}{12}{}%
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{Pricing and Matching problem}{13}{}%
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{Seasonal Pricing and Matching problem: Sliding Window}{13}{}%
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{Seasonal Pricing and Matching problem: Change Detection}{13}{}%
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{References}{13}{}%
+\contentsline {section}{References}{17}% 

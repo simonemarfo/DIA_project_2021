@@ -1,10 +1,10 @@
-items_info = [{'id':0, 'name':'Item-1'},
-         {'id':1, 'name':'Item-2'}]
+items_info = [  {'id':0, 'name':'Racing Skis'},
+                {'id':1, 'name':'Racing Ski Helmet'}]
 
-classes_info = [{'id':0, 'name':'Category-1','color':'r'}, #COMPRA A QUALSIASI PREZZO
-                {'id':1, 'name':'Category-2','color':'b'},         #REGALA LA BICI
-                {'id':2, 'name':'Category-3','color':'g'},        #FA SPORT OGNI TANTO
-                {'id':3, 'name':'Category-4','color':'y'}]        #STA ATTENTO A SPENDERE
+classes_info = [{'id':0, 'name':'Sport Addicted','color':'r'},
+                {'id':1, 'name':'Gifter','color':'b'},         
+                {'id':2, 'name':'Amateur','color':'g'},        
+                {'id':3, 'name':'Worried','color':'y'}]        
 
 
 item1_prices = [1800.0, 1900.0, 2000.0, 2100.0, 2200.0, 2300.0, 2400.0, 2500.0, 2600.0, 2700.0]
@@ -23,10 +23,10 @@ gaussDistributionParam =[[.15,.03],
 no_promo1=.7
 no_promo2=.65
 
-item1_probabilities =[{'id':0,'name':'Spring-Summer', 'probabilities':[[.80, .72, .55, .53, .5, .45, .4, .35, .3, .3],              #MTB - Sport Addicted
-                                                                        [.70, .65, .5, .4, .4, .38, .35, .32, .25, .20],            #MTB - Gifter
-                                                                        [.80, .72, .45, .42, .37, .35, .30, .28, .25, .20],         #MTB - Amateur
-                                                                        [.80, .72, .38, .35, .3, .15, .12, .1, .1, .08]]},          #MTB - Worried
+item1_probabilities =[{'id':0,'name':'Spring-Summer', 'probabilities':[[.80, .72, .55, .53, .5, .45, .4, .35, .3, .3],              #Skis - Sport Addicted
+                                                                        [.70, .65, .5, .4, .4, .38, .35, .32, .25, .20],            #Skis - Gifter
+                                                                        [.80, .72, .45, .42, .37, .35, .30, .28, .25, .20],         #Skis - Amateur
+                                                                        [.80, .72, .38, .35, .3, .15, .12, .1, .1, .08]]},          #Skis - Worried
                       {'id':1,'name':'Autumn', 'probabilities':[[.40, .55, .58, .62, .62, .68, .80, .87, .87, .82],
                                                                  [.33, .35, .39, .40, .45, .50, .75, .78, .80, .81],
                                                                  [.35, .40, .45, .51, .53, .76, .80, .71, .70, .65],
@@ -38,7 +38,7 @@ item1_probabilities =[{'id':0,'name':'Spring-Summer', 'probabilities':[[.80, .72
                     ]
                       
 
-item2_probabilities = [{'id':0,'name':'Spring-Summer', 'probabilities':[[.9, .88, .79, .72, .68, .58, .56 ,.5, .45, .4, .35, .3, .3],    #GARMIN - Sport Addicted ...
+item2_probabilities = [{'id':0,'name':'Spring-Summer', 'probabilities':[[.9, .88, .79, .72, .68, .58, .56 ,.5, .45, .4, .35, .3, .3],    #Helmet - Sport Addicted ...
                                                                         [.78, .75 ,.7, .65, .57, .5,.42, .4, .38, .35, .31, .25, .20],
                                                                         [.70, .68, .65, .59, .52, .41, .40 ,.37, .35, .30, .28, .28, .20],
                                                                         [.60, .58 ,.54, .5, .45, .38, .35, .3, .15, .12, .1, .1, .08]]},
