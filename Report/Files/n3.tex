@@ -38,9 +38,7 @@ Pseudocode\\
 
 2. At every time $t$ play arm $a$ such that:
 
-
-
-3. $a_{t} \leftarrow \argmax_a{\left\{\left[\bar{x}_{a} + \sqrt{\frac{2 log(t)}{{n_{a}(t-1)}} }\right]\times a\right\}}$
+$a_{t} \leftarrow \argmax_a{\left\{\left[\bar{x}_{a} + \sqrt{\frac{2 log(t)}{{n_{a}(t-1)}} }\right]\times a\right\}}$
 
 \subparagraph*{Thompson Sampling (TS)}
 Main idea:
@@ -76,4 +74,7 @@ $(\alpha_{a_{t}}, \beta_{a_{t}}) \leftarrow (\alpha_{a_{t}}, \beta_{a_{t}}) + (x
 
 
 \subparagraph*{Results}
+\begin{center}
+	\includegraphics[scale=1]{Images/n3}
+\end{center}
 \subparagraph*{Considerations}
