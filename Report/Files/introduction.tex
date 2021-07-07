@@ -1,12 +1,12 @@
-\subsection{Scenario}
+\subsection*{Scenario}
  Consider the scenario in which a shop has a number of promo codes to incentivize the customers that buy an item to buy a different item. The customers can belong to different classes and the promo codes can provide different discounts. 
-\subsection{Environment}
+\subsection*{Environment}
  Imagine two items (referred to as first and second items; for each item we have an infinite number of units) and four customers’ classes. The daily number of customers of each class is described by a potentially different (truncated) Gaussian probability distribution. Each class is also associated with a potentially different conversion rate returning the probability that the user will buy the first item at a given price.
 \paragraph{}
 Once a buyer has bought the item, she/he can decide to buy the second item that can be or not promoted. There are four different promos P0, P1, P2, P3, each corresponding to a different level of discount. P0 corresponds to no discount. Given the total number of customers, the business unit of the shop decides the number of promos as a fraction of the total number of the daily customers and is fixed (use two different settings in your experiments that you are free to choose). Each customers’ class is also associated with a potentially different conversion rate returning the probability that the user will buy the second item at a given price after she/he has bought the first. The promos will affect the conversion rate as they actually reduce the price. 
 Every price available is associated with a margin obtained by the sale that is known beforehand. This holds both for the first and the second item. 
 The conversion rates will change during time according to some phases due to, e.g., seasonality.
-\subsection{Steps}
+\subsection*{Steps}
 \begin{enumerate}
 \item Provide a mathematical formulation of the problem in the case in which the daily optimization is performed using the average number of customers per class. Provide an algorithm to find the optimal solution in the offline case in which all the parameters are known. Then, during the day when customers arrive, the shop uses a randomized approach to assure that a fraction of the customers of a given class gets a specified promo according to the optimal solution. For instance, at the optimal solution, a specific fraction of the customers of the first class gets P0, another fraction P1, and so on. These fractions will be used as probabilities during the day.
 \item Consider the online learning version of the above optimization problem, identify the random variables, and choose a model for them when each round corresponds to a single day. Consider a time horizon of one year.
@@ -17,11 +17,29 @@ The conversion rates will change during time according to some phases due to, e.
 \item Do the same as Step 6 when the conversion rates are not stationary. Adopt a sliding-window approach.
 \item Do the same as Step 6 when the conversion rates are not stationary. Adopt a change-detection test approach.
 \end{enumerate}
-\subsection{Context Modeling}
-We have considered a ski shop that sells racing skies as first item and racing ski helmets as second item. The optimization problem is based on a time horizon of one year, taking into account three seasons that change the conversion rates of the two items. We split the customers into four categories:
-\begin{enumerate}
-	\item Sport addicted: who loves and practices ski
-	\item Gifter: who wants to give away the two items
-	\item Worried: who pays a lot of attention to the price of the items
-	\item Amateur: who sometimes practices ski
-\end{enumerate}
+\subsection*{Context Modeling}
+We have considered a ski shop that sells racing skis as first item and racing ski helmets as second item. The optimization problem have a time horizon of one year, splitted in three seasons that change the conversion rates of the two items. Customers are splitted into four different categories that define their purchasing behavior (conversion rates), according to the season and the price of the item.
+
+\begin{center}
+	\begin{tabular}{ |c|c|p{9cm}| } 
+	\hline
+	\multirow{3}{4em}{Items} & Racing Skis & Professional racing skis \\ 
+	& Racing Ski Helmet &  Professional racing skis helmet\\ 
+	\hline
+	\multirow{3}{4em}{Customer categories} & Sport addicted & Who loves and practices ski frequently\\ 
+	& Gifter &  Who wants to give away the both items\\
+	& Worried &  Who pays a lot of attention to the price of the items\\ 
+	& Amateur &  Who sometimes practices ski\\ 
+	\hline
+	\multirow{3}{4em}{seasons} & Spring-Summer & Buyers are not tempted to spend a lot, ski season is far away\\ 
+	& Autumn & Buyers are willing to spend in anticipation of the arrival of the ski season \\
+	& Winter &  Ski season has begun, those who have not yet bought the equipment have hurried to buy it so as not to waste the season\\  
+	\hline
+	\end{tabular}
+	\end{center}
+
+\subsection*{Assumption}
+\begin{itemize}
+		\item Seasonality is taken into accout only for the 7$^{th}$, 8$^{th}$ requests, while for all the other, the seasonality of the products is not considered and the conversion rates remain static. For this requests the default season is the first one, in our context called Spring.  
+		\item In our mathematical formulation, for the total reward maximization problem, we consider the production cost of both the items equal to zero.
+\end{itemize}
