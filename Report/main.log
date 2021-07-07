@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.11.2)  7 JUL 2021 16:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.11.2)  7 JUL 2021 17:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -713,32 +713,63 @@ Underfull \hbox (badness 10000) in paragraph at lines 28--31
  []
 
 [5] [6]
-<Images/CustomerDistribution.png, id=40, 368.87813pt x 202.50656pt>
-File: Images/CustomerDistribution.png Graphic file (type png)
-<use Images/CustomerDistribution.png>
-Package pdftex.def Info: Images/CustomerDistribution.png  used on input line 58.
-(pdftex.def)             Requested size: 368.87721pt x 202.50604pt.
-) (c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Files/random_variables.tex
-Underfull \vbox (badness 10000) detected at line 19
+<Images/n1_results.png, id=40, 533.49312pt x 97.36375pt>
+File: Images/n1_results.png Graphic file (type png)
+<use Images/n1_results.png>
+Package pdftex.def Info: Images/n1_results.png  used on input line 57.
+(pdftex.def)             Requested size: 480.13937pt x 87.62654pt.
+
+Overfull \hbox (50.13475pt too wide) in paragraph at lines 57--58
+ [] 
  []
 
+<Images/n1_chart.png, id=41, 745.8264pt x 544.1931pt>
+File: Images/n1_chart.png Graphic file (type png)
+<use Images/n1_chart.png>
+Package pdftex.def Info: Images/n1_chart.png  used on input line 60.
+(pdftex.def)             Requested size: 522.07492pt x 380.93256pt.
+
+Overfull \hbox (92.0703pt too wide) in paragraph at lines 60--61
+ [] 
+ []
+
+[7 <c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Images/n1_results.png>]) (c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Files/random_variables.tex
+Underfull \vbox (badness 10000) detected at line 20
+ []
+
+[8 <c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Images/n1_chart.png>]
+<Images/CustomerDistribution.png, id=50, 648.9846pt x 472.6458pt>
 File: Images/CustomerDistribution.png Graphic file (type png)
 <use Images/CustomerDistribution.png>
-Package pdftex.def Info: Images/CustomerDistribution.png  used on input line 22.
-(pdftex.def)             Requested size: 368.87721pt x 202.50604pt.
-[7 <c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Images/CustomerDistribution.png>]
-<Images/CR_fstItem.png, id=44, 774.64406pt x 627.09282pt>
+Package pdftex.def Info: Images/CustomerDistribution.png  used on input line 23.
+(pdftex.def)             Requested size: 519.18839pt x 378.11714pt.
+
+Overfull \hbox (89.18376pt too wide) in paragraph at lines 23--24
+ [] 
+ []
+
+[9 <c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Images/CustomerDistribution.png>]
+<Images/CR_fstItem.png, id=55, 874.467pt x 648.2619pt>
 File: Images/CR_fstItem.png Graphic file (type png)
 <use Images/CR_fstItem.png>
-Package pdftex.def Info: Images/CR_fstItem.png  used on input line 35.
-(pdftex.def)             Requested size: 387.32108pt x 313.54564pt.
- [8]
-<Images/CR_scndItem.png, id=48, 798.73407pt x 622.57594pt>
+Package pdftex.def Info: Images/CR_fstItem.png  used on input line 34.
+(pdftex.def)             Requested size: 437.23242pt x 324.13016pt.
+
+Overfull \hbox (7.2278pt too wide) in paragraph at lines 34--35
+ [] 
+ []
+
+<Images/CR_scndItem.png, id=56, 879.5259pt x 690.9012pt>
 File: Images/CR_scndItem.png Graphic file (type png)
 <use Images/CR_scndItem.png>
-Package pdftex.def Info: Images/CR_scndItem.png  used on input line 39.
-(pdftex.def)             Requested size: 399.36606pt x 311.2872pt.
- [9 <c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Images/CR_fstItem.png>]) (c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Files/experimetn_context.tex) (c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Files/n3.tex [10 <c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Images/CR_scndItem.png>] [11]
+Package pdftex.def Info: Images/CR_scndItem.png  used on input line 38.
+(pdftex.def)             Requested size: 439.76187pt x 345.44975pt.
+
+Overfull \hbox (9.75725pt too wide) in paragraph at lines 38--39
+ [] 
+ []
+
+[10 <c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Images/CR_fstItem.png>]) [11 <c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Images/CR_scndItem.png>] (c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Files/experimetn_context.tex) (c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Files/n3.tex [12]
 Underfull \hbox (badness 10000) in paragraph at lines 20--21
 
  []
@@ -748,7 +779,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 35--36
 
  []
 
-[12]
+[13]
 Underfull \hbox (badness 10000) in paragraph at lines 56--57
 
  []
@@ -768,38 +799,38 @@ Underfull \hbox (badness 10000) in paragraph at lines 71--72
 
  []
 
-) (c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Files/n4.tex [13]) (c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Files/n5.tex
+) (c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Files/n4.tex [14]) (c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Files/n5.tex
 Overfull \hbox (13.68759pt too wide) in paragraph at lines 8--10
  \T1/cmr/bx/n/12 Strat-egy \T1/cmr/m/n/12 DIRE CHE BAN-DIT PROB-LEM è e RIVEDERE SE QUELLI PRECE-
  []
 
-[14]) (c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Files/n6.tex)
+[15]) (c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Files/n6.tex)
 Overfull \hbox (2.31444pt too wide) in paragraph at lines 53--53
 []\T1/cmr/bx/n/17.28 Seasonal Pric-ing and Match-ing prob-lem: Slid-ing Win-
  []
 
-(c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Files/n7.tex) (c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Files/n8.tex [15])
+(c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Files/n7.tex) [16] (c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Files/n8.tex)
 
 LaTeX Warning: Empty bibliography on input line 65.
 
-[16] (c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/main.aux)
+[17] (c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/main.aux)
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 13006 strings out of 492167
- 220869 string characters out of 6124419
- 719360 words of memory out of 5000000
- 17128 multiletter control sequences out of 15000+600000
+ 13022 strings out of 492167
+ 221221 string characters out of 6124419
+ 718336 words of memory out of 5000000
+ 17142 multiletter control sequences out of 15000+600000
  20055 words of font info for 55 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,9n,47p,1566b,1687s stack positions out of 5000i,500n,10000p,200000b,80000s
 {d:/Programmi/texlive/2019/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}<d:/Programmi/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><d:/Programmi/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><d:/Programmi/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><d:/Programmi/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><d:/Programmi/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><d:/Programmi/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><d:/Programmi/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><d:/Programmi/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><d:/Programmi/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><d:/Programmi/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx0800.pfb><d:/Programmi/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb><d:/Programmi/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb><d:/Programmi/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb><d:/Programmi/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb><d:/Programmi/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb><d:/Programmi/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb><d:/Programmi/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on "c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/main.pdf" (17 pages, 513463 bytes).
+Output written on "c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/main.pdf" (18 pages, 623445 bytes).
 PDF statistics:
- 133 PDF objects out of 1000 (max. 8388607)
- 91 compressed objects within 1 object stream
+ 143 PDF objects out of 1000 (max. 8388607)
+ 94 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 

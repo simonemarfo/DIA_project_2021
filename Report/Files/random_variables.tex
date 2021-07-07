@@ -1,5 +1,6 @@
-Daily customers: Gaussian Distribution\\
-Normalized gaussian parameters per class (normalizing factor:1000), average and variance:
+For the online problem have identified and modeled the following radom variables
+\subsection*{Daily customers distribution}
+We modeled the daily customers distribution as a \textbf{Gaussian Distribution}, with a normalizing factor of 1000 daily customers. Average and variance of the Gaussian distribution are reported in the table below.
 
 \begin{tabularx}{0.8\textwidth} { 
 		| >{\raggedright\arraybackslash}X 
@@ -8,29 +9,27 @@ Normalized gaussian parameters per class (normalizing factor:1000), average and 
 	\hline
 	Customer Category & Average & Variance  \\
 	\hline
-	Category 1 & 0.15 & 0.03  \\
+	Sport addicted & 0.15 & 0.03  \\
 	\hline
-	Category 2 & 0.20 & 0.03  \\
+	Gifter & 0.20 & 0.03  \\
 	\hline
-	Category 3 & 0.40 & 0.05  \\
+	Worried & 0.40 & 0.05  \\
 	\hline
-	Category 4 & 0.25 & 0.04  \\
+	Amateur & 0.25 & 0.04  \\
 	\hline
 \end{tabularx}
 
 \begin{center}
-	\includegraphics[scale=1]{Images/CustomerDistribution}
+	\includegraphics[scale=0.8]{Images/CustomerDistribution}
 \end{center}
 
-
+\subsection*{Conversions rates}
+The odds of buying one item are modelled with a \textbf{Bernulli Distribution} different for every user category and item price. 
 \begin{itemize}
-	\item Buy item1(price) : Bernoulli \~ 0,1
-	\item Buy item2(price) : Bernoulli \~ 0,1
-	\item Reward item1 = buy item 1 * price item 1
-	\item Reward item2 = buy item 1 * buy item 2 * price item2
-	\item Time horizon = 365 days
+	\item Probability of buying \textit{Racing skis}: Bernoulli \~ 0,1
+	\item Probability of buying \textit{Racing ski helmet}: Bernoulli \~ 0,1
 \end{itemize}
-The following graphs are the demand curves of the two item: the first three graphs are the demand curves of the first item, associated to the three seasonality (spring-summer, autumn, winter); the last three graphs are the demand curves of the second item with its respective seasonality.
+The following graphs are the demand curves of the two items: the first three graphs are the demand curves of the first item, associated to the three seasonality (Spring-Summer, Autumn, Winter), while the last three graphs are the demand curves of the second item with its respective seasonality.
 \begin{center}
 	\includegraphics[scale=0.5]{Images/CR_fstItem}
 \end{center}
@@ -39,5 +38,8 @@ The following graphs are the demand curves of the two item: the first three grap
 	\includegraphics[scale=0.5]{Images/CR_scndItem}
 \end{center}
 
-\subsection{Online Approach}
-Daily we extract the items prices using an online learner algorithm (pricing or matching), then we simulate the current day estimating the number of customers per class through the gaussian distribution. The arrival of every customer is simulated with a random approach. The system proposes the first item to every customer, simulating the purchase of it exploiting the associated Bernoulli distribution probability. The second item is proposed to the customer with the same approach, only if the first item will be bought. It is possible to exploit the information obtained in the previous steps to calculate the rewards and use them to update the learner. This procedure is repeated for every daily customer, for a time horizon of 365 days and during this period the purpose is to find a solution (composed by the prices and the assignment of promotions) that maximise the total reward. 
+\subsection*{Online Approach}
+Our general approach for the online problem is to simulate, day by day the shop, generating the customers and emulating their behavior, collecting the results and, according to the considered scenario and constraints, provide an optimal solution that maximise the reward.\\
+Every day we retrieve the daily customer distribution per class using the previously presented random variable that model the daily customer distribution. Randomly we simulate the entry of a new customer, of which we know the category of belonging, in the shop. With an online approach we select the best price to be prosed to the client, in order to maximize the reward. The purchase is simulated with the previously presented random variable with a Bernulli distribution.
+The second item is proposed to the client only if the first has been purchased. The price at which it is proposed is retrieved with an online matching approach that try to sugget which is the best discout to apply to the user in oreder to maximize the reward.\\
+This procedure is repeated for all clients during the entire time horizon of 356 days. 

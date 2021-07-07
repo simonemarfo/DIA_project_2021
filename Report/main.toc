@@ -7,22 +7,20 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{Formnal Model}{4}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Random Varaibles}{7}% 
+\contentsline {section}{Random Varaibles}{8}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {0.1}Online Approach}{10}% 
+\contentsline {section}{Experiment Context}{12}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Experiment Context}{11}% 
+\contentsline {section}{Online pricing for first item}{12}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Online pricing for first item}{11}% 
+\contentsline {section}{Online pricing for first item with purchase simulation}{15}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Online pricing for first item with purchase simulation}{13}% 
+\contentsline {section}{Matching problem: promo assignment}{15}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Matching problem: promo assignment}{14}% 
+\contentsline {section}{Pricing and Matching problem}{16}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Pricing and Matching problem}{15}% 
+\contentsline {section}{Seasonal Pricing and Matching problem: Sliding Window}{16}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Seasonal Pricing and Matching problem: Sliding Window}{15}% 
+\contentsline {section}{Seasonal Pricing and Matching problem: Change Detection}{17}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Seasonal Pricing and Matching problem: Change Detection}{15}% 
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{References}{16}% 
+\contentsline {section}{References}{17}% 
