@@ -1,11 +1,10 @@
-\subparagraph*{Problem explaination}
-The goal is the same of the previous problem, but in this case the conversion rates are not stationary and is required to use a sliding-window approach.
-\subparagraph*{Strategy}
-In a non-stationary environment the conversion rates are not stationary, so they change due to the seasonalities.
-We exploit the sliding-window approach combined with the Thompson sampling algorithm (SW-TS) to solve this problem. It is an algorithm that exploits a Sliding-Window approach to forget past information  during the learning, which could provide a bias to the estimation process.
-\subparagraph*{Sliding-Window Thompson Sampling (SW-TS)} 
+\subparagraph*{Submission : }
+\textit{Do the same as Step 6 when the conversion rates are not stationary. Adopt a sliding-window approach.}\\
 
-\textbf{Main idea:}\\
+The goal is the same of the previous problem, but in this case the conversion rates are not stationary and is required to use a sliding-window approach.
+
+\subsection*{Basic knowledge}
+\subparagraph*{Sliding-Window Thompson Sampling (SW-TS)} 
 We use a sliding window of length $\tau\in N$ such that the algorithm, at every round $t$, takes into account only the rewards obtained in the last $\tau$ rounds. Based on these realizations, we apply a TS-based algorithm to decide which is the arm to pull in the next round. In particular, the expected value of each arm is coupled with a posterior distribution from which we draw samples, and the arm with the highest value is the next arm to play.\\
 
 \textbf{Pseudocode:}\\
@@ -23,9 +22,17 @@ $a_{t} \leftarrow \argmax_{a \in A} \left\{ \tilde{\theta_{a}}  \right\} $ \\
 if $t\leq\tau$: $(\alpha_{a_{t}}, \beta_{a_{t}}) \leftarrow (\alpha_{a_{t}}, \beta_{a_{t}}) + (x_{a_{t},t}, 1 - x_{a_{t},t})$ 
 
 if $\tau<t$:	$(\alpha_{a_{t}}, \beta_{a_{t}}) \leftarrow \max \left\{(1,1), (\alpha_{a_{t}}, \beta_{a_{t}}) + (x_{a_{t},t}, 1 - x_{a_{t},t}) - (x_{a_{t-\tau},t-\tau}, 1 - x_{a_{t-\tau},t-\tau})    \right\}$
-\subparagraph*{Results}
+
+\subsection*{Strategy}
+In a non-stationary environment the conversion rates are not stationary, so they change due to the seasonalities.
+We exploit the sliding-window approach combined with the Thompson sampling algorithm (SW-TS) to solve this problem. It is an algorithm that exploits a Sliding-Window approach to forget past information  during the learning, which could provide a bias to the estimation process.
+
+\subparagraph{Implementation} 
+\subparagraph{Optimal strategy}
+
+\subsection*{Results}
 \begin{center}
 	\includegraphics[scale=0.30]{Images/n7}
 \end{center}
-\subparagraph*{Considerations}
+\subsection*{Considerations}
 We can observe that in the first season the SW-TS algorithm has an higher regret than the TS algorithm, because the first has a number of samples that is equal to the dimension of the window, instead the second collects all the samples. The SW-TS has a better performance from the second season, due to the sliding-window approach, it stabilizes faster than the TS, and at the end, the cumulative regret for the SW-TS is about 4 times less than the TS.

@@ -1,12 +1,10 @@
-\subparagraph*{Problem explaination}
+\subparagraph*{Submission : }
+\textit{Do the same as Step 6 when the conversion rates are not stationary. Adopt a change-detection test approach.}\\
+
 The goal is the same of the previous problem, but instead of a sliding-window approach, is required to adopt a change-detection test approach.
-\subparagraph*{Strategy}
-In order to solve this problem we have used a change detection (CUSUM) algorithm and a bandit algorithm (UCB). At each time $t$, the UCB outputs a decision $I_t \in K$, where $K$ is a set of arms, based on its past observations of the bandit environment. The environment generates the corresponding reward of arm $I_t$, which is observed by both the bandit algorithm and the change detection algorithm. The change detection algorithm monitors the distribution of each arm, and sends out a positive signal to restart the bandit algorithm once a breakpoint is detected.
 
+\subsection*{Basic knowledge}
 \subparagraph*{Change Detection (CUSUM)}
-
-\textbf{Explaination:}\\
-
 The first $M$ valid samples are used to produce the reference point.\\
 
 Empirical mean of arm $a$ over the first $M$ valid samples $\bar{X_{a}^0}$\\
@@ -44,9 +42,19 @@ $n_{a}(\tau_{a},t-1)$ is the number of valid samples for arm $a$\\
 
 4. If $CD_a (r_{\tau},...,r_t) = 1$ then $\tau_a = t$ and restart $CD_a$
 
-\subparagraph*{Results}
+
+\subsection*{Strategy}
+In order to solve this problem we have used a change detection (CUSUM) algorithm and a bandit algorithm (UCB). At each time $t$, the UCB outputs a decision $I_t \in K$, where $K$ is a set of arms, based on its past observations of the bandit environment. The environment generates the corresponding reward of arm $I_t$, which is observed by both the bandit algorithm and the change detection algorithm. The change detection algorithm monitors the distribution of each arm, and sends out a positive signal to restart the bandit algorithm once a breakpoint is detected.
+
+\subparagraph{Implementation} 
+\subparagraph{Optimal strategy}
+
+
+
+
+\subsection*{Results}
 \begin{center}
 	\includegraphics[scale=0.35]{Images/n8}
 \end{center}
-\subparagraph*{Considerations}
+\subsection*{Considerations}
 We can observe that the change-detection approach performs better than without it, this can be seen from the second season to the end. In the first season, the cumulative regret is higher with the change-detection approach, because it catch some false-positive detection, that can change the solution that it suggests.

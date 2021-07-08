@@ -1,26 +1,50 @@
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
 \babel@toc {english}{}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Introduction}{2}% 
+\contentsline {section}{Introduction}{2}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{2}% 
+\contentsline {paragraph}{}{2}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Formnal Model}{4}% 
+\contentsline {section}{Formal Model}{4}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Random Varaibles}{8}% 
+\contentsline {section}{Random Varaibles}{8}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Experiment Context}{12}% 
+\contentsline {section}{Online pricing for first item}{12}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Online pricing for first item}{12}% 
+\contentsline {subparagraph}{Implementation}{14}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Online pricing for first item with purchase simulation}{15}% 
+\contentsline {subparagraph}{Optimal strategy}{15}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Matching problem: promo assignment}{15}% 
+\contentsline {section}{Online pricing for first item with purchase simulation}{16}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Pricing and Matching problem}{16}% 
+\contentsline {subparagraph}{Implementation}{16}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Seasonal Pricing and Matching problem: Sliding Window}{16}% 
+\contentsline {subparagraph}{Optimal strategy}{17}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Seasonal Pricing and Matching problem: Change Detection}{17}% 
+\contentsline {section}{Matching problem: promo assignment}{18}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{References}{17}% 
+\contentsline {subparagraph}{Implementation}{19}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subparagraph}{Optimal strategy}{19}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Pricing and Matching problem}{20}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subparagraph}{Implementation}{20}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subparagraph}{Optimal strategy}{20}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Seasonal Pricing and Matching problem: Sliding Window}{21}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subparagraph}{Implementation}{22}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subparagraph}{Optimal strategy}{22}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Seasonal Pricing and Matching problem: Change Detection}{23}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subparagraph}{Implementation}{25}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subparagraph}{Optimal strategy}{25}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Folder Structure}{26}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{References}{26}{}%

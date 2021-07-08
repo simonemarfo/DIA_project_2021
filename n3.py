@@ -5,7 +5,7 @@ from Algorithms.TS_Learner import *
 from Algorithms.UCB1_Learner import * 
 
 ctx= Context()
-item2_price_full = ctx.item2_full_price # default is 
+item2_price_full = ctx.item2_full_price # default is 630.0
 promotion_assignment = [2,1,0,3]   # class1: P2; class2:P1; class3:P0; class4:P3. is the optimal solution found with n1.py
 
 discounted_price = ctx.discuonted_second_item_prices(promotion_assignment) # retrun the discounted prices for every customer category, according to the pormotion assignment
@@ -18,7 +18,7 @@ for i in range(4):
 candidates_item1 = [2260.0,1910.0,2130.0, 2010.0, 2340.0]
 
 days = 10
-n_exp = 20
+n_exp = 1
 observation = (days//2)*1000
 ts_experiments = np.zeros((n_exp,observation))
 ucb_experiments = np.zeros((n_exp,observation))
@@ -87,16 +87,6 @@ for e in range(n_exp):
     ts_experiments[e,:] = ts_reward[:observation]
     ucb_experiments[e,:]= ucb_reward[:observation]
     opt_experiments[e,:]= opt_reward[:observation]
-    
-    
-plt.figure(0)
-plt.xlabel("#sales")
-plt.ylabel("Reward")
-plt.plot(np.mean(np.cumsum(ucb_experiments,axis=1),axis=0),'-', color='red', label = 'UCB Learner')
-plt.plot(np.mean(np.cumsum(ts_experiments,axis=1),axis=0),'-', color='green', label = 'TS Learner')
-plt.plot(np.mean(np.cumsum(opt_experiments,axis=1),axis=0),'-', color='blue', label = 'Opt')
-plt.title("Cumulative reward")
-plt.legend()
 
 
 plt.figure(1)
