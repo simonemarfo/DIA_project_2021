@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2021.3.17)  8 JUL 2021 18:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2021.3.17)  9 JUL 2021 12:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -249,7 +249,11 @@ Package: xurl 2020/12/30 v 0.09a modify URL breaks
  (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip16
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
-)) (/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.sty
+)) (/usr/share/texlive/texmf-dist/tex/latex/tabto-ltx/tabto.sty
+Package: tabto 2018/12/28  v 1.4  Another tabbing mechanism
+\CurrentLineWidth=\dimen170
+\TabPrevPos=\dimen171
+) (/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.sty
 Package: csquotes 2021-01-04 v5.2k context-sensitive quotations (JAW)
 \csq@reset=\count278
 \csq@gtype=\count279
@@ -508,10 +512,10 @@ Package: amstext 2000/06/29 v2.01 AMS text
  (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks29
-\ex@=\dimen170
+\ex@=\dimen172
 )) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen171
+\pmbraise@=\dimen173
 ) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
@@ -527,7 +531,7 @@ LaTeX Info: Redefining \dots on input line 499.
 LaTeX Info: Redefining \cdots on input line 620.
 \Mathstrutbox@=\box60
 \strutbox@=\box61
-\big@size=\dimen172
+\big@size=\dimen174
 LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
 \macc@depth=\count414
@@ -540,12 +544,12 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
 \column@=\count419
 \maxfields@=\count420
 \andhelp@=\toks31
-\eqnshift@=\dimen173
-\alignsep@=\dimen174
-\tagshift@=\dimen175
-\tagwidth@=\dimen176
-\totwidth@=\dimen177
-\lineht@=\dimen178
+\eqnshift@=\dimen175
+\alignsep@=\dimen176
+\tagshift@=\dimen177
+\tagwidth@=\dimen178
+\totwidth@=\dimen179
+\lineht@=\dimen180
 \@envbody=\toks32
 \multlinegap=\skip122
 \multlinetaggap=\skip123
@@ -618,13 +622,13 @@ LaTeX Info: Redefining \it@ccap on input line 5.
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count422
-\scratchdimen=\dimen179
+\scratchdimen=\dimen181
 \scratchbox=\box63
 \nofMPsegments=\count423
 \nofMParguments=\count424
 \everyMPshowfont=\toks34
 \MPscratchCnt=\count425
-\MPscratchDim=\dimen180
+\MPscratchDim=\dimen182
 \MPnumerator=\count426
 \makeMPintoPDFobject=\count427
 \everyMPtoPDFconversion=\toks35
@@ -718,58 +722,87 @@ Underfull \hbox (badness 10000) in paragraph at lines 28--31
  []
 
 [5] [6]
-<Images/n1_results.png, id=41, 533.49312pt x 97.36375pt>
+Overfull \hbox (38.29143pt too wide) in paragraph at lines 59--60
+\T1/cmr/m/n/12 columns are the dis-count type. Cells are the weighted as $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 conversionRateSecondItem \OMS/cmsy/m/n/12 ^^C
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--61
+
+ []
+
+
+Overfull \hbox (2.54774pt too wide) in paragraph at lines 66--67
+| \T1/cmr/m/n/12 temp[rowInd[ind],colInd[ind]] = match-ing-Ma-trix[rowInd[ind],colInd[ind]] 
+ []
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 78--79
+
+ []
+
+
+Overfull \hbox (33.98167pt too wide) in paragraph at lines 83--84
+| \T1/cmr/m/n/12 class-Fi-nalD-is-tri-bu-tion[i,j] = (class-Fi-nalD-is-tri-bu-tion[i,j]*100/sumPerClass)/100 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 83--84
+
+ []
+
+<Images/n1_results.png, id=44, 533.49312pt x 97.36375pt>
 File: Images/n1_results.png Graphic file (type png)
 <use Images/n1_results.png>
-Package pdftex.def Info: Images/n1_results.png  used on input line 57.
+Package pdftex.def Info: Images/n1_results.png  used on input line 90.
 (pdftex.def)             Requested size: 480.13937pt x 87.62654pt.
 
-Overfull \hbox (50.13475pt too wide) in paragraph at lines 57--58
+Overfull \hbox (50.13475pt too wide) in paragraph at lines 90--91
  [] 
  []
 
-<Images/n1_chart.png, id=42, 745.8264pt x 544.1931pt>
+<Images/n1_chart.png, id=45, 745.8264pt x 544.1931pt>
 File: Images/n1_chart.png Graphic file (type png)
 <use Images/n1_chart.png>
-Package pdftex.def Info: Images/n1_chart.png  used on input line 60.
+Package pdftex.def Info: Images/n1_chart.png  used on input line 93.
 (pdftex.def)             Requested size: 522.07492pt x 380.93256pt.
 
-Overfull \hbox (92.0703pt too wide) in paragraph at lines 60--61
+Overfull \hbox (92.0703pt too wide) in paragraph at lines 93--94
  [] 
  []
 
-[7 </home/marfo/Documenti/DIA_project_2021/Report/Images/n1_results.png>]) (/home/marfo/Documenti/DIA_project_2021/Report/Files/random_variables.tex
+[8 </home/marfo/Documenti/DIA_project_2021/Report/Images/n1_results.png>]) (/home/marfo/Documenti/DIA_project_2021/Report/Files/random_variables.tex
 Underfull \vbox (badness 10000) detected at line 20
  []
 
-[8 </home/marfo/Documenti/DIA_project_2021/Report/Images/n1_chart.png>]
-<Images/CustomerDistribution.png, id=51, 368.87813pt x 202.50656pt>
+[9 </home/marfo/Documenti/DIA_project_2021/Report/Images/n1_chart.png>]
+<Images/CustomerDistribution.png, id=54, 368.87813pt x 202.50656pt>
 File: Images/CustomerDistribution.png Graphic file (type png)
 <use Images/CustomerDistribution.png>
 Package pdftex.def Info: Images/CustomerDistribution.png  used on input line 23.
 (pdftex.def)             Requested size: 295.10289pt x 162.00545pt.
-<Images/CR_fstItem.png, id=52, 774.64406pt x 627.09282pt>
+<Images/CR_fstItem.png, id=55, 774.64406pt x 627.09282pt>
 File: Images/CR_fstItem.png Graphic file (type png)
 <use Images/CR_fstItem.png>
 Package pdftex.def Info: Images/CR_fstItem.png  used on input line 34.
 (pdftex.def)             Requested size: 387.32108pt x 313.54564pt.
- [9 </home/marfo/Documenti/DIA_project_2021/Report/Images/CustomerDistribution.png>]
-<Images/CR_scndItem.png, id=56, 798.73407pt x 622.57594pt>
+ [10 </home/marfo/Documenti/DIA_project_2021/Report/Images/CustomerDistribution.png>]
+<Images/CR_scndItem.png, id=59, 798.73407pt x 622.57594pt>
 File: Images/CR_scndItem.png Graphic file (type png)
 <use Images/CR_scndItem.png>
 Package pdftex.def Info: Images/CR_scndItem.png  used on input line 38.
 (pdftex.def)             Requested size: 399.36606pt x 311.2872pt.
- [10 </home/marfo/Documenti/DIA_project_2021/Report/Images/CR_fstItem.png>]) (/home/marfo/Documenti/DIA_project_2021/Report/Files/n3.tex
+ [11 </home/marfo/Documenti/DIA_project_2021/Report/Images/CR_fstItem.png>]) (/home/marfo/Documenti/DIA_project_2021/Report/Files/n3.tex
 Underfull \hbox (badness 10000) in paragraph at lines 2--3
 
  []
 
-[11 </home/marfo/Documenti/DIA_project_2021/Report/Images/CR_scndItem.png>]
+[12 </home/marfo/Documenti/DIA_project_2021/Report/Images/CR_scndItem.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 16--17
 
  []
 
-[12]
+[13]
 Underfull \hbox (badness 10000) in paragraph at lines 31--32
 
  []
@@ -779,7 +812,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 50--51
 
  []
 
-[13]
+[14]
 Underfull \hbox (badness 10000) in paragraph at lines 57--58
 
  []
@@ -794,40 +827,55 @@ Underfull \hbox (badness 10000) in paragraph at lines 65--66
 
  []
 
-[14]
-<Images/n3.png, id=76, 319.1925pt x 200.75pt>
+[15]
+<Images/n3.png, id=79, 319.1925pt x 200.75pt>
 File: Images/n3.png Graphic file (type png)
 <use Images/n3.png>
 Package pdftex.def Info: Images/n3.png  used on input line 108.
 (pdftex.def)             Requested size: 383.02907pt x 240.89877pt.
- [15 </home/marfo/Documenti/DIA_project_2021/Report/Images/n3.png>]) (/home/marfo/Documenti/DIA_project_2021/Report/Files/n4.tex
+ [16 </home/marfo/Documenti/DIA_project_2021/Report/Images/n3.png>]) (/home/marfo/Documenti/DIA_project_2021/Report/Files/n4.tex
 Underfull \hbox (badness 10000) in paragraph at lines 2--3
 
  []
 
-[16]
-<Images/n4.png, id=83, 304.63812pt x 208.78pt>
+[17]
+<Images/n4.png, id=86, 304.63812pt x 208.78pt>
 File: Images/n4.png Graphic file (type png)
 <use Images/n4.png>
 Package pdftex.def Info: Images/n4.png  used on input line 40.
 (pdftex.def)             Requested size: 365.56389pt x 250.53471pt.
- [17 </home/marfo/Documenti/DIA_project_2021/Report/Images/n4.png>]) (/home/marfo/Documenti/DIA_project_2021/Report/Files/n5.tex
+ [18 </home/marfo/Documenti/DIA_project_2021/Report/Images/n4.png>]) (/home/marfo/Documenti/DIA_project_2021/Report/Files/n5.tex
 Underfull \hbox (badness 10000) in paragraph at lines 2--3
 
  []
 
-[18]
-<Images/n5.png, id=92, 1381.41093pt x 691.83469pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--8
+
+ []
+
+[19] [20]
+Underfull \hbox (badness 10000) in paragraph at lines 37--38
+
+ []
+
+<Images/n5.png, id=98, 1381.41093pt x 691.83469pt>
 File: Images/n5.png Graphic file (type png)
 <use Images/n5.png>
-Package pdftex.def Info: Images/n5.png  used on input line 27.
+Package pdftex.def Info: Images/n5.png  used on input line 56.
 (pdftex.def)             Requested size: 414.42648pt x 207.552pt.
-) [19 </home/marfo/Documenti/DIA_project_2021/Report/Images/n5.png>] (/home/marfo/Documenti/DIA_project_2021/Report/Files/n6.tex
+[21]
+Underfull \hbox (badness 10000) in paragraph at lines 58--62
+
+ []
+
+) (/home/marfo/Documenti/DIA_project_2021/Report/Files/n6.tex
 Underfull \hbox (badness 10000) in paragraph at lines 2--3
 
  []
 
-<Images/n6.png, id=96, 1339.25343pt x 694.84593pt>
+[22 </home/marfo/Documenti/DIA_project_2021/Report/Images/n5.png>]
+<Images/n6.png, id=105, 1339.25343pt x 694.84593pt>
 File: Images/n6.png Graphic file (type png)
 <use Images/n6.png>
 Package pdftex.def Info: Images/n6.png  used on input line 14.
@@ -837,7 +885,7 @@ Overfull \hbox (38.7411pt too wide) in paragraph at lines 14--15
  [] 
  []
 
-[20])
+) [23 </home/marfo/Documenti/DIA_project_2021/Report/Images/n6.png>]
 Overfull \hbox (2.31444pt too wide) in paragraph at lines 48--48
 []\T1/cmr/bx/n/17.28 Seasonal Pric-ing and Match-ing prob-lem: Slid-ing Win-
  []
@@ -852,7 +900,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--9
 
  []
 
-[21 </home/marfo/Documenti/DIA_project_2021/Report/Images/n6.png>]
+
 Underfull \hbox (badness 10000) in paragraph at lines 10--11
 
  []
@@ -872,22 +920,23 @@ Overfull \hbox (33.38411pt too wide) in paragraph at lines 24--25
 []\T1/cmr/m/n/12 if $\OML/cmm/m/it/12 ^^\ < t$\T1/cmr/m/n/12 : $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 []; ^^L[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12   [] []$ 
  []
 
-<Images/n7.png, id=103, 1387.584pt x 706.0779pt>
+[24]
+<Images/n7.png, id=114, 1387.584pt x 706.0779pt>
 File: Images/n7.png Graphic file (type png)
 <use Images/n7.png>
 Package pdftex.def Info: Images/n7.png  used on input line 35.
 (pdftex.def)             Requested size: 416.27841pt x 211.825pt.
-[22]) (/home/marfo/Documenti/DIA_project_2021/Report/Files/n8.tex
+) (/home/marfo/Documenti/DIA_project_2021/Report/Files/n8.tex
 Underfull \hbox (badness 10000) in paragraph at lines 2--3
 
  []
 
-
+[25 </home/marfo/Documenti/DIA_project_2021/Report/Images/n7.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 8--9
 
  []
 
-[23 </home/marfo/Documenti/DIA_project_2021/Report/Images/n7.png>]
+
 Underfull \hbox (badness 10000) in paragraph at lines 10--11
 
  []
@@ -957,7 +1006,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 35--36
 
  []
 
-
+[26]
 Underfull \hbox (badness 10000) in paragraph at lines 37--38
 
  []
@@ -972,8 +1021,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 41--42
 
  []
 
-[24]
-<Images/n8.png, id=116, 1279.02844pt x 676.77844pt>
+<Images/n8.png, id=122, 1279.02844pt x 676.77844pt>
 File: Images/n8.png Graphic file (type png)
 <use Images/n8.png>
 Package pdftex.def Info: Images/n8.png  used on input line 57.
@@ -983,28 +1031,28 @@ Overfull \hbox (17.66205pt too wide) in paragraph at lines 57--58
  [] 
  []
 
-) [25 </home/marfo/Documenti/DIA_project_2021/Report/Images/n8.png>] (/home/marfo/Documenti/DIA_project_2021/Report/Files/folder_structure.tex)
+[27]) (/home/marfo/Documenti/DIA_project_2021/Report/Files/folder_structure.tex)
 
 LaTeX Warning: Empty bibliography on input line 65.
 
-[26] (/home/marfo/Documenti/DIA_project_2021/Report/main.aux)
+[28 </home/marfo/Documenti/DIA_project_2021/Report/Images/n8.png>] (/home/marfo/Documenti/DIA_project_2021/Report/main.aux)
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 13873 strings out of 479304
- 237648 string characters out of 5869779
- 1011091 words of memory out of 5000000
- 30816 multiletter control sequences out of 15000+600000
+ 13898 strings out of 479304
+ 238083 string characters out of 5869779
+ 1011595 words of memory out of 5000000
+ 30837 multiletter control sequences out of 15000+600000
  420182 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  73i,9n,78p,1499b,1722s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm2074.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on /home/marfo/Documenti/DIA_project_2021/Report/main.pdf (27 pages, 894641 bytes).
+Output written on /home/marfo/Documenti/DIA_project_2021/Report/main.pdf (29 pages, 902557 bytes).
 PDF statistics:
- 184 PDF objects out of 1000 (max. 8388607)
- 120 compressed objects within 2 object streams
+ 190 PDF objects out of 1000 (max. 8388607)
+ 124 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  61 words of extra memory for PDF output out of 10000 (max. 10000000)
 

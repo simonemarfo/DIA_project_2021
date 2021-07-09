@@ -34,7 +34,7 @@ Pseudocode\\
 
 2. At every time $t$ play arm $a$ such that:
 
-$a_{t} \leftarrow \argmax_a{\left\{\left[\bar{x}_{a} + \sqrt{\frac{2 log(t)}{{n_{a}(t-1)}} }\right]\times a\right\}}$
+\hspace{2em}$a_{t} \leftarrow \argmax_a{\left\{\left[\bar{x}_{a} + \sqrt{\frac{2 log(t)}{{n_{a}(t-1)}} }\right]\times a\right\}}$
 
 \subparagraph*{Thompson Sampling (TS)}
 
@@ -58,15 +58,15 @@ Pseudocode\\
 
 1. At every time $t$ for every arm $a$:
 
-$\tilde{\theta_{a}} \leftarrow Sample(\mathbb P(\mu_{a}=\theta_{a}))$ \\
+\hspace{2em}$\tilde{\theta_{a}} \leftarrow Sample(\mathbb P(\mu_{a}=\theta_{a}))$ \\
 
 2. At every time $t$ play arm $a_{t}$ such that 
 
-$a_{t} \leftarrow \argmax_a \left\{ \tilde{\theta_{a}} \times a \right\} $ \\
+\hspace{2em}$a_{t} \leftarrow \argmax_a \left\{ \tilde{\theta_{a}} \times a \right\} $ \\
 
 3.  Update beta distribution of arm $a_{t}$
 
-$(\alpha_{a_{t}}, \beta_{a_{t}}) \leftarrow (\alpha_{a_{t}}, \beta_{a_{t}}) + (x_{a_{t},t}, 1 - x_{a_{t},t})$
+\hspace{2em}$(\alpha_{a_{t}}, \beta_{a_{t}}) \leftarrow (\alpha_{a_{t}}, \beta_{a_{t}}) + (x_{a_{t},t}, 1 - x_{a_{t},t})$
 
 
 \subsection*{Strategy}
