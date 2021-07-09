@@ -42,17 +42,50 @@ The solution of our optimization problem consists in the distribution of the fra
 
 \subsection*{Offline problem - designed algorithm}
 
-In this scenario we have to find the optimal solution in an offline manner (a solution to our maximization problem knowing all the parameters), considering the constraints that the shop uses a randomized approach to assure that a fraction of the customers of a given category gets a specified promotion according to the optimal solution.\\
-We achieve the solution of the problem using a matching approach. 
-To reach the optimal solution we have used an iterative approach: we build a matrix category-promotion containing the mean expected rewards for every couple, calculated as the conversion rate of the \textit{Racing ski helmet} multiplied with its discounted price.
-The goal is to obtain, for each category-promotion couple the fraction of customers that will receive this discount.\\
-We exploit this matrix to perform the matching between the customer classes and the promo types, in order to maximize the total reward. \\
-We select the best reward for every class, for four times, retrieving, at every iteration, the four best combination of category-promotion and assigning an infinite weight to the obtained sub-optimal matching.\\
-Every matching is represented by a reward configuration that maximize the total reward. Every iteration is weighted and represent a different goodnesses of the solution, the first is the best, the last is the worst.\\
+We have to find the optimal solution in an offline manner (solve the maximization problem when all the parameters are known), considering the constraint that the shop uses a randomized approach, to assure that a fraction of a given customer category, gets a specified promotion, according to the optimal solution.\\ 
+We have used an iterative approach to reach the optimal solution: we build a customer category-promotion (matching) matrix, which contains the mean expected rewards for every matching, calculated as the product between the conversion rate of the \textit{Racing ski helmet} and its discounted price.
+The goal is to obtain, for each customer-promo matching, the fraction of customers that will receive this discount, in order to maximize the total reward.\\
+We select the best reward for every class, for four times, retrieving, at each iteration, the four best combination of category-promotion and assigning an infinite weight to the obtained sub-optimal matching.\\
+Every matching is represented by a reward configuration that maximize the total reward, every iteration is weighted and represent a different goodnesses of the solution (the first is the best, the last is the worst).\\
 Through the sub-optimal matchings, we have retrieved the fractions of different promos to assign to every customer categories, based on the proportional weight of the previous sub-optimal matching.\\
 The proportions retrieved, are normalized category per category.
 
 PESEUDOCODICE
+\begin{enumerate}
+	\item Calculate the fraction of the customers per class that buy the first item through the conversion rate of the first item (at the defined price), as fractions of buyers: $firstItemBuyers[i]=$\\
+	$int (customerDaily[i] * conversionRateFirstElement(item1PriceFull, i))$\\
+	Once we know the number of customers that bought the first item, we aims to maximize the profit making them buy the second item.
+	\item Calculate the discounted price for the different promo codes: $discounted_price = [item2_price_full, item2_price_full*(1-ctx.discount_promos[1]),	item2_price_full*(1-ctx.discount_promos[2]),item2_price_full*(1-ctx.discount_promos[3])]$
+	\item Initialize the matching matrix where the rows are the user categories and the columns are the discount type. Cells are the weighted as $(conversionRateSecondItem * discountedPriceSecondItem * firstItemBuyers)$ of that class.
+	\item The matching is performed iterating over the matching matrix four times, retrieving the iteration matrix. Every iteration determine the optimal solution of the matching problem, which allow to maximize the profit. The iteration matrix save all these oprimal solutions.\\
+	
+	for i in range(4):\\
+	\tabto{0.6cm} rowInd,colInd = linearSumAssignment(matchingMatrix,maximize=True)\\
+	\tabto{0.6cm} temp = np.zeros((4,4))\\
+	\tabto{0.6cm}for ind in range(0,len(rowInd)):\\
+	\tabto{1.2cm}temp[rowInd[ind],colInd[ind]] =  matchingMatrix[rowInd[ind],colInd[ind]]\\
+	\tabto{1.2cm}matchingMatrix[rowInd[ind],colInd[ind]] = np.iinfo(np.int64).min \\
+	\tabto{0.6cm}iterationMatrix.append(temp)
+	\item Compiling the class final distribution matrix:\\
+	w = 1\\
+	for i in range(4):\\
+	\tabto{0.6cm}iterSum = np.sum(iterationMatrix[i])\\
+	\tabto{0.6cm}coordinates = np.nonzero(iterationMatrix[i])\\
+	\tabto{0.6cm}for idx in range(len(coordinates[0])):\\
+	\tabto{1.2cm}classFinalDistribution[coordinates[0][idx], coordinates[1][idx]] =
+	\tabto{1.2cm}(100 *iterationMatrix[i][coordinates[0][idx], coordinates[1][idx]] /
+	\tabto{1.2cm} iterSum ) * w\\
+	\tabto{0.6cm}w = w/2\\
+	
+	for i in range(0,4):\\
+	\tabto{0.6cm}sumPerClass=(np.sum(classFinalDistribution[i]))\\
+	\tabto{0.6cm}for j in range(0,4):\\
+	\tabto{1.2cm}classFinalDistribution[i,j] = (classFinalDistribution[i,j]*100/sumPerClass)/100 \\
+	
+	
+	
+\end{enumerate}
+  
 \begin{center}
 	\includegraphics[scale=0.9]{Images/n1_results}
 \end{center}
