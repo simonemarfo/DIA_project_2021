@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2021.3.17)  9 JUL 2021 12:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2021.3.17)  9 JUL 2021 12:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -671,11 +671,12 @@ Package: blx-case-expl3 2020/12/31 v3.16 expl3 case changing code for biblatex
 \openout3 = `main.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'main.bbl' found.
- (/home/marfo/Documenti/DIA_project_2021/Report/main.bbl)
+Package biblatex Info: ... file 'main.bbl' not found.
+
+No file main.bbl.
 Package biblatex Info: Reference section=0 on input line 5.
 Package biblatex Info: Reference segment=0 on input line 5.
- (/home/marfo/Documenti/DIA_project_2021/Report/Files/firstPage.tex
+(/home/marfo/Documenti/DIA_project_2021/Report/Files/firstPage.tex
 LaTeX Font Info:    Trying to load font information for U+msa on input line 5.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -691,11 +692,12 @@ Package pdftex.def Info: Images/PolimiLogo.png  used on input line 7.
 (pdftex.def)             Requested size: 202.75699pt x 62.7342pt.
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} </home/marfo/Documenti/DIA_project_2021/Report/Images/PolimiLogo.png>]) (/home/marfo/Documenti/DIA_project_2021/Report/main.toc)
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} </home/marfo/Documenti/DIA_project_2021/Report/Images/PolimiLogo.png>])
+No file main.toc.
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
- [1] (/home/marfo/Documenti/DIA_project_2021/Report/Files/introduction.tex [2
+[1] (/home/marfo/Documenti/DIA_project_2021/Report/Files/introduction.tex [2
 
 ]
 Overfull \hbox (2.67574pt too wide) in paragraph at lines 29--29
@@ -718,58 +720,265 @@ Underfull \hbox (badness 10000) in paragraph at lines 28--31
  []
 
 [5] [6]
-<Images/n1_results.png, id=41, 533.49312pt x 97.36375pt>
+Overfull \hbox (38.29143pt too wide) in paragraph at lines 59--60
+\T1/cmr/m/n/12 columns are the dis-count type. Cells are the weighted as $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 conversionRateSecondItem \OMS/cmsy/m/n/12 ^^C
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--61
+
+ []
+
+/home/marfo/Documenti/DIA_project_2021/Report/Files/formal_model.tex:63: Undefined control sequence.
+<recently read> \tabto 
+                       
+l.63 	\tabto
+            {0.6cm} rowInd,colInd = linearSumAssignment(matchingMatrix,maxim...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/home/marfo/Documenti/DIA_project_2021/Report/Files/formal_model.tex:64: Undefined control sequence.
+<recently read> \tabto 
+                       
+l.64 	\tabto
+            {0.6cm} temp = np.zeros((4,4))\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/home/marfo/Documenti/DIA_project_2021/Report/Files/formal_model.tex:65: Undefined control sequence.
+<recently read> \tabto 
+                       
+l.65 	\tabto
+            {0.6cm}for ind in range(0,len(rowInd)):\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/home/marfo/Documenti/DIA_project_2021/Report/Files/formal_model.tex:66: Undefined control sequence.
+<recently read> \tabto 
+                       
+l.66 	\tabto
+            {1.2cm}temp[rowInd[ind],colInd[ind]] =  matchingMatrix[rowInd[in...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/home/marfo/Documenti/DIA_project_2021/Report/Files/formal_model.tex:67: Undefined control sequence.
+<recently read> \tabto 
+                       
+l.67 	\tabto
+            {1.2cm}matchingMatrix[rowInd[ind],colInd[ind]] = np.iinfo(np.int...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/home/marfo/Documenti/DIA_project_2021/Report/Files/formal_model.tex:68: Undefined control sequence.
+<recently read> \tabto 
+                       
+l.68 	\tabto
+            {0.6cm}iterationMatrix.append(temp)
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (4.75972pt too wide) in paragraph at lines 62--69
+\T1/cmr/m/n/12 0.6cm rowInd,colInd = lin-ear-SumAs-sign-ment(matchingMatrix,maximize=True) 
+ []
+
+/home/marfo/Documenti/DIA_project_2021/Report/Files/formal_model.tex:72: Undefined control sequence.
+<recently read> \tabto 
+                       
+l.72 	\tabto
+            {0.6cm}iterSum = np.sum(iterationMatrix[i])\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/home/marfo/Documenti/DIA_project_2021/Report/Files/formal_model.tex:73: Undefined control sequence.
+<recently read> \tabto 
+                       
+l.73 	\tabto
+            {0.6cm}coordinates = np.nonzero(iterationMatrix[i])\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/home/marfo/Documenti/DIA_project_2021/Report/Files/formal_model.tex:74: Undefined control sequence.
+<recently read> \tabto 
+                       
+l.74 	\tabto
+            {0.6cm}for idx in range(len(coordinates[0])):\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/home/marfo/Documenti/DIA_project_2021/Report/Files/formal_model.tex:75: Undefined control sequence.
+<recently read> \tabto 
+                       
+l.75 	\tabto
+            {1.2cm}classFinalDistribution[coordinates[0][idx], coordinates[1...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/home/marfo/Documenti/DIA_project_2021/Report/Files/formal_model.tex:76: Undefined control sequence.
+l.76 	\tabto
+            {1.2cm}(100 *iterationMatrix[i][coordinates[0][idx], coordinates...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/home/marfo/Documenti/DIA_project_2021/Report/Files/formal_model.tex:77: Undefined control sequence.
+l.77 	\tabto
+            {1.2cm} iterSum ) * w\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/home/marfo/Documenti/DIA_project_2021/Report/Files/formal_model.tex:78: Undefined control sequence.
+<recently read> \tabto 
+                       
+l.78 	\tabto
+            {0.6cm}w = w/2\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (8.16556pt too wide) in paragraph at lines 69--79
+\T1/cmr/m/n/12 1.2cmclassFinalDistribution[coordinates[0][idx], co-or-di-nates[1][idx]] = 1.2cm(100
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 69--79
+
+ []
+
+[7]
+/home/marfo/Documenti/DIA_project_2021/Report/Files/formal_model.tex:81: Undefined control sequence.
+<recently read> \tabto 
+                       
+l.81 	\tabto
+            {0.6cm}sumPerClass=(np.sum(classFinalDistribution[i]))\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/home/marfo/Documenti/DIA_project_2021/Report/Files/formal_model.tex:82: Undefined control sequence.
+<recently read> \tabto 
+                       
+l.82 	\tabto
+            {0.6cm}for j in range(0,4):\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/home/marfo/Documenti/DIA_project_2021/Report/Files/formal_model.tex:83: Undefined control sequence.
+<recently read> \tabto 
+                       
+l.83 	\tabto
+            {1.2cm}classFinalDistribution[i,j] = (classFinalDistribution[i,j...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (29.85887pt too wide) in paragraph at lines 80--84
+\T1/cmr/m/n/12 1.2cmclassFinalDistribution[i,j] = (class-Fi-nalD-is-tri-bu-tion[i,j]*100/sumPerClass)/100 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--84
+
+ []
+
+<Images/n1_results.png, id=44, 533.49312pt x 97.36375pt>
 File: Images/n1_results.png Graphic file (type png)
 <use Images/n1_results.png>
-Package pdftex.def Info: Images/n1_results.png  used on input line 57.
+Package pdftex.def Info: Images/n1_results.png  used on input line 90.
 (pdftex.def)             Requested size: 480.13937pt x 87.62654pt.
 
-Overfull \hbox (50.13475pt too wide) in paragraph at lines 57--58
+Overfull \hbox (50.13475pt too wide) in paragraph at lines 90--91
  [] 
  []
 
-<Images/n1_chart.png, id=42, 745.8264pt x 544.1931pt>
+<Images/n1_chart.png, id=45, 745.8264pt x 544.1931pt>
 File: Images/n1_chart.png Graphic file (type png)
 <use Images/n1_chart.png>
-Package pdftex.def Info: Images/n1_chart.png  used on input line 60.
+Package pdftex.def Info: Images/n1_chart.png  used on input line 93.
 (pdftex.def)             Requested size: 522.07492pt x 380.93256pt.
 
-Overfull \hbox (92.0703pt too wide) in paragraph at lines 60--61
+Overfull \hbox (92.0703pt too wide) in paragraph at lines 93--94
  [] 
  []
 
-[7 </home/marfo/Documenti/DIA_project_2021/Report/Images/n1_results.png>]) (/home/marfo/Documenti/DIA_project_2021/Report/Files/random_variables.tex
+[8 </home/marfo/Documenti/DIA_project_2021/Report/Images/n1_results.png>]) (/home/marfo/Documenti/DIA_project_2021/Report/Files/random_variables.tex
 Underfull \vbox (badness 10000) detected at line 20
  []
 
-[8 </home/marfo/Documenti/DIA_project_2021/Report/Images/n1_chart.png>]
-<Images/CustomerDistribution.png, id=51, 368.87813pt x 202.50656pt>
+[9 </home/marfo/Documenti/DIA_project_2021/Report/Images/n1_chart.png>]
+<Images/CustomerDistribution.png, id=54, 368.87813pt x 202.50656pt>
 File: Images/CustomerDistribution.png Graphic file (type png)
 <use Images/CustomerDistribution.png>
 Package pdftex.def Info: Images/CustomerDistribution.png  used on input line 23.
 (pdftex.def)             Requested size: 295.10289pt x 162.00545pt.
-<Images/CR_fstItem.png, id=52, 774.64406pt x 627.09282pt>
+<Images/CR_fstItem.png, id=55, 774.64406pt x 627.09282pt>
 File: Images/CR_fstItem.png Graphic file (type png)
 <use Images/CR_fstItem.png>
 Package pdftex.def Info: Images/CR_fstItem.png  used on input line 34.
 (pdftex.def)             Requested size: 387.32108pt x 313.54564pt.
- [9 </home/marfo/Documenti/DIA_project_2021/Report/Images/CustomerDistribution.png>]
-<Images/CR_scndItem.png, id=56, 798.73407pt x 622.57594pt>
+ [10 </home/marfo/Documenti/DIA_project_2021/Report/Images/CustomerDistribution.png>]
+<Images/CR_scndItem.png, id=59, 798.73407pt x 622.57594pt>
 File: Images/CR_scndItem.png Graphic file (type png)
 <use Images/CR_scndItem.png>
 Package pdftex.def Info: Images/CR_scndItem.png  used on input line 38.
 (pdftex.def)             Requested size: 399.36606pt x 311.2872pt.
- [10 </home/marfo/Documenti/DIA_project_2021/Report/Images/CR_fstItem.png>]) (/home/marfo/Documenti/DIA_project_2021/Report/Files/n3.tex
+ [11 </home/marfo/Documenti/DIA_project_2021/Report/Images/CR_fstItem.png>]) (/home/marfo/Documenti/DIA_project_2021/Report/Files/n3.tex
 Underfull \hbox (badness 10000) in paragraph at lines 2--3
 
  []
 
-[11 </home/marfo/Documenti/DIA_project_2021/Report/Images/CR_scndItem.png>]
+[12 </home/marfo/Documenti/DIA_project_2021/Report/Images/CR_scndItem.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 16--17
 
  []
 
-[12]
+[13]
 Underfull \hbox (badness 10000) in paragraph at lines 31--32
 
  []
@@ -779,7 +988,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 50--51
 
  []
 
-[13]
+[14]
 Underfull \hbox (badness 10000) in paragraph at lines 57--58
 
  []
@@ -794,24 +1003,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 65--66
 
  []
 
-[14]
-<Images/n3.png, id=76, 319.1925pt x 200.75pt>
+[15]
+<Images/n3.png, id=79, 319.1925pt x 200.75pt>
 File: Images/n3.png Graphic file (type png)
 <use Images/n3.png>
 Package pdftex.def Info: Images/n3.png  used on input line 108.
 (pdftex.def)             Requested size: 383.02907pt x 240.89877pt.
- [15 </home/marfo/Documenti/DIA_project_2021/Report/Images/n3.png>]) (/home/marfo/Documenti/DIA_project_2021/Report/Files/n4.tex
+ [16 </home/marfo/Documenti/DIA_project_2021/Report/Images/n3.png>]) (/home/marfo/Documenti/DIA_project_2021/Report/Files/n4.tex
 Underfull \hbox (badness 10000) in paragraph at lines 2--3
 
  []
 
-[16]
-<Images/n4.png, id=83, 304.63812pt x 208.78pt>
+[17]
+<Images/n4.png, id=86, 304.63812pt x 208.78pt>
 File: Images/n4.png Graphic file (type png)
 <use Images/n4.png>
 Package pdftex.def Info: Images/n4.png  used on input line 40.
 (pdftex.def)             Requested size: 365.56389pt x 250.53471pt.
- [17 </home/marfo/Documenti/DIA_project_2021/Report/Images/n4.png>]) (/home/marfo/Documenti/DIA_project_2021/Report/Files/n5.tex
+ [18 </home/marfo/Documenti/DIA_project_2021/Report/Images/n4.png>]) (/home/marfo/Documenti/DIA_project_2021/Report/Files/n5.tex
 Underfull \hbox (badness 10000) in paragraph at lines 2--3
 
  []
@@ -821,17 +1030,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--10
 
  []
 
-[18] [19]
+[19] [20]
 Underfull \hbox (badness 10000) in paragraph at lines 39--40
 
  []
 
-<Images/n5.png, id=95, 1381.41093pt x 691.83469pt>
+<Images/n5.png, id=98, 1381.41093pt x 691.83469pt>
 File: Images/n5.png Graphic file (type png)
 <use Images/n5.png>
 Package pdftex.def Info: Images/n5.png  used on input line 58.
 (pdftex.def)             Requested size: 414.42648pt x 207.552pt.
-[20]
+[21]
 Underfull \hbox (badness 10000) in paragraph at lines 60--64
 
  []
@@ -841,8 +1050,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--3
 
  []
 
-[21 </home/marfo/Documenti/DIA_project_2021/Report/Images/n5.png>]
-<Images/n6.png, id=102, 1339.25343pt x 694.84593pt>
+[22 </home/marfo/Documenti/DIA_project_2021/Report/Images/n5.png>]
+<Images/n6.png, id=105, 1339.25343pt x 694.84593pt>
 File: Images/n6.png Graphic file (type png)
 <use Images/n6.png>
 Package pdftex.def Info: Images/n6.png  used on input line 14.
@@ -852,7 +1061,7 @@ Overfull \hbox (38.7411pt too wide) in paragraph at lines 14--15
  [] 
  []
 
-) [22 </home/marfo/Documenti/DIA_project_2021/Report/Images/n6.png>]
+) [23 </home/marfo/Documenti/DIA_project_2021/Report/Images/n6.png>]
 Overfull \hbox (2.31444pt too wide) in paragraph at lines 48--48
 []\T1/cmr/bx/n/17.28 Seasonal Pric-ing and Match-ing prob-lem: Slid-ing Win-
  []
@@ -887,8 +1096,8 @@ Overfull \hbox (33.38411pt too wide) in paragraph at lines 24--25
 []\T1/cmr/m/n/12 if $\OML/cmm/m/it/12 ^^\ < t$\T1/cmr/m/n/12 : $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 []; ^^L[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12   [] []$ 
  []
 
-[23]
-<Images/n7.png, id=110, 1387.584pt x 706.0779pt>
+[24]
+<Images/n7.png, id=114, 1387.584pt x 706.0779pt>
 File: Images/n7.png Graphic file (type png)
 <use Images/n7.png>
 Package pdftex.def Info: Images/n7.png  used on input line 35.
@@ -898,7 +1107,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--3
 
  []
 
-[24 </home/marfo/Documenti/DIA_project_2021/Report/Images/n7.png>]
+[25 </home/marfo/Documenti/DIA_project_2021/Report/Images/n7.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 8--9
 
  []
@@ -973,7 +1182,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 35--36
 
  []
 
-[25]
+[26]
 Underfull \hbox (badness 10000) in paragraph at lines 37--38
 
  []
@@ -988,7 +1197,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 41--42
 
  []
 
-<Images/n8.png, id=119, 1279.02844pt x 676.77844pt>
+<Images/n8.png, id=122, 1279.02844pt x 676.77844pt>
 File: Images/n8.png Graphic file (type png)
 <use Images/n8.png>
 Package pdftex.def Info: Images/n8.png  used on input line 57.
@@ -998,28 +1207,39 @@ Overfull \hbox (17.66205pt too wide) in paragraph at lines 57--58
  [] 
  []
 
-[26]) (/home/marfo/Documenti/DIA_project_2021/Report/Files/folder_structure.tex)
+[27]) (/home/marfo/Documenti/DIA_project_2021/Report/Files/folder_structure.tex)
 
 LaTeX Warning: Empty bibliography on input line 65.
 
-[27 </home/marfo/Documenti/DIA_project_2021/Report/Images/n8.png>] (/home/marfo/Documenti/DIA_project_2021/Report/main.aux)
+[28 </home/marfo/Documenti/DIA_project_2021/Report/Images/n8.png>] (/home/marfo/Documenti/DIA_project_2021/Report/main.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                main
+(biblatex)                and rerun LaTeX afterwards.
+
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 13873 strings out of 479304
- 237648 string characters out of 5869779
- 1011091 words of memory out of 5000000
- 30816 multiletter control sequences out of 15000+600000
+ 13870 strings out of 479304
+ 237437 string characters out of 5869779
+ 1010899 words of memory out of 5000000
+ 30817 multiletter control sequences out of 15000+600000
  420182 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 73i,9n,78p,1499b,1722s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 73i,9n,78p,1499b,1660s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm2074.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on /home/marfo/Documenti/DIA_project_2021/Report/main.pdf (28 pages, 898322 bytes).
+Output written on /home/marfo/Documenti/DIA_project_2021/Report/main.pdf (29 pages, 900691 bytes).
 PDF statistics:
- 187 PDF objects out of 1000 (max. 8388607)
- 122 compressed objects within 2 object streams
+ 190 PDF objects out of 1000 (max. 8388607)
+ 124 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  61 words of extra memory for PDF output out of 10000 (max. 10000000)
 
