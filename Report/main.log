@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2021.3.17)  9 JUL 2021 12:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2021.3.17)  9 JUL 2021 12:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -249,7 +249,11 @@ Package: xurl 2020/12/30 v 0.09a modify URL breaks
  (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip16
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
-)) (/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.sty
+)) (/usr/share/texlive/texmf-dist/tex/latex/tabto-ltx/tabto.sty
+Package: tabto 2018/12/28  v 1.4  Another tabbing mechanism
+\CurrentLineWidth=\dimen170
+\TabPrevPos=\dimen171
+) (/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.sty
 Package: csquotes 2021-01-04 v5.2k context-sensitive quotations (JAW)
 \csq@reset=\count278
 \csq@gtype=\count279
@@ -508,10 +512,10 @@ Package: amstext 2000/06/29 v2.01 AMS text
  (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks29
-\ex@=\dimen170
+\ex@=\dimen172
 )) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen171
+\pmbraise@=\dimen173
 ) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
@@ -527,7 +531,7 @@ LaTeX Info: Redefining \dots on input line 499.
 LaTeX Info: Redefining \cdots on input line 620.
 \Mathstrutbox@=\box60
 \strutbox@=\box61
-\big@size=\dimen172
+\big@size=\dimen174
 LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
 \macc@depth=\count414
@@ -540,12 +544,12 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
 \column@=\count419
 \maxfields@=\count420
 \andhelp@=\toks31
-\eqnshift@=\dimen173
-\alignsep@=\dimen174
-\tagshift@=\dimen175
-\tagwidth@=\dimen176
-\totwidth@=\dimen177
-\lineht@=\dimen178
+\eqnshift@=\dimen175
+\alignsep@=\dimen176
+\tagshift@=\dimen177
+\tagwidth@=\dimen178
+\totwidth@=\dimen179
+\lineht@=\dimen180
 \@envbody=\toks32
 \multlinegap=\skip122
 \multlinetaggap=\skip123
@@ -618,13 +622,13 @@ LaTeX Info: Redefining \it@ccap on input line 5.
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count422
-\scratchdimen=\dimen179
+\scratchdimen=\dimen181
 \scratchbox=\box63
 \nofMPsegments=\count423
 \nofMParguments=\count424
 \everyMPshowfont=\toks34
 \MPscratchCnt=\count425
-\MPscratchDim=\dimen180
+\MPscratchDim=\dimen182
 \MPnumerator=\count426
 \makeMPintoPDFobject=\count427
 \everyMPtoPDFconversion=\toks35
@@ -671,12 +675,11 @@ Package: blx-case-expl3 2020/12/31 v3.16 expl3 case changing code for biblatex
 \openout3 = `main.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'main.bbl' not found.
-
-No file main.bbl.
+Package biblatex Info: ... file 'main.bbl' found.
+ (/home/marfo/Documenti/DIA_project_2021/Report/main.bbl)
 Package biblatex Info: Reference section=0 on input line 5.
 Package biblatex Info: Reference segment=0 on input line 5.
-(/home/marfo/Documenti/DIA_project_2021/Report/Files/firstPage.tex
+ (/home/marfo/Documenti/DIA_project_2021/Report/Files/firstPage.tex
 LaTeX Font Info:    Trying to load font information for U+msa on input line 5.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -692,12 +695,11 @@ Package pdftex.def Info: Images/PolimiLogo.png  used on input line 7.
 (pdftex.def)             Requested size: 202.75699pt x 62.7342pt.
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} </home/marfo/Documenti/DIA_project_2021/Report/Images/PolimiLogo.png>])
-No file main.toc.
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} </home/marfo/Documenti/DIA_project_2021/Report/Images/PolimiLogo.png>]) (/home/marfo/Documenti/DIA_project_2021/Report/main.toc)
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
-[1] (/home/marfo/Documenti/DIA_project_2021/Report/Files/introduction.tex [2
+ [1] (/home/marfo/Documenti/DIA_project_2021/Report/Files/introduction.tex [2
 
 ]
 Overfull \hbox (2.67574pt too wide) in paragraph at lines 29--29
@@ -729,201 +731,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 60--61
 
  []
 
-/home/marfo/Documenti/DIA_project_2021/Report/Files/formal_model.tex:63: Undefined control sequence.
-<recently read> \tabto 
-                       
-l.63 	\tabto
-            {0.6cm} rowInd,colInd = linearSumAssignment(matchingMatrix,maxim...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
 
-/home/marfo/Documenti/DIA_project_2021/Report/Files/formal_model.tex:64: Undefined control sequence.
-<recently read> \tabto 
-                       
-l.64 	\tabto
-            {0.6cm} temp = np.zeros((4,4))\\
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-/home/marfo/Documenti/DIA_project_2021/Report/Files/formal_model.tex:65: Undefined control sequence.
-<recently read> \tabto 
-                       
-l.65 	\tabto
-            {0.6cm}for ind in range(0,len(rowInd)):\\
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-/home/marfo/Documenti/DIA_project_2021/Report/Files/formal_model.tex:66: Undefined control sequence.
-<recently read> \tabto 
-                       
-l.66 	\tabto
-            {1.2cm}temp[rowInd[ind],colInd[ind]] =  matchingMatrix[rowInd[in...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-/home/marfo/Documenti/DIA_project_2021/Report/Files/formal_model.tex:67: Undefined control sequence.
-<recently read> \tabto 
-                       
-l.67 	\tabto
-            {1.2cm}matchingMatrix[rowInd[ind],colInd[ind]] = np.iinfo(np.int...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-/home/marfo/Documenti/DIA_project_2021/Report/Files/formal_model.tex:68: Undefined control sequence.
-<recently read> \tabto 
-                       
-l.68 	\tabto
-            {0.6cm}iterationMatrix.append(temp)
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Overfull \hbox (4.75972pt too wide) in paragraph at lines 62--69
-\T1/cmr/m/n/12 0.6cm rowInd,colInd = lin-ear-SumAs-sign-ment(matchingMatrix,maximize=True) 
- []
-
-/home/marfo/Documenti/DIA_project_2021/Report/Files/formal_model.tex:72: Undefined control sequence.
-<recently read> \tabto 
-                       
-l.72 	\tabto
-            {0.6cm}iterSum = np.sum(iterationMatrix[i])\\
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-/home/marfo/Documenti/DIA_project_2021/Report/Files/formal_model.tex:73: Undefined control sequence.
-<recently read> \tabto 
-                       
-l.73 	\tabto
-            {0.6cm}coordinates = np.nonzero(iterationMatrix[i])\\
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-/home/marfo/Documenti/DIA_project_2021/Report/Files/formal_model.tex:74: Undefined control sequence.
-<recently read> \tabto 
-                       
-l.74 	\tabto
-            {0.6cm}for idx in range(len(coordinates[0])):\\
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-/home/marfo/Documenti/DIA_project_2021/Report/Files/formal_model.tex:75: Undefined control sequence.
-<recently read> \tabto 
-                       
-l.75 	\tabto
-            {1.2cm}classFinalDistribution[coordinates[0][idx], coordinates[1...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-/home/marfo/Documenti/DIA_project_2021/Report/Files/formal_model.tex:76: Undefined control sequence.
-l.76 	\tabto
-            {1.2cm}(100 *iterationMatrix[i][coordinates[0][idx], coordinates...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-/home/marfo/Documenti/DIA_project_2021/Report/Files/formal_model.tex:77: Undefined control sequence.
-l.77 	\tabto
-            {1.2cm} iterSum ) * w\\
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-/home/marfo/Documenti/DIA_project_2021/Report/Files/formal_model.tex:78: Undefined control sequence.
-<recently read> \tabto 
-                       
-l.78 	\tabto
-            {0.6cm}w = w/2\\
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Overfull \hbox (8.16556pt too wide) in paragraph at lines 69--79
-\T1/cmr/m/n/12 1.2cmclassFinalDistribution[coordinates[0][idx], co-or-di-nates[1][idx]] = 1.2cm(100
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 69--79
-
+Overfull \hbox (2.54774pt too wide) in paragraph at lines 66--67
+| \T1/cmr/m/n/12 temp[rowInd[ind],colInd[ind]] = match-ing-Ma-trix[rowInd[ind],colInd[ind]] 
  []
 
 [7]
-/home/marfo/Documenti/DIA_project_2021/Report/Files/formal_model.tex:81: Undefined control sequence.
-<recently read> \tabto 
-                       
-l.81 	\tabto
-            {0.6cm}sumPerClass=(np.sum(classFinalDistribution[i]))\\
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+Underfull \hbox (badness 10000) in paragraph at lines 78--79
 
-/home/marfo/Documenti/DIA_project_2021/Report/Files/formal_model.tex:82: Undefined control sequence.
-<recently read> \tabto 
-                       
-l.82 	\tabto
-            {0.6cm}for j in range(0,4):\\
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-/home/marfo/Documenti/DIA_project_2021/Report/Files/formal_model.tex:83: Undefined control sequence.
-<recently read> \tabto 
-                       
-l.83 	\tabto
-            {1.2cm}classFinalDistribution[i,j] = (classFinalDistribution[i,j...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Overfull \hbox (29.85887pt too wide) in paragraph at lines 80--84
-\T1/cmr/m/n/12 1.2cmclassFinalDistribution[i,j] = (class-Fi-nalD-is-tri-bu-tion[i,j]*100/sumPerClass)/100 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 80--84
+Overfull \hbox (33.98167pt too wide) in paragraph at lines 83--84
+| \T1/cmr/m/n/12 class-Fi-nalD-is-tri-bu-tion[i,j] = (class-Fi-nalD-is-tri-bu-tion[i,j]*100/sumPerClass)/100 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 83--84
 
  []
 
@@ -1026,22 +850,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--3
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 9--10
+Underfull \hbox (badness 10000) in paragraph at lines 7--8
 
  []
 
 [19] [20]
-Underfull \hbox (badness 10000) in paragraph at lines 39--40
+Underfull \hbox (badness 10000) in paragraph at lines 37--38
 
  []
 
 <Images/n5.png, id=98, 1381.41093pt x 691.83469pt>
 File: Images/n5.png Graphic file (type png)
 <use Images/n5.png>
-Package pdftex.def Info: Images/n5.png  used on input line 58.
+Package pdftex.def Info: Images/n5.png  used on input line 56.
 (pdftex.def)             Requested size: 414.42648pt x 207.552pt.
 [21]
-Underfull \hbox (badness 10000) in paragraph at lines 60--64
+Underfull \hbox (badness 10000) in paragraph at lines 58--62
 
  []
 
@@ -1212,31 +1036,20 @@ Overfull \hbox (17.66205pt too wide) in paragraph at lines 57--58
 LaTeX Warning: Empty bibliography on input line 65.
 
 [28 </home/marfo/Documenti/DIA_project_2021/Report/Images/n8.png>] (/home/marfo/Documenti/DIA_project_2021/Report/main.aux)
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                main
-(biblatex)                and rerun LaTeX afterwards.
-
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 13870 strings out of 479304
- 237437 string characters out of 5869779
- 1010899 words of memory out of 5000000
- 30817 multiletter control sequences out of 15000+600000
+ 13898 strings out of 479304
+ 238083 string characters out of 5869779
+ 1011595 words of memory out of 5000000
+ 30837 multiletter control sequences out of 15000+600000
  420182 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 73i,9n,78p,1499b,1660s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 73i,9n,78p,1499b,1722s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm2074.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on /home/marfo/Documenti/DIA_project_2021/Report/main.pdf (29 pages, 900691 bytes).
+Output written on /home/marfo/Documenti/DIA_project_2021/Report/main.pdf (29 pages, 902557 bytes).
 PDF statistics:
  190 PDF objects out of 1000 (max. 8388607)
  124 compressed objects within 2 object streams
