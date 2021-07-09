@@ -46,8 +46,44 @@ $n_{a}(\tau_{a},t-1)$ is the number of valid samples for arm $a$\\
 \subsection*{Strategy}
 In order to solve this problem we have used a change detection (CUSUM) algorithm and a bandit algorithm (UCB). At each time $t$, the UCB outputs a decision $I_t \in K$, where $K$ is a set of arms, based on its past observations of the bandit environment. The environment generates the corresponding reward of arm $I_t$, which is observed by both the bandit algorithm and the change detection algorithm. The change detection algorithm monitors the distribution of each arm, and sends out a positive signal to restart the bandit algorithm once a breakpoint is detected.
 
-\subparagraph{Implementation} 
+\subparagraph{Implementation}
+\begin{itemize}
+	\item Three seasons: Spring-Summer, Autumn, Winter
+	\item Number of customers per class is not known 
+	\item Candidates for the \textit{Racing Skis} are: \{2110.0, 1900.0, 2420.0, 2690.00\}
+	\item Candidates for the \textit{Racing Ski Helmet} are: \{360.0, 410.0, 530.0, 600.0\}
+	\item Conversion rate associated with the first item is not known
+	\item Conversion rate associated with the second item is not known
+	\item Promotion assignment is not known 
+	\item Change-detection test approach
+\end{itemize} 
+
 \subparagraph{Optimal strategy}
+We have calculate the optimal solution in the same way as in the point 6. The only difference is that we will have one optimal solution per season, so at the beginning of each of them we have to calculate it again.
+According to our candidates the optimal solution is:
+
+\begin{center}
+	\begin{tabular}{|c|p{4cm}|p{4cm}|p{4cm}|} 
+		\hline
+		Season & \textit{Racing Skis optimal price} & \textit{Racing Ski Helmet} optimal price & Optimal promo-category matching \\ \hline
+		\multirow{4}{*}{Spring-Summer} & \multirow{4}{*}{1900.0} & \multirow{4}{*}{360.0} & Sport addicted: P$_0$ = 0\% (360.0)  \\ 
+		& 					   &                      & Gifted: P$_1$ = 10\% (324.0)          \\ 
+		& 					   &                      & Worried: P$_2$ = 20\% (288.0)         \\
+		& 					   &                      & Amateur: P$_3$ = 30\% (251.99)         \\ \hline
+		\multirow{4}{*}{Autumn} & \multirow{4}{*}{2690.0} & \multirow{4}{*}{530.0}  & Sport addicted: P$_1$ = 10\% (477.0)\\ 
+		& 					   &                      & Gifted: P$_3$ = 30\% (371.0)         \\ 
+		& 					   &                      & Worried: P$_2$ = 20\% (424.0)         \\
+		& 					   &                      & Amateur: P$_0$ = 0\% (530.0)         \\ \hline
+		\multirow{4}{*}{Winter} & \multirow{4}{*}{2420.0} & \multirow{4}{*}{600.0}  & Sport addicted: P$_3$ = 30\% (420.0)\\ 
+		& 					   &                      & Gifted: P$_1$ = 10\% (540.0)         \\ 
+		& 					   &                      & Worried: P$_2$ = 20\% (480.0)         \\
+		& 					   &                      & Amateur: P$_0$ = 0\% (600.0)          \\ \hline
+	\end{tabular}
+\end{center}
+
+Days: 365\\
+Experiments number: 2 \\
+
 
 
 
@@ -57,4 +93,4 @@ In order to solve this problem we have used a change detection (CUSUM) algorithm
 	\includegraphics[scale=0.35]{Images/n8}
 \end{center}
 \subsection*{Considerations}
-We can observe that the change-detection approach performs better than without it, this can be seen from the second season to the end. In the first season, the cumulative regret is higher with the change-detection approach, because it catch some false-positive detection, that can change the solution that it suggests.
+We can observe that the change-detection approach has a small impact respect to the performance of the SW-TS. This is due to the fact that the change-detection approach catches some false-positive detection; the matching of promo-category of the second item is influenced by the prices chosen for the two items.
