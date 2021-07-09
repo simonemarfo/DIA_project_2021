@@ -135,55 +135,6 @@ class Context():
             print(f"{best_prices = }")
             print(f"{best_matching = }\n\tSport Addicted =>{ctx.discount_promos[best_matching[1][0]] * 100}%\n\tGifter =>{self.discount_promos[best_matching[1][1]] * 100}%\n\tAmateur =>{self.discount_promos[best_matching[1][2]] * 100}%\n\tGifter =>{self.discount_promos[best_matching[1][3]] * 100}%")
         return best_prices,best_matching, best_reward
-
-    def uncorrelated_optimal_solution(self, candidates_item1,candidates_item2,season=0, verbose=False):
-        if verbose: print(f"Uncorrelated optimal solution for season : {item1_probabilities[season]['name']}")
-        best_reward = - np.inf
-        best_reward_item1 = -np.inf
-        best_reward_item2 = -np.inf
-        best_matching = []
-        best_prices = [0,0]
-        # find max reward for item1
-        for p1 in candidates_item1:
-            reward_item1 = 0
-            for c in range(0,4):
-                reward_item1 += self.customersDistribution[c][0] * self.conversion_rate_first_element(p1,c,season) * p1
-            if reward_item1 > best_reward_item1:
-                best_reward_item1 = reward_item1
-                best_prices[0] = p1
-        # find max reward for item2
-        for p2 in candidates_item2:
-            reward_item2 = 0
-            for c in range(0,4):
-                reward_item2 += self.customersDistribution[c][0] * self.conversion_rate_second_element(p2,c,season) * p2
-            if reward_item2 > best_reward_item2:
-                best_reward_item2 = reward_item2
-                best_prices[1] = p2
-        # matching and compute the reward
-        # item2 conversion matrix
-        discounted_price = [best_prices[1], best_prices[1]*(1-self.discount_promos[1]), best_prices[1]*(1-self.discount_promos[2]), best_prices[1]*(1-self.discount_promos[3])]
-        matrix = np.zeros((4,4))
-        for i in range (0,4): #classes
-            for j in range (0,4): #promos
-                matrix[i,j] = (self.conversion_rate_first_element(best_prices[0],c,season) * self.conversion_rate_second_element(discounted_price[j], i,season)) * self.customersDistribution[i][0] *  discounted_price[j]
-        matching_opt = linear_sum_assignment(matrix, maximize=True) # optimal solution row_ind, col_ind
-        best_matching = matching_opt
-        # reward item2 
-        reward_item2 = 0
-        best_reward_item2 = 0
-        for c in range(0,4):
-            best_reward_item2 += matrix[c][matching_opt[1][c]]
-        best_reward = best_reward_item1 + best_reward_item2
-        #results: 
-        if verbose:
-            print(f"{best_reward =}")
-            print(f"{best_reward_item1 =}")
-            print(f"{best_reward_item2 =}")
-            print(f"{best_prices = }")
-            print(f"{best_matching = }\n\tSport Addicted =>{ctx.discount_promos[best_matching[1][0]] * 100}%\n\tGifter =>{self.discount_promos[best_matching[1][1]] * 100}%\n\tAmateur =>{self.discount_promos[best_matching[1][2]] * 100}%\n\tGifter =>{self.discount_promos[best_matching[1][3]] * 100}%")
-        return best_prices,best_matching, best_reward
-
-
 """ ctx = Context()
 ctx.plot_item1_conversion_rate()
 ctx.plot_item2_conversion_rate()

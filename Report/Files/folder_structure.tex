@@ -1,0 +1,15 @@
+We have done a script file for every step of the project. The first two steps are theoretical and they are included in the report, by the way we have implemented, for completeness, a script for the first step that find the optimal solution of the offline optimization problem.
+\subsection*{Config}
+Config.py contains:
+\begin{itemize}
+	\item The samples used to reconstruct the demand curves of the two items
+	\item The parameters of the customer distribution
+	\item Other description information about the environment
+\end{itemize} 
+
+\subsection*{Context}
+Context.py is the library on which the experiment are based on. It contains the functions related to the purchase of the two items based on their conversion rates, the generation of the daily customer numbers per class, the algorithm to calculate the optimal solutions for the non-stationary environment and the plot functions for the demand curves and the other distributions.
+Config.py contains:
+
+\subsection*{Algorithms}
+The Algorithms folder contains all the learning algorithms: UCB and Thompson Sampling, with the customized version.
