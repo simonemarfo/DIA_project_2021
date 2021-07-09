@@ -35,7 +35,25 @@ The strategy is the same of the previous submission with the introduction of the
 	\item Optimal promotion-category assignment need to be learnt
 \end{itemize}
 \subparagraph{Optimal strategy}
-
+The computation of the optimal strategy is the same performed in the previous submission but is calculated three times, thaking into account the three season.
+\begin{center}
+	\begin{tabular}{|c|p{4cm}|p{4cm}|p{4cm}|} 
+	\hline
+	Season & \textit{Racing Skis optimal price} & \textit{Racing Ski Helmet} optimal price & Optimal promo-category matching \\ \hline
+	\multirow{4}{*}{Spring-Summer} & \multirow{4}{*}{1900.0} & \multirow{4}{*}{360.0} & Sport addicted: P$_0$ = 0\% (360.0)  \\ 
+								   & 					   &                      & Gifted: P$_1$ = 10\% (324.0)          \\ 
+								   & 					   &                      & Worried: P$_2$ = 20\% (288.0)         \\
+								   & 					   &                      & Amateur: P$_3$ = 30\% (251.99)         \\ \hline
+	\multirow{4}{*}{Autumn} & \multirow{4}{*}{2690.0} & \multirow{4}{*}{530.0}  & Sport addicted: P$_1$ = 10\% (477.0)\\ 
+								   & 					   &                      & Gifted: P$_3$ = 30\% (371.0)         \\ 
+								   & 					   &                      & Worried: P$_2$ = 20\% (424.0)         \\
+								   & 					   &                      & Amateur: P$_0$ = 0\% (530.0)         \\ \hline
+	\multirow{4}{*}{Winter} & \multirow{4}{*}{2420.0} & \multirow{4}{*}{600.0}  & Sport addicted: P$_3$ = 30\% (420.0)\\ 
+								   & 					   &                      & Gifted: P$_1$ = 10\% (540.0)         \\ 
+								   & 					   &                      & Worried: P$_2$ = 20\% (480.0)         \\
+								   & 					   &                      & Amateur: P$_0$ = 0\% (600.0)          \\ \hline
+	\end{tabular}
+\end{center}
 
 \subsection*{Results}
 \begin{center}
@@ -48,4 +66,4 @@ Experiments number: 3 \\
 Starting delay of the Promo-Category UCB Matching: 1000 clients\\
 SWTS window size : $\sqrt{365 * 1000} * 30$\\
 \subsection*{Considerations}
-We can observe that in the first season the SW-TS algorithm has an higher regret than the TS algorithm, because the first has a number of samples that is equal to the dimension of the window, instead the second collects all the samples. The SW-TS has a better performance from the second season, due to the sliding-window approach, it stabilizes faster than the TS, and at the end, the cumulative regret for the SW-TS is about 4 times less than the TS.
+We can observe that in the first season the TS perform better since it has a complete knowledge of the collected sample, while the SWTS discars the older samples. However, when the conversion rates changes due to the change of the season, with the sliding window approach, the newer sample becomes predominants thus, the algorithm changes its behaviour adapting the solution to the new season. We can note that the cumulative regret for the SWTS is about 4 times less than the TS. 
