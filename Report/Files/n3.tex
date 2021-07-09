@@ -22,7 +22,7 @@ Notation:\\
 \item $a^*$ optimal arm
 \item $X_{a}$ random variable (bernoulli) associated to arm a
 \item $\mu_{a}$ expected value of random variable $X_{a}$
-\item $x_{a,t}$ realization of rv $X_{a}$ at time $t$
+\item $x_{a,t}$ realization of random variable $X_{a}$ at time $t$
 \item $x_{a}$ realizations of $X_{a}$
 \item $\bar{x}_{a}$ empirical mean of $x_{a}$
 \item $n_{a}(t)$ number of samples of arm $a$ at time $t$
@@ -71,7 +71,7 @@ $(\alpha_{a_{t}}, \beta_{a_{t}}) \leftarrow (\alpha_{a_{t}}, \beta_{a_{t}}) + (x
 
 \subsection*{Strategy}
 
-In our solution we simulate a random arrival of the customers, through two different leaner, TS learner and a UCB learner, we extract from our candidates two prices and we emulate the purchase phase using both prices. In case the customer buys the first item, we propose the second one at a fixed price, computed according to the customer category. In this case we do not simulate the purchase phase, but we use the knowledge of the conversion rate of the second item to compute the final customer reward. 
+In our solution we simulate a random arrival of the customers, through two different leaners, TS learner and a UCB learner, we extract from our candidates two prices and we emulate the purchase phase using both prices. In case the customer buys the first item, we propose the second one at a fixed price, computed according to the customer category. In this case we do not simulate the purchase phase, but we use the knowledge of the conversion rate of the second item to compute the final customer reward. 
 
 \subparagraph{Implementation} 
 \begin{itemize}
@@ -107,7 +107,7 @@ Both UCB and TS learner expect as learnign parameter a binomial value, while our
 \begin{center}
 	\includegraphics[scale=1.2]{Images/n3}
 \end{center}
-Days :10\\
+Days: 10\\
 Experiments number: 10 \\
 Both UCB and TS strategy converge on 1910.0\\
 \textit{We decide to plot the regret of the first 5000 clients, since plotting the results of the entire time horizon made the plot unreadable}

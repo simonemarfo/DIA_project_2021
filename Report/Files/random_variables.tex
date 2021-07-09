@@ -39,7 +39,7 @@ The following graphs are the demand curves of the two items: the first three gra
 \end{center}
 
 \subsection*{Online Approach}
-Our general approach for the online problem is to simulate, day by day the shop, generating the customers and emulating their behavior, collecting the results and, according to the considered scenario and constraints, provide an optimal solution that maximise the reward.\\
+Our general approach for the online problem is to simulate, day by day, the shop, generating the customers and emulating their behavior, collecting the results and, according to the considered scenario and constraints, provide an optimal solution that maximize the reward.\\
 Every day we retrieve the daily customer distribution per class using the previously presented random variable that model the daily customer distribution. Randomly we simulate the entry of a new customer, of which we know the category of belonging, in the shop. With an online approach we select the best price to be prosed to the client, in order to maximize the reward. The purchase is simulated with the previously presented random variable with a Bernulli distribution.
 The second item is proposed to the client only if the first has been purchased. The price at which it is proposed is retrieved with an online matching approach that try to sugget which is the best discout to apply to the user in oreder to maximize the reward.\\
-This procedure is repeated for all clients during the entire time horizon of 356 days. 
+This procedure is repeated for all clients during the entire time horizon of 365 days. 
