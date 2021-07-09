@@ -1,12 +1,12 @@
 # Fdb version 3
-["biber main"] 1625826252 "main.bcf" "main.bbl" "main" 1625826314
-  "main.bcf" 1625826298 105958 9f211889282cc646524175eb4b50ad24 "pdflatex"
+["biber main"] 1625832868 "main.bcf" "main.bbl" "main" 1625833333
+  "main.bcf" 1625833333 105958 9f211889282cc646524175eb4b50ad24 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
-["pdflatex"] 1625826295 "/home/marfo/Documenti/DIA_project_2021/Report/main.tex" "/home/marfo/Documenti/DIA_project_2021/Report/main.pdf" "main" 1625826314
+["pdflatex"] 1625833330 "/home/marfo/Documenti/DIA_project_2021/Report/main.tex" "/home/marfo/Documenti/DIA_project_2021/Report/main.pdf" "main" 1625833333
   "/etc/texmf/web2c/texmf.cnf" 1615995747 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/marfo/Documenti/DIA_project_2021/Report/main.aux" 1625826298 4867 a5d9043c168a9e18902610812da5807c ""
+  "/home/marfo/Documenti/DIA_project_2021/Report/main.aux" 1625833333 4867 4b94b76ed06d2cdc45a0abc92067743a ""
   "/home/marfo/Documenti/DIA_project_2021/Report/main.tex" 1625755548 2332 6301c136ea9be536efcb577b2ddf4d49 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx0600.tfm" 1136768653 3584 ad9fcbc26a2a7bccd6d08b0a5792fbe0 ""
@@ -146,7 +146,7 @@
   "Files/n4.tex" 1625825950 3132 c9e94aed054fbb5d96dac869d37e57f4 ""
   "Files/n5.tex" 1625826314 5490 8897a204bde989f7f19ee2960f81ecec ""
   "Files/n6.tex" 1625759173 1670 58f4f4e86943b68a889d59386d2427f0 ""
-  "Files/n7.tex" 1625759628 2540 eb5494f1ef3e47d6f80b320535caac66 ""
+  "Files/n7.tex" 1625833330 3796 524334a54eb834abec4495c86ccce235 ""
   "Files/n8.tex" 1625759628 2998 89e37c9e70117e42cf4fff97a66871d4 ""
   "Files/random_variables.tex" 1625825950 2754 3a3702d29255a89dd0c6f43c21f17e4d ""
   "Images/CR_fstItem.png" 1625751959 136775 3a8e2679cf7635fdab8b1c22572b368a ""
@@ -161,18 +161,18 @@
   "Images/n6.png" 1625751959 39698 fc911c654854e915055d9ea56e9f4381 ""
   "Images/n7.png" 1625747930 54446 77d360294496d9df8aee6d09517cc7bf ""
   "Images/n8.png" 1625751959 57387 c95928638667f076ef9f09e63ec29918 ""
-  "main.aux" 1625826298 4867 a5d9043c168a9e18902610812da5807c "pdflatex"
-  "main.bbl" 1625826253 466 f7f239c736cf01ac6ce7bd829f9b3c7b "biber main"
-  "main.run.xml" 1625826298 2338 91d5c4a897dc0ae6a5a5b4e41d27ea15 "pdflatex"
+  "main.aux" 1625833333 4867 4b94b76ed06d2cdc45a0abc92067743a "pdflatex"
+  "main.bbl" 1625832869 466 f7f239c736cf01ac6ce7bd829f9b3c7b "biber main"
+  "main.run.xml" 1625833333 2338 91d5c4a897dc0ae6a5a5b4e41d27ea15 "pdflatex"
   "main.tex" 1625755548 2332 6301c136ea9be536efcb577b2ddf4d49 ""
-  "main.toc" 1625826298 2316 3727497efc3cf57bbe7ae28b2b770f24 "pdflatex"
+  "main.toc" 1625833333 2316 fc83db77dcfbdf6851b1462cd09f87d0 "pdflatex"
   "styleFile.tex" 1625826252 858 5374550ffad86e12a4e7553e3ac15d0a ""
   (generated)
   "main.toc"
   "main.bcf"
-  "/home/marfo/Documenti/DIA_project_2021/Report/main.log"
+  "main.aux"
+  "main.run.xml"
   "/home/marfo/Documenti/DIA_project_2021/Report/main.pdf"
   "main.pdf"
-  "main.aux"
   "main.log"
-  "main.run.xml"
+  "/home/marfo/Documenti/DIA_project_2021/Report/main.log"

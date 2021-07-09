@@ -39,12 +39,12 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subparagraph}{Optimal strategy}{25}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Seasonal Pricing and Matching problem: Change Detection}{26}{}%
+\contentsline {section}{Seasonal Pricing and Matching problem: Change Detection}{27}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subparagraph}{Implementation}{27}{}%
+\contentsline {subparagraph}{Implementation}{28}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subparagraph}{Optimal strategy}{27}{}%
+\contentsline {subparagraph}{Optimal strategy}{28}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Folder Structure}{28}{}%
+\contentsline {section}{Folder Structure}{29}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{References}{28}{}%
+\contentsline {section}{References}{29}{}%
