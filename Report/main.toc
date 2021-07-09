@@ -23,28 +23,28 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{Matching problem: promo assignment}{18}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subparagraph}{Implementation}{19}{}%
-\defcounter {refsection}{0}\relax 
-\contentsline {subparagraph}{Optimal strategy}{19}{}%
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{Pricing and Matching problem}{20}{}%
-\defcounter {refsection}{0}\relax 
 \contentsline {subparagraph}{Implementation}{20}{}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subparagraph}{Optimal strategy}{20}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Seasonal Pricing and Matching problem: Sliding Window}{21}{}%
+\contentsline {section}{Pricing and Matching problem}{21}{}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subparagraph}{Implementation}{22}{}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subparagraph}{Optimal strategy}{22}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Seasonal Pricing and Matching problem: Change Detection}{23}{}%
+\contentsline {section}{Seasonal Pricing and Matching problem: Sliding Window}{23}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subparagraph}{Implementation}{25}{}%
+\contentsline {subparagraph}{Implementation}{24}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subparagraph}{Optimal strategy}{25}{}%
+\contentsline {subparagraph}{Optimal strategy}{24}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Folder Structure}{26}{}%
+\contentsline {section}{Seasonal Pricing and Matching problem: Change Detection}{25}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{References}{26}{}%
+\contentsline {subparagraph}{Implementation}{26}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subparagraph}{Optimal strategy}{26}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Folder Structure}{27}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{References}{27}{}%
