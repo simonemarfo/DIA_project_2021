@@ -31,7 +31,7 @@ We have considered a ski shop that sells racing skis as first item and racing sk
 	& Worried &  Who pays a lot of attention to the price of the items\\ 
 	& Amateur &  Who sometimes practices ski\\ 
 	\hline
-	\multirow{3}{4em}{seasons} & Spring-Summer & Buyers are not tempted to spend a lot, ski season is far away\\ 
+	\multirow{3}{4em}{Seasons} & Spring-Summer & Buyers are not tempted to spend a lot, ski season is far away\\ 
 	& Autumn & Buyers are willing to spend in anticipation of the arrival of the ski season \\
 	& Winter &  Ski season has begun, those who have not yet bought the equipment have hurried to buy it so as not to waste the season\\  
 	\hline
@@ -42,4 +42,5 @@ We have considered a ski shop that sells racing skis as first item and racing sk
 \begin{itemize}
 		\item Seasonality is taken into accout only for the 7$^{th}$, 8$^{th}$ requests, while for all the other, the seasonality of the products is not considered and the conversion rates remain static. For this requests the default season is the first one, in our context called Spring.  
 		\item In our mathematical formulation, for the total reward maximization problem, we consider the production cost of both the items equal to zero.
-\end{itemize}
+		\item For the first step the objective of promo assignment is to find the best values for the fractions of clients of the various classes that receice a specific promo code. In the next steps, instead, we use online learning algorithm to find the best combination for the assignment promo code - class.
+	\end{itemize}
