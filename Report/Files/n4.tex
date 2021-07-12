@@ -3,6 +3,7 @@
 
 The goal is the same of the previous problem: we have to learn the optimal price for the first item comparing TS and UCB approach. In addition, this time, we have no information about the conversion rate for the second item. 
 
+Implementation: \textit{n4.py}
 \subsection*{Strategy}
 The script that we have implemented is similar to the previous one. We simulate a random arrival of the customers, proposing the \textit{Racing Skis} to them at the prices suggested by the two learners (UCB and TS) and simulating the purchase of it. In case the customer buys the first item, instead of mathematically retrieve the reward of the second item using the conversion rate, we simulate the purchase of it proposing the \textit{Racing Ski Helmet} at the disconted price accordingly to the user category. We calculate the total reward and we update the learners with the results, as the prevoius submission, normilizing the reward. 
 

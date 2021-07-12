@@ -1,166 +1,169 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2021.3.17)  9 JUL 2021 15:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.11.2)  12 JUL 2021 18:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/home/marfo/Documenti/DIA_project_2021/Report/main.tex
-(/home/marfo/Documenti/DIA_project_2021/Report/main.tex
-LaTeX2e <2020-10-01> patch level 4
-L3 programming layer <2021-01-09> xparse <2020-03-03> (/home/marfo/Documenti/DIA_project_2021/Report/styleFile.tex (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
-Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
-(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
-File: size12.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
+**"c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/main.tex"
+(c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/main.tex
+LaTeX2e <2019-10-01> patch level 1
+(c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/styleFile.tex (d:/Programmi/texlive/2019/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2019/08/27 v1.4j Standard LaTeX document class
+(d:/Programmi/texlive/2019/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2019/08/27 v1.4j Standard LaTeX file (size option)
 )
-\c@part=\count177
-\c@section=\count178
-\c@subsection=\count179
-\c@subsubsection=\count180
-\c@paragraph=\count181
-\c@subparagraph=\count182
-\c@figure=\count183
-\c@table=\count184
-\abovecaptionskip=\skip47
-\belowcaptionskip=\skip48
-\bibindent=\dimen138
-) (/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
-Package: geometry 2020/01/02 v5.9 Page Geometry
- (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+\c@part=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+) (d:/Programmi/texlive/2019/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2018/04/16 v5.8 Page Geometry
+ (d:/Programmi/texlive/2019/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks15
-) (/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
-Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
- (/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
-Package: iftex 2020/03/06 v1.0d TeX engine tests
-))
-\Gm@cnth=\count185
-\Gm@cntv=\count186
-\c@Gm@tempcnt=\count187
-\Gm@bindingoffset=\dimen139
-\Gm@wd@mp=\dimen140
-\Gm@odd@mp=\dimen141
-\Gm@even@mp=\dimen142
-\Gm@layoutwidth=\dimen143
-\Gm@layoutheight=\dimen144
-\Gm@layouthoffset=\dimen145
-\Gm@layoutvoffset=\dimen146
-\Gm@dimlist=\toks16
-) (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
-Package: fontenc 2020/08/10 v2.0s Standard LaTeX package
-) (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
-Package: inputenc 2020/08/01 v1.3d Input encoding file
-\inpenc@prehook=\toks17
-\inpenc@posthook=\toks18
-) (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2021/01/26 3.53 The Babel package
- (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
-File: babel.def 2021/01/26 3.53 Babel common definitions
-\babel@savecnt=\count188
-\U@D=\dimen147
-\l@babelnohyphens=\language86
- (/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
-\bbl@readstream=\read2
+\KV@toks@=\toks14
+) (d:/Programmi/texlive/2019/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
+) (d:/Programmi/texlive/2019/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+) (d:/Programmi/texlive/2019/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-\bbl@dirlevel=\count189
- (/usr/share/texlive/texmf-dist/tex/generic/babel-italian/italian.ldf
-Language: italian 2020/05/21 v.1.4.04 Italian support for the babel system
-\it@lettering=\count190
-\it@doublequoteactive=\count191
-\it@ISOcompliance=\count192
-) (/usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf
+\Gm@cnth=\count88
+\Gm@cntv=\count89
+\c@Gm@tempcnt=\count90
+\Gm@bindingoffset=\dimen103
+\Gm@wd@mp=\dimen104
+\Gm@odd@mp=\dimen105
+\Gm@even@mp=\dimen106
+\Gm@layoutwidth=\dimen107
+\Gm@layoutheight=\dimen108
+\Gm@layouthoffset=\dimen109
+\Gm@layoutvoffset=\dimen110
+\Gm@dimlist=\toks15
+) (d:/Programmi/texlive/2019/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2018/08/11 v2.0j Standard LaTeX package
+ (d:/Programmi/texlive/2019/texmf-dist/tex/latex/base/t1enc.def
+File: t1enc.def 2018/08/11 v2.0j Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
+)) (d:/Programmi/texlive/2019/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2018/08/11 v1.3c Input encoding file
+\inpenc@prehook=\toks16
+\inpenc@posthook=\toks17
+) (d:/Programmi/texlive/2019/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2019/10/15 3.35 The Babel package
+ (d:/Programmi/texlive/2019/texmf-dist/tex/generic/babel/switch.def
+File: switch.def 2019/10/15 3.35 Babel switching mechanism
+) (d:/Programmi/texlive/2019/texmf-dist/tex/generic/babel-italian/italian.ldf
+Language: italian 2019/01/05 v.1.4.01 Italian support for the babel system
+ (d:/Programmi/texlive/2019/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2019/10/15 3.35 Babel common definitions
+\babel@savecnt=\count91
+\U@D=\dimen111
+ (d:/Programmi/texlive/2019/texmf-dist/tex/generic/babel/txtbabel.def)
+\bbl@dirlevel=\count92
+)
+\it@lettering=\count93
+\it@doublequoteactive=\count94
+\it@ISOcompliance=\count95
+) (d:/Programmi/texlive/2019/texmf-dist/tex/generic/babel-english/english.ldf
 Language: english 2017/06/06 v3.3r English support from the babel system
-Package babel Info: \l@canadian = using hyphenrules for english
-(babel)             (\language0) on input line 102.
-Package babel Info: \l@australian = using hyphenrules for ukenglish
-(babel)             (\language17) on input line 105.
-Package babel Info: \l@newzealand = using hyphenrules for ukenglish
-(babel)             (\language17) on input line 108.
-)) (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
-Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count193
-) (/usr/share/texlive/texmf-dist/tex/latex/tocloft/tocloft.sty
+\l@canadian = a dialect from \language\l@american 
+\l@australian = a dialect from \language\l@british 
+\l@newzealand = a dialect from \language\l@british 
+)) (d:/Programmi/texlive/2019/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count96
+) (d:/Programmi/texlive/2019/texmf-dist/tex/latex/tocloft/tocloft.sty
 Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
 Package tocloft Info: The document has section divisions on input line 51.
-\cftparskip=\skip49
-\cftbeforetoctitleskip=\skip50
-\cftaftertoctitleskip=\skip51
-\cftbeforepartskip=\skip52
-\cftpartnumwidth=\skip53
-\cftpartindent=\skip54
-\cftbeforesecskip=\skip55
-\cftsecindent=\skip56
-\cftsecnumwidth=\skip57
-\cftbeforesubsecskip=\skip58
-\cftsubsecindent=\skip59
-\cftsubsecnumwidth=\skip60
-\cftbeforesubsubsecskip=\skip61
-\cftsubsubsecindent=\skip62
-\cftsubsubsecnumwidth=\skip63
-\cftbeforeparaskip=\skip64
-\cftparaindent=\skip65
-\cftparanumwidth=\skip66
-\cftbeforesubparaskip=\skip67
-\cftsubparaindent=\skip68
-\cftsubparanumwidth=\skip69
-\cftbeforeloftitleskip=\skip70
-\cftafterloftitleskip=\skip71
-\cftbeforefigskip=\skip72
-\cftfigindent=\skip73
-\cftfignumwidth=\skip74
-\c@lofdepth=\count194
-\c@lotdepth=\count195
-\cftbeforelottitleskip=\skip75
-\cftafterlottitleskip=\skip76
-\cftbeforetabskip=\skip77
-\cfttabindent=\skip78
-\cfttabnumwidth=\skip79
-) (/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
-Package: fancyhdr 2021/01/04 v4.0 Extensive control of page headers and footers
-\f@nch@headwidth=\skip80
-\f@nch@O@elh=\skip81
-\f@nch@O@erh=\skip82
-\f@nch@O@olh=\skip83
-\f@nch@O@orh=\skip84
-\f@nch@O@elf=\skip85
-\f@nch@O@erf=\skip86
-\f@nch@O@olf=\skip87
-\f@nch@O@orf=\skip88
-) (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
- (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2020/08/30 v1.4c Standard LaTeX Graphics (DPC,SPQR)
- (/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+\cftparskip=\skip43
+\cftbeforetoctitleskip=\skip44
+\cftaftertoctitleskip=\skip45
+\cftbeforepartskip=\skip46
+\cftpartnumwidth=\skip47
+\cftpartindent=\skip48
+\cftbeforesecskip=\skip49
+\cftsecindent=\skip50
+\cftsecnumwidth=\skip51
+\cftbeforesubsecskip=\skip52
+\cftsubsecindent=\skip53
+\cftsubsecnumwidth=\skip54
+\cftbeforesubsubsecskip=\skip55
+\cftsubsubsecindent=\skip56
+\cftsubsubsecnumwidth=\skip57
+\cftbeforeparaskip=\skip58
+\cftparaindent=\skip59
+\cftparanumwidth=\skip60
+\cftbeforesubparaskip=\skip61
+\cftsubparaindent=\skip62
+\cftsubparanumwidth=\skip63
+\cftbeforeloftitleskip=\skip64
+\cftafterloftitleskip=\skip65
+\cftbeforefigskip=\skip66
+\cftfigindent=\skip67
+\cftfignumwidth=\skip68
+\c@lofdepth=\count97
+\c@lotdepth=\count98
+\cftbeforelottitleskip=\skip69
+\cftafterlottitleskip=\skip70
+\cftbeforetabskip=\skip71
+\cfttabindent=\skip72
+\cfttabnumwidth=\skip73
+) (d:/Programmi/texlive/2019/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footers
+\f@nch@headwidth=\skip74
+\f@nch@O@elh=\skip75
+\f@nch@O@erh=\skip76
+\f@nch@O@olh=\skip77
+\f@nch@O@orh=\skip78
+\f@nch@O@elf=\skip79
+\f@nch@O@erf=\skip80
+\f@nch@O@olf=\skip81
+\f@nch@O@orf=\skip82
+) (d:/Programmi/texlive/2019/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+ (d:/Programmi/texlive/2019/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2019/10/08 v1.3c Standard LaTeX Graphics (DPC,SPQR)
+ (d:/Programmi/texlive/2019/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
-) (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+) (d:/Programmi/texlive/2019/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 105.
- (/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
-File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
+ (d:/Programmi/texlive/2019/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen148
-\Gin@req@width=\dimen149
-) (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+\Gin@req@height=\dimen112
+\Gin@req@width=\dimen113
+) (d:/Programmi/texlive/2019/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
- (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+ (d:/Programmi/texlive/2019/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
- (/usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty
-Package: colortbl 2020/01/04 v1.0e Color table columns (DPC)
- (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
-Package: array 2020/10/01 v2.5c Tabular extension package (FMi)
-\col@sep=\dimen150
-\ar@mcellbox=\box47
-\extrarowheight=\dimen151
-\NC@list=\toks19
-\extratabsurround=\skip89
-\backup@length=\skip90
-\ar@cellbox=\box48
+ (d:/Programmi/texlive/2019/texmf-dist/tex/latex/colortbl/colortbl.sty
+Package: colortbl 2018/12/12 v1.0d Color table columns (DPC)
+ (d:/Programmi/texlive/2019/texmf-dist/tex/latex/tools/array.sty
+Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
+\col@sep=\dimen114
+\ar@mcellbox=\box27
+\extrarowheight=\dimen115
+\NC@list=\toks18
+\extratabsurround=\skip83
+\backup@length=\skip84
+\ar@cellbox=\box28
 )
-\everycr=\toks20
-\minrowclearance=\skip91
+\everycr=\toks19
+\minrowclearance=\skip85
 )
-\rownum=\count196
+\rownum=\count99
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
 Package xcolor Info: Model `RGB' extended on input line 1364.
@@ -170,314 +173,319 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
- (/usr/share/texlive/texmf-dist/tex/latex/graphics/dvipsnam.def
+ (d:/Programmi/texlive/2019/texmf-dist/tex/latex/graphics/dvipsnam.def
 File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
-)) (/usr/share/texlive/texmf-dist/tex/latex/tabu/tabu.sty
-Package: tabu 2019/01/11 v2.9 - flexible LaTeX tabulars (FC+tabu-fixed) + intermediate FMi
- (/usr/share/texlive/texmf-dist/tex/latex/varwidth/varwidth.sty
+)) (d:/Programmi/texlive/2019/texmf-dist/tex/latex/tabu/tabu.sty
+Package: tabu 2019/01/11 v2.9 - flexible LaTeX tabulars (FC+tabu-fixed)
+ (d:/Programmi/texlive/2019/texmf-dist/tex/latex/varwidth/varwidth.sty
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
-\@vwid@box=\box49
-\sift@deathcycles=\count197
-\@vwid@loff=\dimen152
-\@vwid@roff=\dimen153
+\@vwid@box=\box29
+\sift@deathcycles=\count100
+\@vwid@loff=\dimen116
+\@vwid@roff=\dimen117
 )
-\c@taburow=\count198
-\tabu@nbcols=\count199
-\tabu@cnt=\count266
-\tabu@Xcol=\count267
-\tabu@alloc=\count268
-\tabu@nested=\count269
-\tabu@target=\dimen154
-\tabu@spreadtarget=\dimen155
-\tabu@naturalX=\dimen156
-\tabucolX=\dimen157
-\tabu@Xsum=\dimen158
-\extrarowdepth=\dimen159
-\abovetabulinesep=\dimen160
-\belowtabulinesep=\dimen161
-\tabustrutrule=\dimen162
-\tabu@thebody=\toks21
-\tabu@footnotes=\toks22
-\tabu@box=\box50
-\tabu@arstrutbox=\box51
-\tabu@hleads=\box52
-\tabu@vleads=\box53
-\tabu@cellskip=\skip92
-) (/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
-Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
-\TX@col@width=\dimen163
-\TX@old@table=\dimen164
-\TX@old@col=\dimen165
-\TX@target=\dimen166
-\TX@delta=\dimen167
-\TX@cols=\count270
-\TX@ftn=\toks23
-) (/usr/share/texlive/texmf-dist/tex/latex/ltablex/ltablex.sty
+\c@taburow=\count101
+\tabu@nbcols=\count102
+\tabu@cnt=\count103
+\tabu@Xcol=\count104
+\tabu@alloc=\count105
+\tabu@nested=\count106
+\tabu@target=\dimen118
+\tabu@spreadtarget=\dimen119
+\tabu@naturalX=\dimen120
+\tabucolX=\dimen121
+\tabu@Xsum=\dimen122
+\extrarowdepth=\dimen123
+\abovetabulinesep=\dimen124
+\belowtabulinesep=\dimen125
+\tabustrutrule=\dimen126
+\tabu@thebody=\toks20
+\tabu@footnotes=\toks21
+\tabu@box=\box30
+\tabu@arstrutbox=\box31
+\tabu@hleads=\box32
+\tabu@vleads=\box33
+\tabu@cellskip=\skip86
+) (d:/Programmi/texlive/2019/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 2016/02/03 v2.11b `tabularx' package (DPC)
+\TX@col@width=\dimen127
+\TX@old@table=\dimen128
+\TX@old@col=\dimen129
+\TX@target=\dimen130
+\TX@delta=\dimen131
+\TX@cols=\count107
+\TX@ftn=\toks22
+) (d:/Programmi/texlive/2019/texmf-dist/tex/latex/ltablex/ltablex.sty
 Package: ltablex 2014/08/13 v1.1 Modified tabularx
- (/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty
-Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
-\LTleft=\skip93
-\LTright=\skip94
-\LTpre=\skip95
-\LTpost=\skip96
-\LTchunksize=\count271
-\LTcapwidth=\dimen168
-\LT@head=\box54
-\LT@firsthead=\box55
-\LT@foot=\box56
-\LT@lastfoot=\box57
-\LT@cols=\count272
-\LT@rows=\count273
-\c@LT@tables=\count274
-\c@LT@chunks=\count275
-\LT@p@ftn=\toks24
-)) (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+ (d:/Programmi/texlive/2019/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2019/02/06 v4.12 Multi-page Table package (DPC)
+\LTleft=\skip87
+\LTright=\skip88
+\LTpre=\skip89
+\LTpost=\skip90
+\LTchunksize=\count108
+\LTcapwidth=\dimen132
+\LT@head=\box34
+\LT@firsthead=\box35
+\LT@foot=\box36
+\LT@lastfoot=\box37
+\LT@cols=\count109
+\LT@rows=\count110
+\c@LT@tables=\count111
+\c@LT@chunks=\count112
+\LT@p@ftn=\toks23
+)) (d:/Programmi/texlive/2019/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count276
-\float@exts=\toks25
-\float@box=\box58
-\@float@everytoks=\toks26
-\@floatcapt=\box59
-) (/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
-Package: multirow 2021/01/29 v2.7 Span multiple rows of a table
-\multirow@colwidth=\skip97
-\multirow@cntb=\count277
-\multirow@dima=\skip98
-\bigstrutjot=\dimen169
-) (/usr/share/texlive/texmf-dist/tex/latex/xurl/xurl.sty
-Package: xurl 2020/12/30 v 0.09a modify URL breaks
- (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
-\Urlmuskip=\muskip16
+\c@float@type=\count113
+\float@exts=\toks24
+\float@box=\box38
+\@float@everytoks=\toks25
+\@floatcapt=\box39
+) (d:/Programmi/texlive/2019/texmf-dist/tex/latex/multirow/multirow.sty
+Package: multirow 2019/05/31 v2.5 Span multiple rows of a table
+\multirow@colwidth=\skip91
+\multirow@cntb=\count114
+\multirow@dima=\skip92
+\bigstrutjot=\dimen133
+) (d:/Programmi/texlive/2019/texmf-dist/tex/latex/xurl/xurl.sty
+Package: xurl 2018/12/23 v 0.07 modify URL breaks
+ (d:/Programmi/texlive/2019/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip10
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
-)) (/usr/share/texlive/texmf-dist/tex/latex/tabto-ltx/tabto.sty
+)) (d:/Programmi/texlive/2019/texmf-dist/tex/latex/tabto-ltx/tabto.sty
 Package: tabto 2018/12/28  v 1.4  Another tabbing mechanism
-\CurrentLineWidth=\dimen170
-\TabPrevPos=\dimen171
-) (/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.sty
-Package: csquotes 2021-01-04 v5.2k context-sensitive quotations (JAW)
-\csq@reset=\count278
-\csq@gtype=\count279
-\csq@glevel=\count280
-\csq@qlevel=\count281
-\csq@maxlvl=\count282
-\csq@tshold=\count283
-\csq@ltx@everypar=\toks27
- (/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.def
-File: csquotes.def 2021-01-04 v5.2k csquotes generic definitions (JAW)
+\CurrentLineWidth=\dimen134
+\TabPrevPos=\dimen135
+) (d:/Programmi/texlive/2019/texmf-dist/tex/latex/csquotes/csquotes.sty
+Package: csquotes 2019/05/10 v5.2e context-sensitive quotations (JAW)
+\csq@reset=\count115
+\csq@gtype=\count116
+\csq@glevel=\count117
+\csq@qlevel=\count118
+\csq@maxlvl=\count119
+\csq@tshold=\count120
+\csq@ltx@everypar=\toks26
+ (d:/Programmi/texlive/2019/texmf-dist/tex/latex/csquotes/csquotes.def
+File: csquotes.def 2019/05/10 v5.2e csquotes generic definitions (JAW)
 )
 Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
 Package csquotes Info: ... configuration file loaded successfully.
- (/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.cfg
+ (d:/Programmi/texlive/2019/texmf-dist/tex/latex/csquotes/csquotes.cfg
 File: csquotes.cfg 
-)) (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.sty
-Package: biblatex 2020/12/31 v3.16 programmable bibliographies (PK/MW)
- (/usr/share/texlive/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
-Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
- (/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty
-Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
-) (/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
-Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+)) (d:/Programmi/texlive/2019/texmf-dist/tex/latex/biblatex/biblatex.sty
+Package: biblatex 2019/08/31 v3.13a programmable bibliographies (PK/MW)
+ (d:/Programmi/texlive/2019/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2019/07/25 v0.30 Utility functions of pdfTeX for LuaTeX (HO)
+ (d:/Programmi/texlive/2019/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+) (d:/Programmi/texlive/2019/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+) (d:/Programmi/texlive/2019/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 )
+Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-) (/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
-Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
- (/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
-Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
-)) (/usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.sty
+) (d:/Programmi/texlive/2019/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+ (d:/Programmi/texlive/2019/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+ (d:/Programmi/texlive/2019/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+))) (d:/Programmi/texlive/2019/texmf-dist/tex/latex/logreq/logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count284
- (/usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.def
+\lrq@indent=\count121
+ (d:/Programmi/texlive/2019/texmf-dist/tex/latex/logreq/logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
-)) (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+)) (d:/Programmi/texlive/2019/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-\c@tabx@nest=\count285
-\c@listtotal=\count286
-\c@listcount=\count287
-\c@liststart=\count288
-\c@liststop=\count289
-\c@citecount=\count290
-\c@citetotal=\count291
-\c@multicitecount=\count292
-\c@multicitetotal=\count293
-\c@instcount=\count294
-\c@maxnames=\count295
-\c@minnames=\count296
-\c@maxitems=\count297
-\c@minitems=\count298
-\c@citecounter=\count299
-\c@maxcitecounter=\count300
-\c@savedcitecounter=\count301
-\c@uniquelist=\count302
-\c@uniquename=\count303
-\c@refsection=\count304
-\c@refsegment=\count305
-\c@maxextratitle=\count306
-\c@maxextratitleyear=\count307
-\c@maxextraname=\count308
-\c@maxextradate=\count309
-\c@maxextraalpha=\count310
-\c@abbrvpenalty=\count311
-\c@highnamepenalty=\count312
-\c@lownamepenalty=\count313
-\c@maxparens=\count314
-\c@parenlevel=\count315
-\blx@tempcnta=\count316
-\blx@tempcntb=\count317
-\blx@tempcntc=\count318
-\blx@maxsection=\count319
-\blx@maxsegment@0=\count320
-\blx@notetype=\count321
-\blx@parenlevel@text=\count322
-\blx@parenlevel@foot=\count323
-\blx@sectionciteorder@0=\count324
-\blx@entrysetcounter=\count325
-\blx@biblioinstance=\count326
-\labelnumberwidth=\skip99
-\labelalphawidth=\skip100
-\biblabelsep=\skip101
-\bibitemsep=\skip102
-\bibnamesep=\skip103
-\bibinitsep=\skip104
-\bibparsep=\skip105
-\bibhang=\skip106
-\blx@bcfin=\read3
+\c@tabx@nest=\count122
+\c@listtotal=\count123
+\c@listcount=\count124
+\c@liststart=\count125
+\c@liststop=\count126
+\c@citecount=\count127
+\c@citetotal=\count128
+\c@multicitecount=\count129
+\c@multicitetotal=\count130
+\c@instcount=\count131
+\c@maxnames=\count132
+\c@minnames=\count133
+\c@maxitems=\count134
+\c@minitems=\count135
+\c@citecounter=\count136
+\c@maxcitecounter=\count137
+\c@savedcitecounter=\count138
+\c@uniquelist=\count139
+\c@uniquename=\count140
+\c@refsection=\count141
+\c@refsegment=\count142
+\c@maxextratitle=\count143
+\c@maxextratitleyear=\count144
+\c@maxextraname=\count145
+\c@maxextradate=\count146
+\c@maxextraalpha=\count147
+\c@abbrvpenalty=\count148
+\c@highnamepenalty=\count149
+\c@lownamepenalty=\count150
+\c@maxparens=\count151
+\c@parenlevel=\count152
+\blx@tempcnta=\count153
+\blx@tempcntb=\count154
+\blx@tempcntc=\count155
+\blx@maxsection=\count156
+\blx@maxsegment@0=\count157
+\blx@notetype=\count158
+\blx@parenlevel@text=\count159
+\blx@parenlevel@foot=\count160
+\blx@sectionciteorder@0=\count161
+\blx@entrysetcounter=\count162
+\labelnumberwidth=\skip93
+\labelalphawidth=\skip94
+\biblabelsep=\skip95
+\bibitemsep=\skip96
+\bibnamesep=\skip97
+\bibinitsep=\skip98
+\bibparsep=\skip99
+\bibhang=\skip100
+\blx@bcfin=\read1
 \blx@bcfout=\write3
-\blx@langwohyphens=\language87
-\c@mincomprange=\count327
-\c@maxcomprange=\count328
-\c@mincompwidth=\count329
+\blx@langwohyphens=\language85
+\c@mincomprange=\count163
+\c@maxcomprange=\count164
+\c@mincompwidth=\count165
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
- (/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-dm.def
-File: blx-dm.def 2020/12/31 v3.16 biblatex localization (PK/MW)
+ (d:/Programmi/texlive/2019/texmf-dist/tex/latex/biblatex/blx-dm.def
+File: blx-dm.def 2019/08/31 v3.13a biblatex localization (PK/MW)
 )
 Package biblatex Info: Trying to load biblatex citestyle data model...
 Package biblatex Info: ... file 'numeric.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count330
-\c@savedafterword=\count331
-\c@annotator=\count332
-\c@savedannotator=\count333
-\c@author=\count334
-\c@savedauthor=\count335
-\c@bookauthor=\count336
-\c@savedbookauthor=\count337
-\c@commentator=\count338
-\c@savedcommentator=\count339
-\c@editor=\count340
-\c@savededitor=\count341
-\c@editora=\count342
-\c@savededitora=\count343
-\c@editorb=\count344
-\c@savededitorb=\count345
-\c@editorc=\count346
-\c@savededitorc=\count347
-\c@foreword=\count348
-\c@savedforeword=\count349
-\c@holder=\count350
-\c@savedholder=\count351
-\c@introduction=\count352
-\c@savedintroduction=\count353
-\c@namea=\count354
-\c@savednamea=\count355
-\c@nameb=\count356
-\c@savednameb=\count357
-\c@namec=\count358
-\c@savednamec=\count359
-\c@translator=\count360
-\c@savedtranslator=\count361
-\c@shortauthor=\count362
-\c@savedshortauthor=\count363
-\c@shorteditor=\count364
-\c@savedshorteditor=\count365
-\c@labelname=\count366
-\c@savedlabelname=\count367
-\c@institution=\count368
-\c@savedinstitution=\count369
-\c@lista=\count370
-\c@savedlista=\count371
-\c@listb=\count372
-\c@savedlistb=\count373
-\c@listc=\count374
-\c@savedlistc=\count375
-\c@listd=\count376
-\c@savedlistd=\count377
-\c@liste=\count378
-\c@savedliste=\count379
-\c@listf=\count380
-\c@savedlistf=\count381
-\c@location=\count382
-\c@savedlocation=\count383
-\c@organization=\count384
-\c@savedorganization=\count385
-\c@origlocation=\count386
-\c@savedoriglocation=\count387
-\c@origpublisher=\count388
-\c@savedorigpublisher=\count389
-\c@publisher=\count390
-\c@savedpublisher=\count391
-\c@language=\count392
-\c@savedlanguage=\count393
-\c@origlanguage=\count394
-\c@savedoriglanguage=\count395
-\c@pageref=\count396
-\c@savedpageref=\count397
-\shorthandwidth=\skip107
-\shortjournalwidth=\skip108
-\shortserieswidth=\skip109
-\shorttitlewidth=\skip110
-\shortauthorwidth=\skip111
-\shorteditorwidth=\skip112
-\locallabelnumberwidth=\skip113
-\locallabelalphawidth=\skip114
-\localshorthandwidth=\skip115
-\localshortjournalwidth=\skip116
-\localshortserieswidth=\skip117
-\localshorttitlewidth=\skip118
-\localshortauthorwidth=\skip119
-\localshorteditorwidth=\skip120
+\c@afterword=\count166
+\c@savedafterword=\count167
+\c@annotator=\count168
+\c@savedannotator=\count169
+\c@author=\count170
+\c@savedauthor=\count171
+\c@bookauthor=\count172
+\c@savedbookauthor=\count173
+\c@commentator=\count174
+\c@savedcommentator=\count175
+\c@editor=\count176
+\c@savededitor=\count177
+\c@editora=\count178
+\c@savededitora=\count179
+\c@editorb=\count180
+\c@savededitorb=\count181
+\c@editorc=\count182
+\c@savededitorc=\count183
+\c@foreword=\count184
+\c@savedforeword=\count185
+\c@holder=\count186
+\c@savedholder=\count187
+\c@introduction=\count188
+\c@savedintroduction=\count189
+\c@namea=\count190
+\c@savednamea=\count191
+\c@nameb=\count192
+\c@savednameb=\count193
+\c@namec=\count194
+\c@savednamec=\count195
+\c@translator=\count196
+\c@savedtranslator=\count197
+\c@shortauthor=\count198
+\c@savedshortauthor=\count199
+\c@shorteditor=\count266
+\c@savedshorteditor=\count267
+\c@labelname=\count268
+\c@savedlabelname=\count269
+\c@institution=\count270
+\c@savedinstitution=\count271
+\c@lista=\count272
+\c@savedlista=\count273
+\c@listb=\count274
+\c@savedlistb=\count275
+\c@listc=\count276
+\c@savedlistc=\count277
+\c@listd=\count278
+\c@savedlistd=\count279
+\c@liste=\count280
+\c@savedliste=\count281
+\c@listf=\count282
+\c@savedlistf=\count283
+\c@location=\count284
+\c@savedlocation=\count285
+\c@organization=\count286
+\c@savedorganization=\count287
+\c@origlocation=\count288
+\c@savedoriglocation=\count289
+\c@origpublisher=\count290
+\c@savedorigpublisher=\count291
+\c@publisher=\count292
+\c@savedpublisher=\count293
+\c@language=\count294
+\c@savedlanguage=\count295
+\c@origlanguage=\count296
+\c@savedoriglanguage=\count297
+\c@pageref=\count298
+\c@savedpageref=\count299
+\shorthandwidth=\skip101
+\shortjournalwidth=\skip102
+\shortserieswidth=\skip103
+\shorttitlewidth=\skip104
+\shortauthorwidth=\skip105
+\shorteditorwidth=\skip106
+\locallabelnumberwidth=\skip107
+\locallabelalphawidth=\skip108
+\localshorthandwidth=\skip109
+\localshortjournalwidth=\skip110
+\localshortserieswidth=\skip111
+\localshorttitlewidth=\skip112
+\localshortauthorwidth=\skip113
+\localshorteditorwidth=\skip114
 Package biblatex Info: Trying to load compatibility code...
 Package biblatex Info: ... file 'blx-compat.def' found.
- (/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-compat.def
-File: blx-compat.def 2020/12/31 v3.16 biblatex compatibility (PK/MW)
+ (d:/Programmi/texlive/2019/texmf-dist/tex/latex/biblatex/blx-compat.def
+File: blx-compat.def 2019/08/31 v3.13a biblatex compatibility (PK/MW)
 )
 Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
- (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.def
-File: biblatex.def 2020/12/31 v3.16 biblatex compatibility (PK/MW)
-\c@textcitecount=\count398
-\c@textcitetotal=\count399
-\c@textcitemaxnames=\count400
-\c@biburlbigbreakpenalty=\count401
-\c@biburlbreakpenalty=\count402
-\c@biburlnumpenalty=\count403
-\c@biburlucpenalty=\count404
-\c@biburllcpenalty=\count405
-\biburlbigskip=\muskip17
-\biburlnumskip=\muskip18
-\biburlucskip=\muskip19
-\biburllcskip=\muskip20
-\c@smartand=\count406
+ (d:/Programmi/texlive/2019/texmf-dist/tex/latex/biblatex/biblatex.def
+File: biblatex.def 2019/08/31 v3.13a biblatex compatibility (PK/MW)
+\c@textcitecount=\count300
+\c@textcitetotal=\count301
+\c@textcitemaxnames=\count302
+\c@biburlbigbreakpenalty=\count303
+\c@biburlbreakpenalty=\count304
+\c@biburlnumpenalty=\count305
+\c@biburlucpenalty=\count306
+\c@biburllcpenalty=\count307
+\biburlbigskip=\muskip11
+\biburlnumskip=\muskip12
+\biburlucskip=\muskip13
+\biburllcskip=\muskip14
+\c@smartand=\count308
 )
 Package biblatex Info: Trying to load bibliography style 'numeric'...
 Package biblatex Info: ... file 'numeric.bbx' found.
- (/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/numeric.bbx
-File: numeric.bbx 2020/12/31 v3.16 biblatex bibliography style (PK/MW)
+ (d:/Programmi/texlive/2019/texmf-dist/tex/latex/biblatex/bbx/numeric.bbx
+File: numeric.bbx 2019/08/31 v3.13a biblatex bibliography style (PK/MW)
 Package biblatex Info: Trying to load bibliography style 'standard'...
 Package biblatex Info: ... file 'standard.bbx' found.
- (/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
-File: standard.bbx 2020/12/31 v3.16 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count407
-\c@bbx:relatedtotal=\count408
+ (d:/Programmi/texlive/2019/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
+File: standard.bbx 2019/08/31 v3.13a biblatex bibliography style (PK/MW)
+\c@bbx:relatedcount=\count309
+\c@bbx:relatedtotal=\count310
 ))
 Package biblatex Info: Trying to load citation style 'numeric'...
 Package biblatex Info: ... file 'numeric.cbx' found.
- (/usr/share/texlive/texmf-dist/tex/latex/biblatex/cbx/numeric.cbx
-File: numeric.cbx 2020/12/31 v3.16 biblatex citation style (PK/MW)
+ (d:/Programmi/texlive/2019/texmf-dist/tex/latex/biblatex/cbx/numeric.cbx
+File: numeric.cbx 2019/08/31 v3.13a biblatex citation style (PK/MW)
 Package biblatex Info: Redefining '\cite'.
 Package biblatex Info: Redefining '\parencite'.
 Package biblatex Info: Redefining '\footcite'.
@@ -492,96 +500,120 @@ Package biblatex Info: Redefining '\smartcites'.
 )
 Package biblatex Info: Trying to load configuration file...
 Package biblatex Info: ... file 'biblatex.cfg' found.
- (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.cfg
+ (d:/Programmi/texlive/2019/texmf-dist/tex/latex/biblatex/biblatex.cfg
 File: biblatex.cfg 
-))) (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+)) (d:/Programmi/texlive/2019/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
-\@emptytoks=\toks28
+\@emptytoks=\toks27
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2020/09/23 v2.17i AMS math features
-\@mathmargin=\skip121
+) (d:/Programmi/texlive/2019/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2019/04/01 v2.17c AMS math features
+\@mathmargin=\skip115
 
 For additional information on amsmath, use the `?' option.
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(d:/Programmi/texlive/2019/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2000/06/29 v2.01 AMS text
- (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+ (d:/Programmi/texlive/2019/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks29
-\ex@=\dimen172
-)) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+\@emptytoks=\toks28
+\ex@=\dimen136
+)) (d:/Programmi/texlive/2019/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen173
-) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+\pmbraise@=\dimen137
+) (d:/Programmi/texlive/2019/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count409
-LaTeX Info: Redefining \frac on input line 234.
-\uproot@=\count410
-\leftroot@=\count411
-LaTeX Info: Redefining \overline on input line 399.
-\classnum@=\count412
-\DOTSCASE@=\count413
-LaTeX Info: Redefining \ldots on input line 496.
-LaTeX Info: Redefining \dots on input line 499.
-LaTeX Info: Redefining \cdots on input line 620.
-\Mathstrutbox@=\box60
-\strutbox@=\box61
-\big@size=\dimen174
-LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count414
-\c@MaxMatrixCols=\count415
-\dotsspace@=\muskip21
-\c@parentequation=\count416
-\dspbrk@lvl=\count417
-\tag@help=\toks30
-\row@=\count418
-\column@=\count419
-\maxfields@=\count420
-\andhelp@=\toks31
-\eqnshift@=\dimen175
-\alignsep@=\dimen176
-\tagshift@=\dimen177
-\tagwidth@=\dimen178
-\totwidth@=\dimen179
-\lineht@=\dimen180
-\@envbody=\toks32
-\multlinegap=\skip122
-\multlinetaggap=\skip123
-\mathdisplay@stack=\toks33
-LaTeX Info: Redefining \[ on input line 2923.
-LaTeX Info: Redefining \] on input line 2924.
-)
+\inf@bad=\count311
+LaTeX Info: Redefining \frac on input line 227.
+\uproot@=\count312
+\leftroot@=\count313
+LaTeX Info: Redefining \overline on input line 389.
+\classnum@=\count314
+\DOTSCASE@=\count315
+LaTeX Info: Redefining \ldots on input line 486.
+LaTeX Info: Redefining \dots on input line 489.
+LaTeX Info: Redefining \cdots on input line 610.
+\Mathstrutbox@=\box40
+\strutbox@=\box41
+\big@size=\dimen138
+LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
+\macc@depth=\count316
+\c@MaxMatrixCols=\count317
+\dotsspace@=\muskip15
+\c@parentequation=\count318
+\dspbrk@lvl=\count319
+\tag@help=\toks29
+\row@=\count320
+\column@=\count321
+\maxfields@=\count322
+\andhelp@=\toks30
+\eqnshift@=\dimen139
+\alignsep@=\dimen140
+\tagshift@=\dimen141
+\tagwidth@=\dimen142
+\totwidth@=\dimen143
+\lineht@=\dimen144
+\@envbody=\toks31
+\multlinegap=\skip116
+\multlinetaggap=\skip117
+\mathdisplay@stack=\toks32
+LaTeX Info: Redefining \[ on input line 2855.
+LaTeX Info: Redefining \] on input line 2856.
+)) (d:/Programmi/texlive/2019/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count323
+\lst@gtempboxa=\box42
+\lst@token=\toks33
+\lst@length=\count324
+\lst@currlwidth=\dimen145
+\lst@column=\count325
+\lst@pos=\count326
+\lst@lostspace=\dimen146
+\lst@width=\dimen147
+\lst@newlines=\count327
+\lst@lineno=\count328
+\lst@maxwidth=\dimen148
+ (d:/Programmi/texlive/2019/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2019/09/10 1.8c (Carsten Heinz)
+\c@lstnumber=\count329
+\lst@skipnumbers=\count330
+\lst@framebox=\box43
+) (d:/Programmi/texlive/2019/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2019/09/10 1.8c listings configuration
+))
+Package: listings 2019/09/10 1.8c (Carsten Heinz)
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'english'.
- (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-File: l3backend-pdftex.def 2020-01-29 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count421
-\l__pdf_internal_box=\box62
-) (/home/marfo/Documenti/DIA_project_2021/Report/main.aux)
+Package biblatex Info: Trying to load language 'english'...
+Package biblatex Info: ... file 'english.lbx' found.
+ (d:/Programmi/texlive/2019/texmf-dist/tex/latex/biblatex/lbx/english.lbx
+File: english.lbx 2019/08/31 v3.13a biblatex localization (PK/MW)
+)
+Package biblatex Info: Trying to load language 'italian'...
+Package biblatex Info: ... file 'italian.lbx' found.
+ (d:/Programmi/texlive/2019/texmf-dist/tex/latex/biblatex/lbx/italian.lbx
+File: italian.lbx 2019/08/31 v3.13a biblatex localization (PK/MW)
+) (c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -617,75 +649,53 @@ LaTeX Font Info:    ... okay on input line 5.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \it@ocap on input line 5.
-LaTeX Info: Redefining \it@ccap on input line 5.
-(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+LaTeX Info: Redefining \it@ocap on input line 3.
+LaTeX Info: Redefining \it@ccap on input line 3.
+(d:/Programmi/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count422
-\scratchdimen=\dimen181
-\scratchbox=\box63
-\nofMPsegments=\count423
-\nofMParguments=\count424
+\scratchcounter=\count331
+\scratchdimen=\dimen149
+\scratchbox=\box44
+\nofMPsegments=\count332
+\nofMParguments=\count333
 \everyMPshowfont=\toks34
-\MPscratchCnt=\count425
-\MPscratchDim=\dimen182
-\MPnumerator=\count426
-\makeMPintoPDFobject=\count427
+\MPscratchCnt=\count334
+\MPscratchDim=\dimen150
+\MPnumerator=\count335
+\makeMPintoPDFobject=\count336
 \everyMPtoPDFconversion=\toks35
-) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
-Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
- (/usr/share/texlive/texmf-dist/tex/latex/grfext/grfext.sty
-Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
- (/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
-Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+) (d:/Programmi/texlive/2019/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+ (d:/Programmi/texlive/2019/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+ (d:/Programmi/texlive/2019/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
 ))
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 438.
 Package grfext Info: Graphics extension search list:
 (grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 504.
- (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+(grfext)             \AppendGraphicsExtensions on input line 456.
+ (d:/Programmi/texlive/2019/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package biblatex Info: Trying to load language 'english'...
-Package biblatex Info: ... file 'english.lbx' found.
- (/usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/english.lbx
-File: english.lbx 2020/12/31 v3.16 biblatex localization (PK/MW)
-)
-Package biblatex Info: Trying to load language 'italian'...
-Package biblatex Info: ... file 'italian.lbx' found.
- (/usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/italian.lbx
-File: italian.lbx 2020/12/31 v3.16 biblatex localization (PK/MW)
-)
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
-Package biblatex Info: Document encoding is UTF8 ....
- (/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2021-01-09 L3 programming layer (loader) 
-)
-Package biblatex Info: ... and expl3
-(biblatex)             2021-01-09 L3 programming layer (loader) 
-(biblatex)             is new enough (at least 2020/04/06),
-(biblatex)             setting 'casechanger=expl3'.
- (/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty (/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
-Package: xparse 2020-10-27 L3 Experimental document command parser
- (/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse-generic.tex))
-Package: blx-case-expl3 2020/12/31 v3.16 expl3 case changing code for biblatex
-)
 \openout3 = `main.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
- (/home/marfo/Documenti/DIA_project_2021/Report/main.bbl)
-Package biblatex Info: Reference section=0 on input line 5.
-Package biblatex Info: Reference segment=0 on input line 5.
- (/home/marfo/Documenti/DIA_project_2021/Report/Files/firstPage.tex
+ (c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/main.bbl)
+Package biblatex Info: Reference section=0 on input line 3.
+Package biblatex Info: Reference segment=0 on input line 3.
+\c@lstlisting=\count337
+ (c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Files/firstPage.tex
 LaTeX Font Info:    Trying to load font information for U+msa on input line 5.
- (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+ (d:/Programmi/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 5.
- (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+ (d:/Programmi/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 <Images/PolimiLogo.png, id=1, 405.515pt x 125.46875pt>
@@ -695,11 +705,11 @@ Package pdftex.def Info: Images/PolimiLogo.png  used on input line 7.
 (pdftex.def)             Requested size: 202.75699pt x 62.7342pt.
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} </home/marfo/Documenti/DIA_project_2021/Report/Images/PolimiLogo.png>]) (/home/marfo/Documenti/DIA_project_2021/Report/main.toc)
+{d:/Programmi/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Images/PolimiLogo.png>]) (c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/main.toc)
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
- [1] (/home/marfo/Documenti/DIA_project_2021/Report/Files/introduction.tex [2
+ [1] (c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Files/introduction.tex [2
 
 ]
 Overfull \hbox (2.67574pt too wide) in paragraph at lines 29--29
@@ -716,66 +726,82 @@ Overfull \hbox (6.75043pt too wide) in paragraph at lines 24--39
  [] 
  []
 
-[3]) (/home/marfo/Documenti/DIA_project_2021/Report/Files/formal_model.tex [4]
+[3]
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 43.
+ (d:/Programmi/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 43.
+) (c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Files/formal_model.tex [4]
 Underfull \hbox (badness 10000) in paragraph at lines 28--31
 
  []
 
 [5] [6]
-Overfull \hbox (38.29143pt too wide) in paragraph at lines 59--60
-\T1/cmr/m/n/12 columns are the dis-count type. Cells are the weighted as $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 conversionRateSecondItem \OMS/cmsy/m/n/12 ^^C
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 60--61
+Underfull \hbox (badness 10000) in paragraph at lines 53--54
 
  []
 
 
-Overfull \hbox (2.54774pt too wide) in paragraph at lines 66--67
-| \T1/cmr/m/n/12 temp[rowInd[ind],colInd[ind]] = match-ing-Ma-trix[rowInd[ind],colInd[ind]] 
+Overfull \hbox (2.91199pt too wide) in paragraph at lines 59--60
+[]\T1/cmr/m/n/12 Calculate the dis-counted price for the dif-fer-ent promo codes: $\OML/cmm/m/it/12 discountedPrice \OT1/cmr/m/n/12 =
+ []
+
+
+Overfull \hbox (15.3101pt too wide) in paragraph at lines 59--60
+\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 item\OT1/cmr/m/n/12 2\OML/cmm/m/it/12 PriceFull; item\OT1/cmr/m/n/12 2\OML/cmm/m/it/12 PriceFull \OMS/cmsy/m/n/12 ^^C \OT1/cmr/m/n/12 (1 \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 ctx:discountPromos\OT1/cmr/m/n/12 [1])\OML/cmm/m/it/12 ; item\OT1/cmr/m/n/12 2\OML/cmm/m/it/12 PriceFull \OMS/cmsy/m/n/12 ^^C
+ []
+
+
+Overfull \hbox (8.92358pt too wide) in paragraph at lines 60--61
+\T1/cmr/m/n/12 columns are the pro-mo-tions. Cells are weighted as $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 conversionRateSecondItem \OMS/cmsy/m/n/12 ^^C
+ []
+
+(d:/Programmi/texlive/2019/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2019/09/10 1.8c listings language file
+)
+Underfull \hbox (badness 10000) in paragraph at lines 61--62
+
+ []
+
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 62.
+(d:/Programmi/texlive/2019/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <6> not available
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 63.
+
+Underfull \hbox (badness 10000) in paragraph at lines 72--73
+
  []
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 78--79
-
- []
-
-
-Overfull \hbox (33.98167pt too wide) in paragraph at lines 83--84
-| \T1/cmr/m/n/12 class-Fi-nalD-is-tri-bu-tion[i,j] = (class-Fi-nalD-is-tri-bu-tion[i,j]*100/sumPerClass)/100 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 83--84
-
- []
-
 <Images/n1_results.png, id=44, 533.49312pt x 97.36375pt>
 File: Images/n1_results.png Graphic file (type png)
 <use Images/n1_results.png>
-Package pdftex.def Info: Images/n1_results.png  used on input line 90.
+Package pdftex.def Info: Images/n1_results.png  used on input line 93.
 (pdftex.def)             Requested size: 480.13937pt x 87.62654pt.
 
-Overfull \hbox (50.13475pt too wide) in paragraph at lines 90--91
+Overfull \hbox (50.13475pt too wide) in paragraph at lines 93--94
  [] 
  []
 
 <Images/n1_chart.png, id=45, 745.8264pt x 544.1931pt>
 File: Images/n1_chart.png Graphic file (type png)
 <use Images/n1_chart.png>
-Package pdftex.def Info: Images/n1_chart.png  used on input line 93.
+Package pdftex.def Info: Images/n1_chart.png  used on input line 97.
 (pdftex.def)             Requested size: 522.07492pt x 380.93256pt.
 
-Overfull \hbox (92.0703pt too wide) in paragraph at lines 93--94
+Overfull \hbox (92.0703pt too wide) in paragraph at lines 97--98
  [] 
  []
 
-[8 </home/marfo/Documenti/DIA_project_2021/Report/Images/n1_results.png>]) (/home/marfo/Documenti/DIA_project_2021/Report/Files/random_variables.tex
+[8 <c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Images/n1_results.png>]) (c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Files/random_variables.tex
 Underfull \vbox (badness 10000) detected at line 20
  []
 
-[9 </home/marfo/Documenti/DIA_project_2021/Report/Images/n1_chart.png>]
+[9 <c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Images/n1_chart.png>]
 <Images/CustomerDistribution.png, id=54, 368.87813pt x 202.50656pt>
 File: Images/CustomerDistribution.png Graphic file (type png)
 <use Images/CustomerDistribution.png>
@@ -786,44 +812,44 @@ File: Images/CR_fstItem.png Graphic file (type png)
 <use Images/CR_fstItem.png>
 Package pdftex.def Info: Images/CR_fstItem.png  used on input line 34.
 (pdftex.def)             Requested size: 387.32108pt x 313.54564pt.
- [10 </home/marfo/Documenti/DIA_project_2021/Report/Images/CustomerDistribution.png>]
+ [10 <c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Images/CustomerDistribution.png>]
 <Images/CR_scndItem.png, id=59, 798.73407pt x 622.57594pt>
 File: Images/CR_scndItem.png Graphic file (type png)
 <use Images/CR_scndItem.png>
 Package pdftex.def Info: Images/CR_scndItem.png  used on input line 38.
 (pdftex.def)             Requested size: 399.36606pt x 311.2872pt.
- [11 </home/marfo/Documenti/DIA_project_2021/Report/Images/CR_fstItem.png>]) (/home/marfo/Documenti/DIA_project_2021/Report/Files/n3.tex
+ [11 <c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Images/CR_fstItem.png>]) (c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Files/n3.tex
 Underfull \hbox (badness 10000) in paragraph at lines 2--3
 
  []
 
-[12 </home/marfo/Documenti/DIA_project_2021/Report/Images/CR_scndItem.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 16--17
+[12 <c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Images/CR_scndItem.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 17--18
 
  []
 
 [13]
-Underfull \hbox (badness 10000) in paragraph at lines 31--32
+Underfull \hbox (badness 10000) in paragraph at lines 32--33
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 50--51
+Underfull \hbox (badness 10000) in paragraph at lines 51--52
 
  []
 
 [14]
-Underfull \hbox (badness 10000) in paragraph at lines 57--58
+Underfull \hbox (badness 10000) in paragraph at lines 58--59
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 61--62
+Underfull \hbox (badness 10000) in paragraph at lines 62--63
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 65--66
+Underfull \hbox (badness 10000) in paragraph at lines 66--67
 
  []
 
@@ -831,9 +857,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 65--66
 <Images/n3.png, id=79, 319.1925pt x 200.75pt>
 File: Images/n3.png Graphic file (type png)
 <use Images/n3.png>
-Package pdftex.def Info: Images/n3.png  used on input line 108.
+Package pdftex.def Info: Images/n3.png  used on input line 109.
 (pdftex.def)             Requested size: 383.02907pt x 240.89877pt.
- [16 </home/marfo/Documenti/DIA_project_2021/Report/Images/n3.png>]) (/home/marfo/Documenti/DIA_project_2021/Report/Files/n4.tex
+ [16 <c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Images/n3.png>]) (c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Files/n4.tex
 Underfull \hbox (badness 10000) in paragraph at lines 2--3
 
  []
@@ -842,146 +868,86 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--3
 <Images/n4.png, id=86, 304.63812pt x 208.78pt>
 File: Images/n4.png Graphic file (type png)
 <use Images/n4.png>
-Package pdftex.def Info: Images/n4.png  used on input line 40.
+Package pdftex.def Info: Images/n4.png  used on input line 41.
 (pdftex.def)             Requested size: 365.56389pt x 250.53471pt.
- [18 </home/marfo/Documenti/DIA_project_2021/Report/Images/n4.png>]) (/home/marfo/Documenti/DIA_project_2021/Report/Files/n5.tex
+ [18]) (c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Files/n5.tex
 Underfull \hbox (badness 10000) in paragraph at lines 2--3
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 7--8
-
- []
-
-[19] [20]
-Underfull \hbox (badness 10000) in paragraph at lines 37--38
+[19 <c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Images/n4.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 8--9
 
  []
 
-<Images/n5.png, id=98, 1381.41093pt x 691.83469pt>
+[20]
+Underfull \hbox (badness 10000) in paragraph at lines 36--37
+
+ []
+
+[21]
+<Images/n5.png, id=101, 1381.41093pt x 691.83469pt>
 File: Images/n5.png Graphic file (type png)
 <use Images/n5.png>
-Package pdftex.def Info: Images/n5.png  used on input line 56.
+Package pdftex.def Info: Images/n5.png  used on input line 55.
 (pdftex.def)             Requested size: 414.42648pt x 207.552pt.
-[21]
-Underfull \hbox (badness 10000) in paragraph at lines 58--62
+
+Underfull \hbox (badness 10000) in paragraph at lines 57--61
 
  []
 
-) (/home/marfo/Documenti/DIA_project_2021/Report/Files/n6.tex
+) (c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Files/n6.tex
 Underfull \hbox (badness 10000) in paragraph at lines 2--3
 
  []
 
-[22 </home/marfo/Documenti/DIA_project_2021/Report/Images/n5.png>] [23]
-Underfull \hbox (badness 10000) in paragraph at lines 30--32
+[22 <c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Images/n5.png>] [23]
+Underfull \hbox (badness 3679) in paragraph at lines 28--28
+[]|\T1/cmr/m/it/12 Racing Skis op-ti-mal
+ []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 28--28
+[]|\T1/cmr/m/n/12 Optimal promo-
+ []
+
+
+Underfull \hbox (badness 2119) in paragraph at lines 30--31
+[]|\T1/cmr/m/n/12 Gifted: P$[]$ = 20%
+ []
+
+
+Overfull \hbox (41.04785pt too wide) in paragraph at lines 26--34
+ [] 
  []
 
 <Images/n6.png, id=108, 1339.25343pt x 694.84593pt>
 File: Images/n6.png Graphic file (type png)
 <use Images/n6.png>
-Package pdftex.def Info: Images/n6.png  used on input line 35.
+Package pdftex.def Info: Images/n6.png  used on input line 38.
 (pdftex.def)             Requested size: 468.74573pt x 243.1997pt.
 
-Overfull \hbox (38.7411pt too wide) in paragraph at lines 35--36
+Overfull \hbox (38.7411pt too wide) in paragraph at lines 38--39
  [] 
  []
 
-) [24 </home/marfo/Documenti/DIA_project_2021/Report/Images/n6.png>]
-Overfull \hbox (2.31444pt too wide) in paragraph at lines 48--48
-[]\T1/cmr/bx/n/17.28 Seasonal Pric-ing and Match-ing prob-lem: Slid-ing Win-
+[24]
+Underfull \hbox (badness 10000) in paragraph at lines 40--43
+
  []
 
-(/home/marfo/Documenti/DIA_project_2021/Report/Files/n7.tex
+) (c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Files/n7.tex
 Underfull \hbox (badness 10000) in paragraph at lines 2--3
 
  []
 
-
-Overfull \hbox (18.81485pt too wide) in paragraph at lines 8--9
- \T1/cmr/bx/n/12 Sliding-Window Thomp-son Sam-pling (SW-TS) \T1/cmr/m/n/12 The Slid-ing Win-dow Thomp-
+[25 <c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Images/n6.png>]
+Overfull \hbox (12.81631pt too wide) in paragraph at lines 9--10
+ \T1/cmr/bx/n/12 Slid-ing Win-dow Thomp-son Sam-pling (SWTS) \T1/cmr/m/n/12 The Slid-ing Win-dow Thomp-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 8--9
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 12--13
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 16--17
-
- []
-
-[25]
-Overfull \hbox (56.87837pt too wide) in paragraph at lines 22--23
-[] \T1/cmr/m/n/12 if $\OML/cmm/m/it/12 ^^\ < t$\T1/cmr/m/n/12 : $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 []; ^^L[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12   [] []$ 
- []
-
-
-Underfull \hbox (badness 3679) in paragraph at lines 42--42
-[]|\T1/cmr/m/it/12 Racing Skis op-ti-mal
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 42--42
-[]|\T1/cmr/m/n/12 Optimal promo-
- []
-
-
-Underfull \hbox (badness 2119) in paragraph at lines 44--45
-[]|\T1/cmr/m/n/12 Gifted: P$[]$ = 10%
- []
-
-
-Underfull \hbox (badness 2119) in paragraph at lines 48--49
-[]|\T1/cmr/m/n/12 Gifted: P$[]$ = 30%
- []
-
-
-Underfull \hbox (badness 2119) in paragraph at lines 52--53
-[]|\T1/cmr/m/n/12 Gifted: P$[]$ = 10%
- []
-
-
-Overfull \hbox (41.04785pt too wide) in paragraph at lines 40--56
- [] 
- []
-
-[26]
-<Images/n7.png, id=120, 1387.584pt x 706.0779pt>
-File: Images/n7.png Graphic file (type png)
-<use Images/n7.png>
-Package pdftex.def Info: Images/n7.png  used on input line 60.
-(pdftex.def)             Requested size: 416.27841pt x 211.825pt.
- [27]
-Underfull \hbox (badness 10000) in paragraph at lines 62--68
-
- []
-
-) (/home/marfo/Documenti/DIA_project_2021/Report/Files/n8.tex
-Underfull \hbox (badness 10000) in paragraph at lines 2--3
-
- []
-
-[28 </home/marfo/Documenti/DIA_project_2021/Report/Images/n7.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 8--9
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 10--11
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 12--13
+Underfull \hbox (badness 10000) in paragraph at lines 9--10
 
  []
 
@@ -991,42 +957,113 @@ Underfull \hbox (badness 10000) in paragraph at lines 14--15
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 16--17
-
- []
-
-
-Overfull \hbox (69.22923pt too wide) in paragraph at lines 18--19
-[]\T1/cmr/m/n/12 Cumulative pos-i-tive de-vi-a-tion from the ref-er-ence point at $\OML/cmm/m/it/12 t$   $g[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t\OT1/cmr/m/n/12 ) = [] []$ 
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 18--19
 
  []
 
 
-Overfull \hbox (72.10081pt too wide) in paragraph at lines 20--21
+Overfull \hbox (56.87837pt too wide) in paragraph at lines 24--25
+[] \T1/cmr/m/n/12 if $\OML/cmm/m/it/12 ^^\ < t$\T1/cmr/m/n/12 : $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 []; ^^L[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12   [] []$ 
+ []
+
+[26]
+Underfull \hbox (badness 3679) in paragraph at lines 44--44
+[]|\T1/cmr/m/it/12 Racing Skis op-ti-mal
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 44--44
+[]|\T1/cmr/m/n/12 Optimal promo-
+ []
+
+
+Underfull \hbox (badness 2119) in paragraph at lines 46--47
+[]|\T1/cmr/m/n/12 Gifted: P$[]$ = 20%
+ []
+
+
+Underfull \hbox (badness 2119) in paragraph at lines 50--51
+[]|\T1/cmr/m/n/12 Gifted: P$[]$ = 30%
+ []
+
+
+Underfull \hbox (badness 2119) in paragraph at lines 54--55
+[]|\T1/cmr/m/n/12 Gifted: P$[]$ = 10%
+ []
+
+
+Overfull \hbox (41.04785pt too wide) in paragraph at lines 42--58
+ [] 
+ []
+
+[27]
+<Images/n7.png, id=123, 1387.584pt x 706.0779pt>
+File: Images/n7.png Graphic file (type png)
+<use Images/n7.png>
+Package pdftex.def Info: Images/n7.png  used on input line 62.
+(pdftex.def)             Requested size: 416.27841pt x 211.825pt.
+ [28]
+Underfull \hbox (badness 10000) in paragraph at lines 64--70
+
+ []
+
+) (c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Files/n8.tex
+Underfull \hbox (badness 10000) in paragraph at lines 2--3
+
+ []
+
+[29 <c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Images/n7.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 9--10
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--12
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 13--14
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 15--16
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--18
+
+ []
+
+
+Overfull \hbox (69.22923pt too wide) in paragraph at lines 19--20
+[]\T1/cmr/m/n/12 Cumulative pos-i-tive de-vi-a-tion from the ref-er-ence point at $\OML/cmm/m/it/12 t$   $g[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t\OT1/cmr/m/n/12 ) = [] []$ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--20
+
+ []
+
+
+Overfull \hbox (72.10081pt too wide) in paragraph at lines 21--22
 []\T1/cmr/m/n/12 Cumulative neg-a-tive de-vi-a-tion from the ref-er-ence point at $\OML/cmm/m/it/12 t$   $g[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t\OT1/cmr/m/n/12 ) = [] []$ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 20--21
+Underfull \hbox (badness 10000) in paragraph at lines 21--22
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 22--23
+Underfull \hbox (badness 10000) in paragraph at lines 23--24
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 25--26
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 29--30
+Underfull \hbox (badness 10000) in paragraph at lines 27--28
 
  []
 
@@ -1040,12 +1077,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 33--34
 
  []
 
-
+[30]
 Underfull \hbox (badness 10000) in paragraph at lines 35--36
 
  []
 
-[29]
+
 Underfull \hbox (badness 10000) in paragraph at lines 37--38
 
  []
@@ -1060,38 +1097,75 @@ Underfull \hbox (badness 10000) in paragraph at lines 41--42
 
  []
 
-<Images/n8.png, id=131, 1279.02844pt x 676.77844pt>
-File: Images/n8.png Graphic file (type png)
-<use Images/n8.png>
-Package pdftex.def Info: Images/n8.png  used on input line 57.
-(pdftex.def)             Requested size: 447.66667pt x 236.876pt.
 
-Overfull \hbox (17.66205pt too wide) in paragraph at lines 57--58
+Underfull \hbox (badness 10000) in paragraph at lines 43--44
+
+ []
+
+[31]
+Underfull \hbox (badness 3679) in paragraph at lines 71--71
+[]|\T1/cmr/m/it/12 Racing Skis op-ti-mal
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 71--71
+[]|\T1/cmr/m/n/12 Optimal promo-
+ []
+
+
+Underfull \hbox (badness 2119) in paragraph at lines 73--74
+[]|\T1/cmr/m/n/12 Gifted: P$[]$ = 20%
+ []
+
+
+Underfull \hbox (badness 2119) in paragraph at lines 77--78
+[]|\T1/cmr/m/n/12 Gifted: P$[]$ = 30%
+ []
+
+
+Underfull \hbox (badness 2119) in paragraph at lines 81--82
+[]|\T1/cmr/m/n/12 Gifted: P$[]$ = 10%
+ []
+
+
+Overfull \hbox (41.04785pt too wide) in paragraph at lines 69--85
  [] 
  []
 
-[30]) (/home/marfo/Documenti/DIA_project_2021/Report/Files/folder_structure.tex)
+[32]
+<Images/n8.png, id=141, 1279.02844pt x 676.77844pt>
+File: Images/n8.png Graphic file (type png)
+<use Images/n8.png>
+Package pdftex.def Info: Images/n8.png  used on input line 89.
+(pdftex.def)             Requested size: 447.66667pt x 236.876pt.
 
-LaTeX Warning: Empty bibliography on input line 65.
+Overfull \hbox (17.66205pt too wide) in paragraph at lines 89--90
+ [] 
+ []
 
-[31 </home/marfo/Documenti/DIA_project_2021/Report/Images/n8.png>] (/home/marfo/Documenti/DIA_project_2021/Report/main.aux)
+[33]
+Underfull \hbox (badness 10000) in paragraph at lines 92--97
+
+ []
+
+) (c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Files/folder_structure.tex [34 <c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/Images/n8.png>]) [35] (c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/main.aux)
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 13898 strings out of 479304
- 238083 string characters out of 5869779
- 1014620 words of memory out of 5000000
- 30837 multiletter control sequences out of 15000+600000
- 420182 words of font info for 69 fonts, out of 8000000 for 9000
+ 14880 strings out of 492167
+ 245974 string characters out of 6124419
+ 741227 words of memory out of 5000000
+ 18976 multiletter control sequences out of 15000+600000
+ 20368 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 73i,10n,78p,1499b,1722s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm2074.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on /home/marfo/Documenti/DIA_project_2021/Report/main.pdf (32 pages, 908830 bytes).
+ 42i,10n,47p,1566b,1689s stack positions out of 5000i,500n,10000p,200000b,80000s
+{d:/Programmi/texlive/2019/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}<d:/Programmi/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><d:/Programmi/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><d:/Programmi/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><d:/Programmi/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><d:/Programmi/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><d:/Programmi/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><d:/Programmi/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><d:/Programmi/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><d:/Programmi/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><d:/Programmi/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><d:/Programmi/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx0800.pfb><d:/Programmi/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb><d:/Programmi/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb><d:/Programmi/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb><d:/Programmi/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb><d:/Programmi/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb><d:/Programmi/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb><d:/Programmi/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb><d:/Programmi/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sftt0800.pfb>
+Output written on "c:/Users/Marforio/OneDrive - Politecnico di Milano/POLI/Data Intelligence Applications/DIA_project_2021/Report/main.pdf" (36 pages, 953484 bytes).
 PDF statistics:
- 200 PDF objects out of 1000 (max. 8388607)
- 131 compressed objects within 2 object streams
+ 213 PDF objects out of 1000 (max. 8388607)
+ 139 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  61 words of extra memory for PDF output out of 10000 (max. 10000000)
 

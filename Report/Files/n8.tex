@@ -1,10 +1,11 @@
 \subparagraph*{Submission : }
 \textit{Do the same as Step 6 when the conversion rates are not stationary. Adopt a change-detection test approach.}\\
 
-The goal is the same of the previous problem, but instead of a sliding-window approach, is required to adopt a change-detection test approach.
+The goal is the same of the previous problem,but we have to manage the seasonality during the matching learning phase, using a change detection approach.
 
+Implementation: \textit{n8.py}
 \subsection*{Basic knowledge}
-\subparagraph*{Change Detection (CUSUM)}
+\subsubsection*{Change Detection (CUSUM)}
 The first $M$ valid samples are used to produce the reference point.\\
 
 Empirical mean of arm $a$ over the first $M$ valid samples $\bar{X_{a}^0}$\\
@@ -20,9 +21,10 @@ Cumulative positive deviation from the reference point at $t$ \hspace{0.2cm} $g_
 Cumulative negative deviation from the reference point at $t$ \hspace{0.2cm} $g_{a}^{-}(t) = \max \left\{0, g_{a}^{-}(t-1) + s_{a}^{-}(t) \right\}$ \\
 
 We have a change if \hspace{0.2cm} $g_{a}^{-}(t) > h$ or $g_{a}^{+}(t) > h$\\
-\subparagraph*{CD-UCB}
+\subsubsection*{CD-UCB} 
+To the classical UCB algorithm is added a change detection mechanism. The bandit algorithm take the optimal decision, according with its past observation. During the update phase, the rewards are observed also by the change detection algorithm that monitos the distribution of each arms, and sends to the UCB a positive (or negative) signals in case of detection and the bandit reset the arm.
 
-\textbf{Pseudocode:}\\
+\underline{\textit{Pseudocode}}\\
 
 1. Initialize $\tau_{a} = 0$ for $a\in A$ 
 
@@ -42,9 +44,10 @@ $n_{a}(\tau_{a},t-1)$ is the number of valid samples for arm $a$\\
 
 4. If $CD_a (r_{\tau},...,r_t) = 1$ then $\tau_a = t$ and restart $CD_a$
 
+\subsubsection*{Promo-Category CD-UCB Matching} Also in this case we have developed a custom version of the UCB algorithm that we use in our scenarios. As for the modification we have done for the UCB without the change detection mechanism, we have added two matrices (support matrix and total reward matrix), used to compute the average reward obtained by each arm. The same initial phase of exploration (the starting delay) is adopted also in this case. The main difference is that we use a CD-UCB implementation and when a detection is present the two additional matrices are reset. 
 
 \subsection*{Strategy}
-In order to solve this problem we have used a change detection (CUSUM) algorithm and a bandit algorithm (UCB). At each time $t$, the UCB outputs a decision $I_t \in K$, where $K$ is a set of arms, based on its past observations of the bandit environment. The environment generates the corresponding reward of arm $I_t$, which is observed by both the bandit algorithm and the change detection algorithm. The change detection algorithm monitors the distribution of each arm, and sends out a positive signal to restart the bandit algorithm once a breakpoint is detected.
+In order to solve this problem we have used our customized implementation of Change Detection UCB algorithm, built on top of CUMSUM algorithm and classical UCB bandit algorithm. As for the previous submissions, we simulate the purchase of the two items client by client. We select the optimal superarm with the pricing learner, then, usign the Promo-Category CD-UCB we retrieve the optimal matching promotion-category for the current user. Finally we compute the rewards and update the learners. 
 
 \subparagraph{Implementation}
 \begin{itemize}
@@ -55,21 +58,21 @@ In order to solve this problem we have used a change detection (CUSUM) algorithm
 	\item Conversion rate associated with the first item is not known
 	\item Conversion rate associated with the second item is not known
 	\item Promotion assignment is not known 
-	\item Change-detection test approach
+	\item Change-detection approach
 \end{itemize} 
 
 \subparagraph{Optimal strategy}
-We have calculate the optimal solution in the same way as in the point 6. The only difference is that we will have one optimal solution per season, so at the beginning of each of them we have to calculate it again.
+We have calculate the optimal solution in the same way as in step 7.\\
 According to our candidates the optimal solution is:
 
 \begin{center}
 	\begin{tabular}{|c|p{4cm}|p{4cm}|p{4cm}|} 
 		\hline
 		Season & \textit{Racing Skis optimal price} & \textit{Racing Ski Helmet} optimal price & Optimal promo-category matching \\ \hline
-		\multirow{4}{*}{Spring-Summer} & \multirow{4}{*}{1900.0} & \multirow{4}{*}{360.0} & Sport addicted: P$_0$ = 0\% (360.0)  \\ 
-		& 					   &                      & Gifted: P$_1$ = 10\% (324.0)          \\ 
-		& 					   &                      & Worried: P$_2$ = 20\% (288.0)         \\
-		& 					   &                      & Amateur: P$_3$ = 30\% (251.99)         \\ \hline
+		\multirow{4}{*}{Spring-Summer} & \multirow{4}{*}{1900.0} & \multirow{4}{*}{410.0} & Sport addicted: P$_0$ = 0\% (410.0)  \\ 
+								   & 					   &                      & Gifted: P$_2$ = 20\% (328.0)          \\ 
+								   & 					   &                      & Worried: P$_3$ = 30\% (287.0)         \\
+								   & 					   &                      & Amateur: P$_1$ = 10\% (369.0)         \\ \hline
 		\multirow{4}{*}{Autumn} & \multirow{4}{*}{2690.0} & \multirow{4}{*}{530.0}  & Sport addicted: P$_1$ = 10\% (477.0)\\ 
 		& 					   &                      & Gifted: P$_3$ = 30\% (371.0)         \\ 
 		& 					   &                      & Worried: P$_2$ = 20\% (424.0)         \\
@@ -81,16 +84,16 @@ According to our candidates the optimal solution is:
 	\end{tabular}
 \end{center}
 
-Days: 365\\
-Experiments number: 2 \\
-
-
-
-
-
 \subsection*{Results}
 \begin{center}
 	\includegraphics[scale=0.35]{Images/n8}
 \end{center}
+
+Days: 365\\
+Experiments number: 2 \\
+Season length : $|365/3| = 122 $ days\\
+Starting delay of the Promo-Category CD-UCB Matching: 1000 clients\\
+SWTS window size : $\sqrt{365 * 1000} * 30$\\
+
 \subsection*{Considerations}
-We can observe that the change-detection approach has a small impact respect to the performance of the SW-TS. This is due to the fact that the change-detection approach catches some false-positive detection; the matching of promo-category of the second item is influenced by the prices chosen for the two items.
+We can observe that the change detection approach has a smaller impact respect to the performance of the SWTS. This is due to the fact that the change detection approach catches some false positive detection; the matching of promo-category of the second item is influenced by the prices chosen for the two items.

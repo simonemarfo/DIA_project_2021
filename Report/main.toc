@@ -1,52 +1,46 @@
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
 \babel@toc {english}{}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Introduction}{2}{}%
+\contentsline {section}{Introduction}{2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{2}{}%
+\contentsline {paragraph}{}{2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Formal Model}{4}{}%
+\contentsline {section}{Step 1 - Formal Model}{4}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Random Varaibles}{9}{}%
+\contentsline {section}{Step 2 - Random Variables}{9}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Online pricing for first item}{13}{}%
+\contentsline {section}{Step 3 - Learning price for racing skis with known demand curve}{13}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subparagraph}{Implementation}{15}{}%
+\contentsline {subparagraph}{Implementation}{15}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subparagraph}{Optimal strategy}{16}{}%
+\contentsline {subparagraph}{Optimal strategy}{16}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Online pricing for first item with purchase simulation}{17}{}%
+\contentsline {section}{Step 4 - Learnig price for racing skis with purchase simulation}{17}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subparagraph}{Implementation}{17}{}%
+\contentsline {subparagraph}{Implementation}{17}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subparagraph}{Optimal strategy}{18}{}%
+\contentsline {subparagraph}{Optimal strategy}{18}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Matching problem: promo assignment}{19}{}%
+\contentsline {section}{Step 5 - Matching problem : promo assignment}{19}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {0.0.1}*UCB Matching}{19}{}%
+\contentsline {subparagraph}{Implementation}{21}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subparagraph}{Implementation}{21}{}%
+\contentsline {section}{Step 6 - Pricing and Matching}{23}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {0.0.2}Optimal strategy}{21}{}%
+\contentsline {subparagraph}{Implementation}{23}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Pricing and Matching problem}{22}{}%
+\contentsline {subparagraph}{Optimal strategy}{24}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subparagraph}{Implementation}{23}{}%
+\contentsline {section}{sect:Step 7 - Pricing and Matching: Sliding Window}{26}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subparagraph}{Optimal strategy}{23}{}%
+\contentsline {subparagraph}{Implementation}{27}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Seasonal Pricing and Matching problem: Sliding Window}{25}{}%
+\contentsline {subparagraph}{Optimal strategy}{27}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subparagraph}{Implementation}{26}{}%
+\contentsline {section}{Step 8 - Pricing and Matching: Change Detection}{29}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subparagraph}{Optimal strategy}{26}{}%
+\contentsline {subparagraph}{Implementation}{31}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Seasonal Pricing and Matching problem: Change Detection}{29}{}%
+\contentsline {subparagraph}{Optimal strategy}{32}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subparagraph}{Implementation}{30}{}%
-\defcounter {refsection}{0}\relax 
-\contentsline {subparagraph}{Optimal strategy}{30}{}%
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{Folder Structure}{31}{}%
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{References}{31}{}%
+\contentsline {section}{Folder Structure}{34}% 

@@ -1,8 +1,9 @@
 \subparagraph*{Submission : }
 \textit{Consider the case in which the assignment of promos is fixed and the price of the second itm is fixed and the goal is to learn the optimal price of the first item. Assume that the number of users per class is known as well as the conversion rate associated with the second item. Also assume that the prices are the same for all: the classes (assume the same in the following) and that the conversion rates do not change unless specified differently below. Adopt both an upper-confidence bound approach and a Thompson-sampling approach and compare their performance.}\\
 
-The request is to learn the optimal price of the first item, comparing the adoption of a Thompson-sampling approach and an Upper-Confidence Bound approach
+The request is to learn the optimal price of the first item, comparing the adoption of a Thompson-Sampling approach and an Upper-Confidence Bound approach
 
+Implementation: \textit{n3.py}
 \subsection*{Basic knowledge}
 The described problem is a combinatorial bandit problem, which is a decision making problem in where decision maker selects one single arm in each round, and observes a realization of the corresponding unknown reward distribution. Each decision is based on past observed rewards. The objective is to maximize the expected cumulative reward over some time horizon by balancing exploitation and exploration. We can solve it, through an online algorithm, where only for the feasible solutions we will have precise estimations. Thomspon-Sampling algorithm (TS) and Upper-Confidence Bound algorithm (UCB1) are well known algorithm used to solve combinatorial bandits problem.
 
@@ -28,7 +29,7 @@ Notation:\\
 \item $n_{a}(t)$ number of samples of arm $a$ at time $t$
 \end{itemize}
 
-Pseudocode\\
+\underline{\textit{Pseudocode}}\\
 
 1. Play once each arm $a \in A$
 
@@ -54,7 +55,7 @@ Notation (in addition to classical UCB):\\
 	\item $(\alpha_{a_{t}}, \beta_{a_{t}})$ parameters of the beta distribution $P(\mu_{a}=\theta_{a})$
 \end{itemize}
 
-Pseudocode\\
+\underline{\textit{Pseudocode}}\\
 
 1. At every time $t$ for every arm $a$:
 
@@ -71,7 +72,7 @@ Pseudocode\\
 
 \subsection*{Strategy}
 
-In our solution we simulate a random arrival of the customers, through two different leaners, TS learner and a UCB learner, we extract from our candidates two prices and we emulate the purchase phase using both prices. In case the customer buys the first item, we propose the second one at a fixed price, computed according to the customer category. In this case we do not simulate the purchase phase, but we use the knowledge of the conversion rate of the second item to compute the final customer reward. 
+In our solution we simulate a random arrival of the customers. Through two different leaners, TS learner and a UCB learner, we extract from our candidates two prices and we emulate the purchase phase using both prices. In case the customer buys the first item, we propose the second one at a fixed price, computed according to the customer category. In this case we do not simulate the purchase phase, but we use the knowledge of the conversion rate of the second item to compute the final customer reward. 
 
 \subparagraph{Implementation} 
 \begin{itemize}
@@ -99,7 +100,7 @@ In our solution we simulate a random arrival of the customers, through two diffe
 	\item Conversion rate associated with the second item is known
 \end{itemize}
 
-Both UCB and TS learner expect as learnign parameter a binomial value, while our reward is value composed by the sold of the first item plus the eventual sold of the second item. In order to normilize the reward to be passed learner, we divide the customer reward by the maximum achievable reward.   
+Both UCB and TS learner expect as learning parameter a binomial value, while our reward is a value composed by the sold of the first item plus the eventual sold of the second item (equal to zero or grater than one). In order to normilize the reward to be passed learner, we divide the customer reward by the maximum achievable reward.   
 
 \subparagraph{Optimal strategy}In order to compute a regret, the simulated rewards are compared with an optimal solution that, accordingly to the conversion rates for the first items, is to offer the \textit{Racing Skis} at the lower price (1910.0 according to our candidates prices). 
 
@@ -110,8 +111,8 @@ Both UCB and TS learner expect as learnign parameter a binomial value, while our
 Days: 10\\
 Experiments number: 10 \\
 Both UCB and TS strategy converge on 1910.0\\
-\textit{We decide to plot the regret of the first 5000 clients, since plotting the results of the entire time horizon made the plot unreadable}
+\textit{We decide to plot the regret of the first 5000 clients, since plotting the results of the entire time horizon made the plot unreadable.}
 
 
 \subsection*{Considerations}
-As we can observe in the plot, both approach converge to a stable solution, however Thompson Sampling approach performs better than a UCB approach. Infact Thompson Sampling is faster to find the best price for the first item than UCB and this allow to have a lower regret. 
+As we can observe in the plot, both the approaches converge to a stable solution, however Thompson Sampling approach performs better than a UCB approach. Infact Thompson Sampling is faster to find the best price for the first item than UCB and this allow to have a lower regret. 
