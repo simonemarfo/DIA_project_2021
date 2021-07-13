@@ -72,7 +72,7 @@ Notation (in addition to classical UCB):\\
 
 \subsection*{Strategy}
 
-In our solution we simulate a random arrival of the customers. Through two different leaners, TS learner and a UCB learner, we extract from our candidates two prices and we emulate the purchase phase using both prices. In case the customer buys the first item, we propose the second one at a fixed price, computed according to the customer category. In this case we do not simulate the purchase phase, but we use the knowledge of the conversion rate of the second item to compute the final customer reward. 
+In our solution we simulate a random arrival of the customers. Through two different learners, TS learner and a UCB learner, we extract from our candidates two prices and we emulate the purchase phase using both prices. In case the customer buys the first item, we propose the second one at a fixed price, computed according to the customer category. In this case we do not simulate the purchase phase, but we use the knowledge of the conversion rate of the second item to compute the final customer reward. 
 
 \subparagraph{Implementation} 
 \begin{itemize}
@@ -115,4 +115,4 @@ Both UCB and TS strategy converge on 1910.0\\
 
 
 \subsection*{Considerations}
-As we can observe in the plot, both the approaches converge to a stable solution, however Thompson Sampling approach performs better than a UCB approach. Infact Thompson Sampling is faster to find the best price for the first item than UCB and this allow to have a lower regret. 
+As we can observe in the plot, both the approaches converge to a stable solution, however Thompson Sampling approach performs better than a UCB approach. Infact Thompson Sampling is faster to find the best price for the first item than UCB and this allows to have a lower regret. 

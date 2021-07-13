@@ -8,7 +8,7 @@
 \item $c1$ = production cost of \textit{Racing skis} = 0
 \item $c2$ = production cost of \textit{Racing ski helmet} = 0
 \item $q1_i(p1)$ = conversion rate for user category $i$, for \textit{Racing skis} sold at the price $p1$
-\item $q2_i(p2)$ = conversion rate for user category $i$, for \textit{Racing ski helmet} sold at price the $p2$
+\item $q2_i(p2)$ = conversion rate for user category $i$, for \textit{Racing ski helmet} sold at the price $p2$
 \item $s_{ji}(p2)$ = discounted price of \textit{Racing ski helmet}, for user category $i$, according to promo discount $j$
 \item $d_{ij}$ = amount of promo $j$ distributed to user category $i$
 \item $d_{max}$ = maximum number of promos to be to distributed (\#P$_1$ + \#P$_2$ + \#P$_3$)
@@ -33,10 +33,10 @@ $\textrm {max} ( \sum \limits _{i = 0, j = 0} ^{i = 4, j = 4}[(p1*q1_i(p1) - c1*
 \\
 We have fixed the full prices of the two items: $p1$, $p2$. We retrieve the discounted prices of $p2$, applying the promos $j$. \\
 We know: the average number of customers per category $i$, $avgCustomer_i$, the conversion rate for both products ($q1_i(p1)$, $q2_i(p2)$) and the maximum number of promos to distribute ($d_{max}$).\\
-As assumption the production costs of the two items is zero ($c1$ = 0, $c2$ = 0).\\
+As assumption, the production costs of the two items is zero ($c1$ = 0, $c2$ = 0).\\
 It is possible to retrieve the total revenue for \textit{Racing skis} as the product between the full price of the first item, the conversion rate for the considered user category and the average number of customers for that category:
 $(p1 * q1_i(p1) * avgCustomer_i)$.\\
-For the second item the calculation of the reward is the same except for the fact that the product is buyed only if also the first one is purchased (so we multiply also the conversion rate of the first item) and the considered price have to be discounted according to the assigned promotion. 
+For the second item the calculation of the reward is the same, except for the fact that the product is buyed only if also the first one is purchased (so we multiply also the conversion rate of the first item) and the considered price have to be discounted according to the assigned promotion. 
 
 The solution of our optimization problem consists in the distribution of the fraction of promo codes among the user categories.
 
@@ -45,7 +45,7 @@ The solution of our optimization problem consists in the distribution of the fra
 We have to find the optimal solution in an offline manner (solve the maximization problem when all the parameters are known), considering the constraint that the shop uses a randomized approach to assure that a fraction of a given customer category gets a specified promotion, according to the optimal solution.\\ 
 We have used an iterative approach to reach the optimal solution: we build a customer category-promotion (matching) matrix, which contains the mean expected rewards for every matching, calculated as the product between the conversion rate of the \textit{Racing ski helmet} and its discounted price.
 The goal is to obtain, for each customer-promo matching, the fraction of customers that will receive this discount, in order to maximize the total reward.\\
-We select the best reward for every class, for four times, retrieving, at each iteration, the four best combination of category-promotion and assigning an infinite weight to the obtained sub-optimal matching.\\
+We select the best reward for every class, for four times, retrieving, at each iteration, the four best combinations of category-promotion and assigning an infinite weight to the obtained sub-optimal matching.\\
 Every matching is represented by a reward configuration that maximize the total reward, every iteration is weighted and represent a different goodnesses of the solution (the first is the best, the last is the worst).\\
 Through the sub-optimal matchings, we have retrieved the fractions of different promos to assign to every customer categories, based on the proportional weight of the previous sub-optimal matching. Then the retrieved proportions, are normalized category per category.
 
@@ -92,9 +92,9 @@ Below we schematize the previous described algorithm:\\
 \begin{center}
 	\includegraphics[scale=0.9]{Images/n1_results}
 \end{center}
-In terms of rewars the results are the following: 
+In terms of rewards the results are the following: 
 \begin{center}
-	\includegraphics[scale=0.7]{Images/n1_chart}
+	\includegraphics[scale=0.6]{Images/n1_chart}
 \end{center}
 
 

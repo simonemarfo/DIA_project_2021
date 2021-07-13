@@ -22,7 +22,7 @@ Cumulative negative deviation from the reference point at $t$ \hspace{0.2cm} $g_
 
 We have a change if \hspace{0.2cm} $g_{a}^{-}(t) > h$ or $g_{a}^{+}(t) > h$\\
 \subsubsection*{CD-UCB} 
-To the classical UCB algorithm is added a change detection mechanism. The bandit algorithm take the optimal decision, according with its past observation. During the update phase, the rewards are observed also by the change detection algorithm that monitos the distribution of each arms, and sends to the UCB a positive (or negative) signals in case of detection and the bandit reset the arm.
+A change detection mechanism is added to the classical UCB algorithm. The bandit algorithm take the optimal decision, according with its past observation. During the update phase, the rewards are observed also by the change detection algorithm that monitors the distribution of each arms, and sends to the UCB a positive (or negative) signals in case of detection and the bandit resets the arm.
 
 \underline{\textit{Pseudocode}}\\
 
