@@ -1,7 +1,9 @@
 # DIA_project_2021: Pricing and Matching 
 
 Ivan Cavadini   matricola:941927 codice persona:10524829
+
 Simone Marforio matricola:944320 codice persona:10524844
+
 Nicolò Molinari matricola:942404 codice persona:10524812
 
 ## Scenario
