@@ -135,7 +135,7 @@ for e in range(n_exp):
     v_swts_experimets[e:] = np.cumsum(v_daily_opt_reward) - np.cumsum(v_daily_swts_reward)
     v_ts_experimets[e:] = np.cumsum(v_daily_opt_reward) - np.cumsum(v_daily_ts_reward)
                 
-# ploting results
+# plotting results
 plt.figure(1)
 plt.xlabel("Days")
 plt.ylabel("Regret")

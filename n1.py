@@ -38,7 +38,7 @@ def promoDistribution(iteration_matrix, class_final_distribution, verbose = Fals
     return class_final_distribution
 
 def computeClassPromoDistribution(iteration_matrix,class_final_distribution,verbose=False):
-    #noPromoDistribution(iteration_matrix, class_final_distribution,verbose=verbose) # compute the first column related to P0 (no doscount)
+   
 
     """
         calcolo la distribuzione tenendo conto dell'intera matrice, cioè anche della colonna P0 

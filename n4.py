@@ -64,7 +64,7 @@ for e in range(n_exp):
             if (opt_buy_or_not_item1):
                 opt_customer_reward = min(candidates_item1) + ctx.purchase_online_second_element(discounted_price[category],category)*discounted_price[category]
 
-            # update the learner normilizing the reward
+            # update the learner normalizing the reward
             ts_learner.update(ts_pulled_arm,ts_customer_reward/maximum_rewards)
             ucb_learner.update(ucb_pulled_arm,ucb_customer_reward/maximum_rewards)
             

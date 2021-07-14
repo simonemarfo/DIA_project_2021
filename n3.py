@@ -8,7 +8,7 @@ ctx= Context()
 item2_price_full = ctx.item2_full_price # default is 630.0
 promotion_assignment = [2,1,0,3]   # class1: P2; class2:P1; class3:P0; class4:P3. is the optimal solution found with n1.py
 
-discounted_price = ctx.discuonted_second_item_prices(promotion_assignment) # retrun the discounted prices for every customer category, according to the pormotion assignment
+discounted_price = ctx.discuonted_second_item_prices(promotion_assignment) # return the discounted prices for every customer category, according to the pormotion assignment
 
 conversion_rate_second = np.zeros((4))
 for i in range(4):

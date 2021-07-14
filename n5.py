@@ -93,7 +93,7 @@ for e in range(n_exp):
     days_experiments[e,:] = np.cumsum(day_opt_reward) - np.cumsum(day_UCB_reward)
 
 
-# ploting results
+# plotting results
 plt.figure(1)
 plt.xlabel("Days")
 plt.ylabel("Regret")
