@@ -1,5 +1,9 @@
 # DIA_project_2021: Pricing and Matching 
 
+Ivan Cavadini   matricola:941927 codice persona:10524829
+Simone Marforio matricola:944320 codice persona:10524844
+Nicolò Molinari matricola:942404 codice persona:10524812
+
 ## Scenario
 Consider the scenario in which a shop has a number of promo codes to incentivize the customers that buy an item to buy a different item. The customers can belong to different classes and the promo codes can provide different discounts.
 
